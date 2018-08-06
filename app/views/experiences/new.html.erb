@@ -1,2 +1,12 @@
-<h1>Experiences#new</h1>
-<p>Find me in app/views/experiences/new.html.erb</p>
+<div class="wrapper wrapper-img2 ">
+  <div class="row">
+    <div class="col col-sm-12 col-sm-offset-0">
+      <div class="div-design">
+        <h3 class="font-color">Add A New Experience To Your Own Profile</h3>
+        <%= render 'form', experience: @experience %>
+        <br>
+        <%= link_to 'Back', profile_path %>
+      </div>
+    </div>
+  </div>
+</div>
