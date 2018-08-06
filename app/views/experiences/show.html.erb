@@ -1,0 +1,9 @@
+<h1><%= @experience.name %></h1>
+<div><%= @experience.description %></div>
+<div><%= "¥#{@experience.price}" %></div>
+<div><%= "Maximum attendants: #{@experience.capacity}" %></div>
+<div><%= "Held by #{@experience.user.first_name}" %></div>
+<div><%= @experience.user.description %></div>
+<div><%= @experience.user.email %></div>
+<div><%= @experience.user.nationality %></div>
+<%= link_to 'See All Experiences', experiences_path %>
