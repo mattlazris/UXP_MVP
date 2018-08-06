@@ -5,3 +5,37 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+puts 'Cleaning database'
+Booking.destroy_all
+Experience.destroy_all
+User.destroy_all
+
+puts 'Done'
+
+20.times do
+  user = User.new(
+    first_name: Faker::FunnyName.two_word_name.scan(/\S+/),
+    last_name: Faker::FunnyName.two_word_name.scan(/\S+/),
+    email: Faker::Internet.email,
+    phone: Faker::PhoneNumber.cell_phone,
+    description: Faker::StarWars.quote,
+    nationality: ['Chinese', 'American', 'German', 'Swedish', 'British', 'Russian', 'Korean', 'French', 'Japanese'].sample,
+    gender:['Male', 'Female'].sample,
+    password: "123456",
+    host?: true
+  )
+  user.save
+  rand(0..5).times do
+    experience =  Experience.new(
+      name: Faker::Food.dish,
+      description: Faker::Food.description,
+      price: rand(50..300),
+      capacity: rand(1..10)
+    )
+    experience.user = user
+    experience.save
+  end
+  user.save
+end
