@@ -16,8 +16,8 @@ puts 'Done'
 
 20.times do
   user = User.new(
-    first_name: Faker::FunnyName.two_word_name.scan(/\S+/),
-    last_name: Faker::FunnyName.two_word_name.scan(/\S+/),
+    first_name: Faker::FunnyName.two_word_name.scan(/\S+/)[0],
+    last_name: Faker::FunnyName.two_word_name.scan(/\S+/)[1],
     email: Faker::Internet.email,
     phone: Faker::PhoneNumber.cell_phone,
     description: Faker::StarWars.quote,

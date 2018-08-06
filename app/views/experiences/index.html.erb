@@ -2,9 +2,9 @@
 <% @experiences.each do |experience| %>
   <ul>
     <li>
-      <div><%= experience.name %></div>
+      <div><%= link_to experience.name, experience %></div>
       <div><%= experience.description %></div>
-      <div><%= "¥/#{experience.price}" %></div>
+      <div><%= "¥#{experience.price}" %></div>
       <div><%= "#{experience.user.first_name} #{experience.user.last_name}" %></div>
       <div><%= experience.user.description %></div>
     </li>
