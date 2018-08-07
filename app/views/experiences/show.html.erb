@@ -1,10 +1,34 @@
-<h1><%= @experience.name %></h1>
-<div><%= @experience.description %></div>
-<div><%= "¥#{@experience.price}" %></div>
-<div><%= "Maximum attendants: #{@experience.capacity}" %></div>
-<div>"Held by "<%= link_to @experience.user.first_name, experience_host_path(@experience) %></div>
-<div><%= link_to 'Book', new_experience_booking_path(@experience) %></div>
-<div><%= @experience.user.description %></div>
-<div><%= @experience.user.email %></div>
-<div><%= @experience.user.nationality %></div>
-<%= link_to 'See All Experiences', experiences_path %>
+<div class="experience_title_card">
+  <div class="row">
+    <div class="experience_title col-xs-12 col-md-8">
+      <h1><%= @experience.name %></h1>
+    </div>
+    <div class="book col-xs-12 col-md-4">
+      <div class="btn btn-success"><%= link_to 'Book', new_experience_booking_path(@experience) %></div>
+    </div>
+  </row>
+</div>
+
+<div class="experience_card">
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <div><%= @experience.description %></div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div><%= "Maximum attendants: #{@experience.capacity}" %></div>
+      <div><%= "¥#{@experience.price}" %></div>
+      <div>"Held by "<%= link_to @experience.user.first_name, experience_host_path(@experience) %></div>
+    </div>
+  </row>
+</div>
+
+<div class="profile_card">
+  <div class="">
+
+    <div><%= @experience.user.description %></div>
+
+    <div><%= @experience.user.email %></div>
+    <div><%= @experience.user.nationality %></div>
+     <%= link_to 'See All Experiences', experiences_path %>
+</div>
+
