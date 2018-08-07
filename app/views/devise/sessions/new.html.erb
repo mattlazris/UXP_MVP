@@ -1,7 +1,7 @@
-<div class="wrapper form-margin">
+<div class="form-wrapper form-margin form-backgroup">
   <div class="cardlogin">
     <% @title = 'Log In'  %>
-    <h2>Log in</h2>
+    <h3>Welcome to UXP</h3>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
         <%= f.input :email, required: false, autofocus: true %>
@@ -16,3 +16,4 @@
     <%= render "devise/shared/links" %>
   </div>
 </div>
+
