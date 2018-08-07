@@ -1,4 +1,122 @@
-<h1>Experiences</h1>
+<div class="banner crop kenburns-top" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3) 50%, rgba(0,36,61,0.6) 100%), url('<%= image_path 'surf.jpg' %>');">
+  <div class="banner-content">
+    <h3>UniXP - Experience Platform</h3>
+    <h1>Life Is Too Short: Own Experiences, Not Things!</h1>
+    <p>
+    UniXP connects <strong>interesting people</strong> through <strong>unique experiences</strong>
+    </p>
+  </div>
+</div>
+
+<h2 class="section-title-home">
+      <div class="section-title-home-content" style="font-size:30px;">
+        Categories
+      </div>
+</h2>
+
+<div class="tabs">
+  <a class="tab active" href="#">
+    <div>
+      <%= image_tag "grill.gif", class: "img" %>
+      <p>Food & Drinks</p>
+    </div>
+  </a>
+  <a class="tab" href="#">
+    <div>
+      <%= image_tag "bulb.gif", class: "img" %>
+      <p>Class & Workshops</p>
+    </div>
+  </a>
+  <a class="tab" href="#">
+    <div>
+      <%= image_tag "rocket.gif", class: "img" %>
+      <p>Unique Tours</p>
+    </div>
+  </a>
+  <a class="tab" href="#">
+    <div>
+      <%= image_tag "tent.gif", class: "img" %>
+      <p>Sports & Outdoors</p>
+    </div>
+  </a>
+</div>
+
+<h2 class="section-title-home">
+      <div class="section-title-home-content" style="font-size:35px;">
+        Explore Your Experiences
+      </div>
+</h2>
+
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-3">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/copenhagen');">
+        <div class="card-category">Food & Drinks</div>
+        <div class="card-description">
+          <p>Shanghai food tour with local foodie</p>
+        </div>
+        <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/atmosfeer">
+        <a class="card-link" href="#"></a>
+  </div>
+
+  <div class="footer">
+      <div class="icongroup">
+        <a href="#"><i class="fas fa-star rating"></i></a>
+        <span>4.9</span>
+      </div>
+      <div class="icongroup">
+        <a href="#"><i class="fas fa-comment"></i></a>
+        <span>15</span>
+      </div>
+      <div class="icongroup">
+        <a href="#"><i class="fas fa-heart"></i></a>
+        <span>4,846</span>
+      </div>
+      <div class="icongroup">
+        <a href="#"><i class="fas fa-yen-sign"></i></a>
+        <span>150</span>
+    </div>
+  </div>
+
+    </div>
+
+
+    <div class="col-xs-12 col-sm-3">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/lisbon');">
+        <div class="card-category">Food & Drinks</div>
+        <div class="card-description">
+          <p>Shanghai food tour with local foodie</p>
+        </div>
+        <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/graysdays">
+        <a class="card-link" href="#"></a>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-3">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/lisbon');">
+        <div class="card-category">Food & Drinks</div>
+        <div class="card-description">
+          <p>Shanghai food tour with local foodie</p>
+        </div>
+        <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/graysdays">
+        <a class="card-link" href="#"></a>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-3">
+     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/sao-paulo');">
+       <div class="card-category">Food & Drinks</div>
+       <div class="card-description">
+        <p>Shanghai food tour with local foodie</p>
+       </div>
+       <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/matleroux">
+       <a class="card-link" href="#"></a>
+     </div>
+  </div>
+</div>
+
+
+
 <% @experiences.each do |experience| %>
   <ul>
     <li>
