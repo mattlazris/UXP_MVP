@@ -49,35 +49,39 @@
   </ul>
 </div>
 <div>
-  <h2>Hosting</h2>
-  <ul>
-    <% @hosting_bookings.each do |booking| %>
-      <li>
-        <div><%= booking.experience.name %></div>
-        <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
-        <div><%= booking.start_time %></div>
-        <div><%= booking.end_time %></div>
-        <div>
-          <%= "In Progress" %>
-          <%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %>
-        </div>
-      </li>
-    <% end %>
-  </ul>
-</div>
-<div>
-  <h2>Hosted</h2>
-  <ul>
-    <% @hosted_bookings.each do |booking| %>
-      <li>
-        <div><%= booking.experience.name %></div>
-        <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
-        <div><%= booking.start_time %></div>
-        <div><%= booking.end_time %></div>
-        <div>
-          <%= "This Deal Is Closed" %>
-        </div>
-      </li>
-    <% end %>
-  </ul>
+  <% if user.host %>
+    <div>
+      <h2>Hosting</h2>
+      <ul>
+        <% @hosting_bookings.each do |booking| %>
+          <li>
+            <div><%= booking.experience.name %></div>
+            <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
+            <div><%= booking.start_time %></div>
+            <div><%= booking.end_time %></div>
+            <div>
+              <%= "In Progress" %>
+              <%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div>
+      <h2>Hosted</h2>
+      <ul>
+        <% @hosted_bookings.each do |booking| %>
+          <li>
+            <div><%= booking.experience.name %></div>
+            <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
+            <div><%= booking.start_time %></div>
+            <div><%= booking.end_time %></div>
+            <div>
+              <%= "This Deal Is Closed" %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 </div>
