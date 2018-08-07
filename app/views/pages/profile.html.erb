@@ -1,7 +1,14 @@
 <h1><%= "#{@user.first_name} #{@user.last_name}" %></h1>
+<div><%= "You are a host." if @user.host %></div>
 <div>
   <% @user.gender == 'Male' ? (pronoun = 'His') : (pronoun = 'Her') %>
-  <div><%= link_to 'Add An Experience To Your Profile', new_experience_path if policy(Experience).create?%></div>
+  <div>
+    <% if @user.host %>
+      <%= link_to 'Add An Experience To Your Profile', new_experience_path if policy(Experience).create?%>
+    <% else %>
+      <%= link_to 'Become A Host', edit_user_registration_path %>
+    <% end %>
+  </div>
   <h2><%= "#{pronoun} Experiences" %></h2>
   <ul>
     <% @user.experiences.each do |exp| %>
