@@ -2,7 +2,7 @@
 <div><%= @experience.description %></div>
 <div><%= "¥#{@experience.price}" %></div>
 <div><%= "Maximum attendants: #{@experience.capacity}" %></div>
-<div><%= "Held by #{@experience.user.first_name}" %></div>
+<div>"Held by "<%= link_to @experience.user.first_name, experience_host_path(@experience) %></div>
 <div><%= @experience.user.description %></div>
 <div><%= @experience.user.email %></div>
 <div><%= @experience.user.nationality %></div>
