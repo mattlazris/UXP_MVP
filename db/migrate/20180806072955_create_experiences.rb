@@ -3,6 +3,7 @@ class CreateExperiences < ActiveRecord::Migration[5.2]
     create_table :experiences do |t|
       t.string :name
       t.string :description
+      t.string :category
       t.float :price
       t.integer :capacity
 
