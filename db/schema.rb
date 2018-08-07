@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2018_08_07_070838) do
   create_table "experiences", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "category"
     t.float "price"
     t.integer "capacity"
     t.bigint "user_id"
