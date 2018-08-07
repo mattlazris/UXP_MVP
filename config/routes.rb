@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :experiences do
     get "host", to: "pages#host"
+    resources :bookings, only: [ :index, :show, :new, :create, :destroy ]
   end
 
   get "profile", to: "pages#profile", as: "profile"
