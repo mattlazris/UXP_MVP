@@ -1,3 +1,4 @@
+<% @title = "#{@user.first_name} #{@user.last_name}"  %>
 <h1><%= "#{@user.first_name} #{@user.last_name}" %></h1>
 <div><%= "You are a host." if @user.host %></div>
 <div>
@@ -49,7 +50,7 @@
   </ul>
 </div>
 <div>
-  <% if user.host %>
+  <% if @user.host %>
     <div>
       <h2>Hosting</h2>
       <ul>
