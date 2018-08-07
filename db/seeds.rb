@@ -24,7 +24,7 @@ puts 'Done'
     nationality: ['Chinese', 'American', 'German', 'Swedish', 'British', 'Russian', 'Korean', 'French', 'Japanese'].sample,
     gender:['Male', 'Female'].sample,
     password: "123456",
-    host?: true
+    host: true
   )
   user.save
   rand(0..5).times do
