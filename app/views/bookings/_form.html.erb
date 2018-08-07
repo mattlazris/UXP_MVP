@@ -3,6 +3,8 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="form-inputs form-inline">
     <%= f.input :start_time %>
+  </div>
+  <div class="form-inputs form-inline">
     <%= f.input :end_time %>
   </div>
   <br>
