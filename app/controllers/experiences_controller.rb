@@ -3,8 +3,18 @@ class ExperiencesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @experiences = Experience.all
     @experiences = policy_scope(Experience).order(created_at: :desc)
+    if params[:query].present?
+      sql_query = " \
+        experiences.name @@ :query \
+        OR experiences.description @@ :query \
+        OR  users.first_name @@ :query \
+        OR  users.last_name @@ :query \
+      "
+      @experiences = Experience.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @experiences = Experience.all
+    end
   end
 
   def show
