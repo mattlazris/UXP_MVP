@@ -31,6 +31,7 @@ puts 'Done'
     experience =  Experience.new(
       name: Faker::Food.dish,
       description: Faker::Food.description,
+      category: ['Food & Drink', 'Classes & Workshops', 'Unique tours', 'Sports & Outdoors'].sample,
       price: rand(50..300),
       capacity: rand(1..10)
     )
