@@ -1,0 +1,14 @@
+<h1><%= "#{@host.first_name} #{@host.last_name}" %></h1>
+<div><%= @host.description %></div>
+<div>
+  <h2>Experiences</h2>
+  <ul>
+    <% @host.experiences.each do |exp| %>
+      <li>
+        <div><%= link_to exp.name, exp %></div>
+        <div><%= exp.price %></div>
+        <div><%= exp.description %></div>
+      </li>
+    <% end %>
+  </ul>
+</div>
