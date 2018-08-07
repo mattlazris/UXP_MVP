@@ -5,13 +5,7 @@ class ExperiencesController < ApplicationController
   def index
     @experiences = policy_scope(Experience).order(created_at: :desc)
     if params[:query].present?
-      sql_query = " \
-        experiences.name @@ :query \
-        OR experiences.description @@ :query \
-        OR  users.first_name @@ :query \
-        OR  users.last_name @@ :query \
-      "
-      @experiences = Experience.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+      @experiences = Experience.global_search(params[:query])
     else
       @experiences = Experience.all
     end
