@@ -1,7 +1,7 @@
 <h1><%= "#{@user.first_name} #{@user.last_name}" %></h1>
 <div>
   <% @user.gender == 'Male' ? (pronoun = 'His') : (pronoun = 'Her') %>
-  <div><%= link_to 'Add An Experience To Your Profile', new_experience_path %></div>
+  <div><%= link_to 'Add An Experience To Your Profile', new_experience_path if policy(Experience).create?%></div>
   <h2><%= "#{pronoun} Experiences" %></h2>
   <ul>
     <% @user.experiences.each do |exp| %>
@@ -10,8 +10,8 @@
         <div><%= exp.description %></div>
         <div><%= "¥#{exp.price}" %></div>
         <div><%= exp.capacity %></div>
-        <div><%= link_to 'Edit', edit_experience_path(exp) %></div>
-        <div><%= link_to 'Delete',exp, method: :delete, data: { confirm: "Are you sure?" } %></div>
+        <div><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></div>
+        <div><%= link_to 'Delete',exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></div>
       </li>
     <% end %>
   </ul>

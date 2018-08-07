@@ -4,6 +4,7 @@ class ExperiencesController < ApplicationController
 
   def index
     @experiences = Experience.all
+    @experiences = policy_scope(Experience).order(created_at: :desc)
   end
 
   def show
@@ -12,6 +13,7 @@ class ExperiencesController < ApplicationController
   def new
     if current_user.host?
       @experience = Experience.new
+      authorize @experience
     else
       redirect_to profile_path
     end
@@ -19,6 +21,7 @@ class ExperiencesController < ApplicationController
 
   def create
     @experience = Experience.new(experience_params)
+    authorize @experience
     @experience.user = current_user
     if @experience.save
       redirect_to profile_path
@@ -45,7 +48,7 @@ class ExperiencesController < ApplicationController
 
   private
   def find_experience
-    @experience = Experience.find(params[:id])
+    @experience = authorize Experience.find(params[:id])
   end
 
   def experience_params
