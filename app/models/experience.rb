@@ -1,4 +1,7 @@
 class Experience < ApplicationRecord
+  acts_as_taggable
+  acts_as_taggable_on :tags
+
   belongs_to :user
   has_many :bookings
 
@@ -6,6 +9,8 @@ class Experience < ApplicationRecord
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :description, presence: true
   validates :price, presence: true
+  validates :category, presence: true, inclusion: {
+  in: ['Food & Drink', 'Classes & Workshops', 'Unique tours', 'Sports & Outdoors'], message: "The capacity is too big or too small or not a number."}
   validates :capacity, presence: true, inclusion: {
   in: (1..20).to_a, message: "The capacity is too big or too small or not a number."}, numericality: { only_integer: true }
 
