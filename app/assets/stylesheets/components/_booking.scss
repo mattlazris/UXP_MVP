@@ -1,0 +1,51 @@
+.booking-wrapper {
+  background: white;
+}
+
+.booking-info {
+  width: 500px;
+  border-radius: 5px ;
+  background-position: center;
+  color: #616668;
+  background: white;                          /* White background */
+  padding: 20px;                              /* Internal space */
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50px;
+  right: 180px;
+};
+
+
+.booking-review {
+  width: 500px;
+  border-radius: 5px ;
+  background-position: center;
+  color: #616668;
+  background: white;                          /* White background */
+  padding: 20px;                              /* Internal space */
+  position: absolute;
+  top: 50px;
+  left: 180px;
+};
+
+.booking-payment {
+  width: 500px;
+  border-radius: 5px ;
+  background-position: center;
+  color: #616668;
+  background: white;                          /* White background */
+  padding: 20px;                              /* Internal space */
+  position: absolute;
+  bottom: 200px;
+  left: 180px;
+};
+
+.in-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.green:hover {
+  color: #5DB498;
+}

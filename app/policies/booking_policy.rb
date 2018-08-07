@@ -14,10 +14,10 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    user && (user == record.experience.user || user == record.user)
   end
 
   def destroy?
-    true
+    user
   end
 end
