@@ -25,7 +25,20 @@
 <div>
   <h2>Attending</h2>
   <ul>
-    <% @user.bookings.each do |booking| %>
+    <% @attending_bookings.each do |booking| %>
+      <li>
+        <div><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></div>
+        <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
+        <div><%= booking.start_time %></div>
+        <div><%= booking.end_time %></div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div>
+  <h2>Attended</h2>
+  <ul>
+    <% @attended_bookings.each do |booking| %>
       <li>
         <div><%= booking.experience.name %></div>
         <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
@@ -34,4 +47,41 @@
       </li>
     <% end %>
   </ul>
+</div>
+<div>
+  <% if user.host %>
+    <div>
+      <h2>Hosting</h2>
+      <ul>
+        <% @hosting_bookings.each do |booking| %>
+          <li>
+            <div><%= booking.experience.name %></div>
+            <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
+            <div><%= booking.start_time %></div>
+            <div><%= booking.end_time %></div>
+            <div>
+              <%= "In Progress" %>
+              <%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div>
+      <h2>Hosted</h2>
+      <ul>
+        <% @hosted_bookings.each do |booking| %>
+          <li>
+            <div><%= booking.experience.name %></div>
+            <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
+            <div><%= booking.start_time %></div>
+            <div><%= booking.end_time %></div>
+            <div>
+              <%= "This Deal Is Closed" %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 </div>

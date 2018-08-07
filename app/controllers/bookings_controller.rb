@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :find_booking, only: [ :show, :edit, :update, :destroy ]
+
   def index
     @bookings = Booking.all
   end
@@ -27,13 +29,25 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+    @booking.finished = true
+    @booking.save
+    redirect_to profile_path
+  end
+
+  def update
+  end
+
   def destroy
-    @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to profile_path
   end
 
   private
+  def find_booking
+    @booking = authorize Booking.find(params[:id])
+  end
+
   def booking_params
     params.require(:booking).permit(:start_time, :end_time, :finished)
   end

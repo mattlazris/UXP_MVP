@@ -7,6 +7,17 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @attended_bookings = []
+    @attending_bookings = []
+    @attended_bookings += @user.bookings.select { |booking| booking.finished }
+    @attending_bookings += @user.bookings.reject { |booking| booking.finished }
+
+    @hosted_bookings = []
+    @hosting_bookings = []
+    @user.experiences.each do |exp|
+      @hosted_bookings += exp.bookings.select { |booking| booking.finished }
+      @hosting_bookings += exp.bookings.reject { |booking| booking.finished }
+    end
   end
 
   def host
