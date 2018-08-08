@@ -13,6 +13,8 @@ class Experience < ApplicationRecord
   validates :price, presence: true
   validates :language, presence: true
   validates :location, presence: true
+  validates :duration, presence: true, inclusion: {
+  in: (1..5).to_a }
   validates :category, presence: true, inclusion: {
   in: ['Food & Drink', 'Classes & Workshops', 'Unique tours', 'Sports & Outdoors'] }
   validates :capacity, presence: true, inclusion: {

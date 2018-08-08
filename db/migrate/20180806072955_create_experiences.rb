@@ -8,6 +8,7 @@ class CreateExperiences < ActiveRecord::Migration[5.2]
       t.integer :capacity
       t.string :location
       t.string :language
+      t.integer :duration
 
       t.references :user, foreign_key: true
 
