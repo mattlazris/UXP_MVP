@@ -10,6 +10,8 @@
         class: "form-control",
         placeholder: "Search For Experiences"
       %>
+      <button name="button" type="submit" class="btn btn-success">Seach</button>
+    </div>
         <button name="button" type="submit" class="btn btn-success">Button</button>
       </div>
     <% end %>
@@ -55,9 +57,9 @@
   <% @experiences.each do |experience| %>
     <div class="col-xs-12 col-sm-3">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('cl_image_tag experience.photo');">
-        <div class="card-category">experience.category</div>
+        <div class="card-category"><%= experience.category %></div>
         <div class="card-description">
-          <p><%= experience.name %></p>
+          <p><%= link_to experience.name, experience %></p>
         </div>
         <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/atmosfeer">
         <a class="card-link" href="#"></a>
