@@ -9,7 +9,9 @@
       </div>
       <div class="book col-xs-12 col-sm-6">
         <div class="height-100">
-          <div class="btn btn-success btn-book font-white"><%= link_to 'Book', new_experience_booking_path(@experience) %></div>
+          <%= link_to new_experience_booking_path(@experience) do  %>
+          <div class="btn btn-success btn-book font-white">Book</div>
+          <% end %>
         </div>
       </div>
     </div>
