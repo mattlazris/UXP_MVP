@@ -23,8 +23,10 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6">
         <div class="width-400">
-          <img class="show-margin-15" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQFBvEl5IAbqQvx08hNueskQ3omumRB-x5ovScaKE59AR-GZk-Xw" width=400px height=400px>
-          <div class="show-card host_header"> <strong>Our Plan, </strong><%= @experience.description %></div>
+          <div><%= cl_image_tag @experience.photo, height: 400, width: 400, crop: :fill %></div>
+          <br>
+          <div><strong>Our Plan, </strong></div>
+          <div><%= @experience.description %></div>
         </div>
       </div>
       <div class="book col-xs-12 col-sm-6">
@@ -65,8 +67,10 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6">
         <div class="width-400">
-          <img class="show-margin-15" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/28661132_1743596052374973_66734549423752883_n.jpg?_nc_cat=0&oh=7becb1545041dffa1ecff1491f942333&oe=5C1089A3" width=400px height=400px>
-          <div class="show-card"><strong>Meet your host, </strong><%= @experience.user.description %></div>
+          <div><%= cl_image_tag @experience.user.photo, height: 400, width: 400, crop: :fill %></div>
+          <br>
+          <div class="show-card"><strong>Meet your host, </strong></div>
+          <div><%= @experience.user.description %></div>
         </div>
       </div>
       <div class="book col-xs-12 col-sm-6">
