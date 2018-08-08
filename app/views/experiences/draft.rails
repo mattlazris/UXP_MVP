@@ -1,0 +1,21 @@
+<h1>Experiences</h1>
+  <%= form_tag experiences_path, method: :get do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search For Experiences"
+  %>
+  <% end %>
+  <% @experiences.each do |experience| %>
+    <ul>
+      <li>
+        <div><%= cl_image_tag experience.photo, height: 300, width: 400, crop: :fill %></div>
+        <div><%= link_to experience.name, experience %></div>
+        <div><%= experience.description %></div>
+        <div><%= "¥#{experience.price}" %></div>
+        <div><%= "#{experience.user.first_name} #{experience.user.last_name}" %></div>
+        <div><%= cl_image_tag experience.user.photo, height: 300, width: 400, crop: :fill, alternative: "#{experience.user.first_name} #{experience.user.last_name}" %></div>
+        <div><%= experience.user.description %></div>
+      </li>
+    </ul>
+  <% end %>
