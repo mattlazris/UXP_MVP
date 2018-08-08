@@ -1,6 +1,7 @@
 // Import your components CSS files here.
 @import "alert";
 @import "navbar";
+@import "buttons";
 
 .banner {
   color: white;
@@ -166,10 +167,10 @@
     padding-right: 15px;
 }
 
-.row {
-    margin-left: 15px;
-    margin-right: 15px;
-}
+// .row {
+//     margin-left: 15px;
+//     margin-right: 15px;
+// }
 
 .footer {
   font-size:13px;
@@ -353,8 +354,6 @@
 
 @import "cards";
 @import "form";
-@import "buttons";
-@import "font";
 @import "booking";
 @import "image";
 

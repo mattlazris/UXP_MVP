@@ -1,7 +1,7 @@
 <% @title = @booking.experience.name  %>
 <div class="form-wrapper">
   <div>
-    <h2 class="fas fa-check-circle font-green"> You’ve successfully booked the experience!</h2>
+    <h2 class="title-green"> You’ve successfully booked the experience!</h2>
     <h4>We hope you enjoy your experience!</h4>
     <br>
     <h5>Below are the details of your order:</h5>
@@ -19,6 +19,6 @@
       <div><%= cl_image_tag @booking.experience.user.photo, height: 326.5, width: 326.5, crop: :fill %></div>
     </div>
     <br>
-    <button class="font-color-white btn btn-success font-white"><%= link_to 'Continue to your profile page', profile_path %></button>
+    <button class="font-color-white btn btn-success font-white"><%= link_to 'Back to home page', root_path %></button>
   </div>
 </div>
