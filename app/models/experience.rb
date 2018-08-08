@@ -1,4 +1,6 @@
 class Experience < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+
   acts_as_taggable
   acts_as_taggable_on :tags
 

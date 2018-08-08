@@ -6,6 +6,8 @@
     <%= f.input :description %>
     <%= f.input :price, placeholder: 'In RMB' %>
     <%= f.input :capacity, placeholder: 'Fill in the maximum number of people that you can host every time.' %>
+    <%= f.input :photo, hint: "Upload a picture for your experience." %>
+    <%= f.input :photo_cache, as: :hidden %>
   </div>
   <div class="form-actions">
     <%= f.button :submit, class: "btn btn-success"%>
