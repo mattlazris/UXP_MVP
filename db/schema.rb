@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_08_08_031734) do
     t.integer "capacity"
     t.string "location"
     t.string "language"
+    t.integer "duration"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

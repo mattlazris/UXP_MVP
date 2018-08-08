@@ -4,9 +4,6 @@
   <div class="form-inputs form-inline">
     <%= f.input :start_time %>
   </div>
-  <div class="form-inputs form-inline">
-    <%= f.input :end_time %>
-  </div>
   <br>
   <div class="form-actions">
     <%= f.submit "Book The Meal", class: "btn btn-success", data: { confirm: "Please Confirm: You are booking #{@experience.name} hosted by #{@experience.user.first_name} #{@experience.user.last_name} with a price of ¥#{@experience.price}" } %>
