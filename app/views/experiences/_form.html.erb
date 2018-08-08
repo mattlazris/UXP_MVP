@@ -5,7 +5,11 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :price, placeholder: 'In RMB' %>
+    <%= f.input :location %>
+    <%= f.input :language %>
     <%= f.input :capacity, placeholder: 'Fill in the maximum number of people that you can host every time.' %>
+    <%= f.input :category, as: :radio_buttons, collection: ['Food & Drink', 'Classes & Workshops', 'Unique tours', 'Sports & Outdoors'] %>
+    <%= f.input :duration, :collection => (1..5).to_a, hint: 'In hours' %>
     <%= f.input :photo, hint: "Upload a picture for your experience." %>
     <%= f.input :photo_cache, as: :hidden %>
   </div>

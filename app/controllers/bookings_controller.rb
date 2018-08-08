@@ -20,6 +20,7 @@ class BookingsController < ApplicationController
     @experience = Experience.find(params[:experience_id])
     @booking = Booking.new(booking_params)
     authorize @booking
+    @booking.end_time = (@booking.start_time.to_time + @experience.duration.hours).to_datetime
     @booking.experience = @experience
     @booking.user = current_user
     if @booking.save

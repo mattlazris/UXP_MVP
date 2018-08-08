@@ -1,4 +1,4 @@
-<div class="form-wrapper form-margin form-backgroup">
+<div class="form-wrapper form-margin form-backgroup3">
   <div class="cardlogin form-top">
     <% @title = 'Sign Up'  %>
     <% @title = 'Apply To Become A Host'  %>
@@ -11,6 +11,9 @@
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
         <%= f.input :description, required: true, hint: "Write about yourself and your lifestyle" %>
+        <%= f.input :hometown, required: true %>
+        <%= f.input :occupation, required: true %>
+        <%= f.input :interesting_fact, required: true, hint: "An interesting fact about yourself" %>
         <%= f.input :photo, hint: "Upload a photo of your self" %>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
