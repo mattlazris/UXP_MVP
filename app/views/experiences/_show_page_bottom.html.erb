@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-8">
+    <img class="show-margin-15" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/28661132_1743596052374973_66734549423752883_n.jpg?_nc_cat=0&oh=7becb1545041dffa1ecff1491f942333&oe=5C1089A3" height=400px width=100%>
+    <strong>Meet your host, </strong><%= @experience.user.description %>
+    <div>
+      <%= link_to "See All Host's Experiences", experiences_path %>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <div class="host_info_container">
+      <div class="row">
+        <div class="host_name_header"><%= link_to " #{@experience.user.first_name} #{@experience.user.last_name}", experience_host_path(@experience)%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="host_header">Occupation:</div>
+        <div class="host_ans"><%= @experience.user.occupation %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="host_header">Hometown:</div>
+        <div class="host_ans"><%= @experience.user.hometown %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="host_header">Intersting Fact:</div>
+        <div class="host_ans"><%= @experience.user.interesting_fact %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="host_header">Interests:</div>
+        <div class="host_ans"><%=  %></div>
+        <!-- interests *could be tags* (need to add in db) -->
+      </div>
+      <br>
+      <div class="row">
+        <div class="host_header">Nationality:</div>
+        <div class="host_ans"><%= @experience.user.nationality %></div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="host_header">Contact Info:</div>
+        <div class="host_ans"><%= @experience.user.email %></div>
+        <div class="host_ans"><%= @experience.user.phone %></div>
+      </div>
+    </div>
+  </div>
+</div>
