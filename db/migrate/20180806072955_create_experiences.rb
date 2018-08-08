@@ -6,6 +6,8 @@ class CreateExperiences < ActiveRecord::Migration[5.2]
       t.string :category
       t.float :price
       t.integer :capacity
+      t.string :location
+      t.string :language
 
       t.references :user, foreign_key: true
 

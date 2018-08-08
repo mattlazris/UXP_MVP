@@ -22,6 +22,9 @@ puts 'Done'
     phone: Faker::PhoneNumber.cell_phone,
     description: Faker::StarWars.quote,
     nationality: ['Chinese', 'American', 'German', 'Swedish', 'British', 'Russian', 'Korean', 'French', 'Japanese'].sample,
+    occupation: Faker::Job.field,
+    hometown: Faker::Address.city,
+    interesting_fact: Faker::MostInterestingManInTheWorld.quote,
     gender:['Male', 'Female'].sample,
     password: "123456",
     host: true
@@ -31,6 +34,8 @@ puts 'Done'
     experience =  Experience.new(
       name: Faker::Food.dish,
       description: Faker::Food.description,
+      location: Faker::Address.street_address,
+      language: ['English', 'Mandarin', 'Cantonese'].sample,
       category: ['Food & Drink', 'Classes & Workshops', 'Unique tours', 'Sports & Outdoors'].sample,
       price: rand(50..300),
       capacity: rand(1..10)

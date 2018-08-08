@@ -11,6 +11,8 @@ class Experience < ApplicationRecord
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :description, presence: true
   validates :price, presence: true
+  validates :language, presence: true
+  validates :location, presence: true
   validates :category, presence: true, inclusion: {
   in: ['Food & Drink', 'Classes & Workshops', 'Unique tours', 'Sports & Outdoors'], message: "The capacity is too big or too small or not a number."}
   validates :capacity, presence: true, inclusion: {
