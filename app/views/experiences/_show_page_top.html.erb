@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-8">
+    <h2><%= @experience.name %></h2>
+    <p><%= @experience.category %></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-8">
+    <img class="show-margin-15" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/28661132_1743596052374973_66734549423752883_n.jpg?_nc_cat=0&oh=7becb1545041dffa1ecff1491f942333&oe=5C1089A3" height=400px width=100% >
+    <div class="host_header"> <strong>Our Plan, </strong><%= @experience.description %>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <div class="host_info_container">
+      <div class="detail_name_header">
+        Details
+      </div>
+      <div class="row">
+        <i class="fas fa-map-marker-alt icons"></i>
+        <div class="experience-desc-after-icon">
+          <%= "#{@experience.location}" %>
+        </div>
+      </div>
+      <div class="row">
+        <i class="fas fa-language icons"></i>
+        <div class="experience-desc-after-icon"><%= "#{@experience.language}" %></div>
+      </div>
+      <div class="row">
+        <i class="far fa-clock icons"></i>
+        <!-- duration of experience (need to add in db and form for add experience)-->
+      </div>
+      <div>
+        <!-- stars (need to add in db) -->
+      </div>
+      <div class="row">
+        <i class="fas fa-coins icons"></i>
+        <div class="experience-desc-after-icon"> <%= "¥#{@experience.price} per person" %>
+        </div>
+      </div>
+      <div class="row">
+        <%= link_to "Book", new_experience_booking_path(@experience), class: "btn btn-success btn-book font-white"  %>
+      </div>
+    </div>
+  </div>
+</div>
