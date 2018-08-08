@@ -344,6 +344,13 @@
   background: #AD103C;
 }
 
+.align-items-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 @import "cards";
 @import "form";
 @import "buttons";
