@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2018_08_08_031734) do
     t.string "category"
     t.float "price"
     t.integer "capacity"
+    t.string "location"
+    t.string "language"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -82,9 +84,12 @@ ActiveRecord::Schema.define(version: 2018_08_08_031734) do
     t.string "last_name"
     t.string "phone"
     t.datetime "birthday"
-    t.string "nationality"
     t.string "gender"
     t.text "description"
+    t.string "occupation"
+    t.string "nationality"
+    t.string "hometown"
+    t.text "interesting_fact"
     t.boolean "host", default: false
     t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
