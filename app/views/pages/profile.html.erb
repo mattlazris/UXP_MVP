@@ -19,7 +19,7 @@
         <div><%= "¥#{exp.price}" %></div>
         <div><%= exp.capacity %></div>
         <div><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></div>
-        <div><%= link_to 'Delete',exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></div>
+        <div><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></div>
       </li>
     <% end %>
   </ul>
@@ -33,6 +33,7 @@
         <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
         <div><%= booking.start_time %></div>
         <div><%= booking.end_time %></div>
+        <div><%= link_to "Cancel", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></div>
       </li>
     <% end %>
   </ul>
@@ -65,6 +66,7 @@
               <%= "In Progress" %>
               <%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %>
             </div>
+            <div><%= link_to "Decline", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></div>
           </li>
         <% end %>
       </ul>
