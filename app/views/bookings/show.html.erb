@@ -1,14 +1,24 @@
 <% @title = @booking.experience.name  %>
-<ul>
-  <h3 class="fas fa-check-circle"> You’ve successfully booked the experience!</h3>
-  <h5>Below are the details of your order:</h5>
-  <h4 font-weight= bold >Your experience: <%= @booking.experience.name %></h4>
-  <h4>Price: <%= @booking.experience.price %></h4>
-  <h4>Start At: <%= @booking.start_time %></h4>
-  <h4>End At: <%= @booking.end_time %></h4>
-  <h4>Host: <%= "#{@booking.experience.user.first_name} #{@booking.experience.user.last_name}" %></h4>
-  <h5>We’ve sent contact information of the foodie guide to your email inbox.</h5>
-  <h5>Please say hello to your foodie guide!</h5>
-  <h5>Enjoy your experience!</h5>
-  <div class="font-color-white"><%= link_to 'Continue to your profile page', profile_path %></div>
-</ul>
+<div class="form-wrapper">
+  <div>
+    <h2 class="fas fa-check-circle font-green"> You’ve successfully booked the experience!</h2>
+    <h4>We hope you enjoy your experience!</h4>
+    <br>
+    <h5>Below are the details of your order:</h5>
+    <div class="in-line">
+      <div class="div-recommended">
+        <h5 font-weight= bold >Your experience: <%= @booking.experience.name %></h5>
+        <h5>Price: <%= @booking.experience.price %></h5>
+        <h5>Start At: <%= @booking.start_time %></h5>
+        <h5>End At: <%= @booking.end_time %></h5>
+        <h5>Host: <%= "#{@booking.experience.user.first_name} #{@booking.experience.user.last_name}" %></h5>
+        <h5>Wechat: </h5>
+        <h5>We’ve sent contact information of the foodie guide to your email inbox.</h5>
+        <h5>Please say hello to your foodie guide!</h5>
+      </div>
+      <div><%= cl_image_tag @booking.experience.user.photo, height: 326.5, width: 326.5, crop: :fill %></div>
+    </div>
+    <br>
+    <button class="font-color-white btn btn-success font-white"><%= link_to 'Continue to your profile page', profile_path %></button>
+  </div>
+</div>
