@@ -1,4 +1,5 @@
 <% @title = "#{@user.first_name} #{@user.last_name}"  %>
+<%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
 <h1><%= "#{@user.first_name} #{@user.last_name}" %></h1>
 <div><%= "You are a host." if @user.host %></div>
 <div>

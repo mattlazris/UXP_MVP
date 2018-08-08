@@ -1,4 +1,5 @@
 <% @title = "#{@host.first_name} #{@host.last_name}"  %>
+<div><%= cl_image_tag @host.photo, height: 300, width: 400, crop: :fill %></div>
 <h1><%= "#{@host.first_name} #{@host.last_name}" %></h1>
 <div><%= @host.description %></div>
 <div>
