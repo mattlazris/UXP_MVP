@@ -154,6 +154,7 @@
 
 .wholecard {
   margin-bottom: 50px;
+  text-align: center;
 }
 
 .card-user {
@@ -180,8 +181,10 @@
 
 .card-description {
     position: absolute;
-    bottom: 11px;
-    left: 26px;
+    top: 181px;
+    bottom: 0px;
+    left: 50px;
+    right: 0px;
     font-size: 13px;
     z-index:1;
     text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
@@ -207,6 +210,7 @@
 
 .experience-card-index {
   margin-left: 50px;
+  display: block;
 }
 
 .footer {
@@ -226,10 +230,31 @@
   right: 0px;
 }
 
+.container {
+max-width: 100%;
+overflow-x: hidden;
+}
+
 
 .icongroup {
-  margin-right: 0px;
+  display: flex;
+  position: absolute;
+  top: 181px;
+  bottom: 0px;
+  left: 116px;
+  right: 0px;
 }
+
+.icongroup li {
+  text-decoration: none;
+  font-size: 12px;
+  color: #aaa;
+  float: right;
+  width: auto;
+  margin: 0 0 0 12px;
+  display: inline;
+}
+
 
 .cn {
   font-size: 120%;
@@ -358,7 +383,7 @@
 
 #snip1584-name {
   text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
-  margin-bottom: -2px;
+  margin-bottom: 4px;
   color: white;
   font-weight:bold;
 }
