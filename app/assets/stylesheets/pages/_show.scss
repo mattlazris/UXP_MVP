@@ -89,6 +89,7 @@
 
 .host_header {
   font-size: 18px;
+  color: black;
 }
 
 .host_ans {
@@ -111,7 +112,21 @@
 
 .icons {
   font-size: 20px;
-  margin: 10px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.description-icons {
+  font-size: 20px;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+.text-restrict-width {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 50px;
 }
 
 .show-page-space {
