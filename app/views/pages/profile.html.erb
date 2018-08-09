@@ -1,107 +1,67 @@
-<div class="row">
-  <div class="col-xs-12 col-sm-8">
-    <img class="show-margin-15" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/28661132_1743596052374973_66734549423752883_n.jpg?_nc_cat=0&oh=7becb1545041dffa1ecff1491f942333&oe=5C1089A3" height=400px width=100%>
-    <strong>Meet your host, </strong><%= @experience.user.description %>
-    <div>
-      <%= link_to "See All Host's Experiences", experiences_path %>
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-4">
-    <div class="host_info_container">
-      <div class="row">
-        <div class="host_name_header"><%= link_to " #{@experience.user.first_name} #{@experience.user.last_name}", experience_host_path(@experience)%>
-        </div>
-      </div>
-      <div class="row">
-        <div class="host_header">Occupation:</div>
-        <div class="host_ans"><%= @experience.user.occupation %>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="host_header">Hometown:</div>
-        <div class="host_ans"><%= @experience.user.hometown %>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="host_header">Intersting Fact:</div>
-        <div class="host_ans"><%= @experience.user.interesting_fact %>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="host_header">Interests:</div>
-        <div class="host_ans"><%=  %></div>
-        <!-- interests *could be tags* (need to add in db) -->
-      </div>
-      <br>
-      <div class="row">
-        <div class="host_header">Nationality:</div>
-        <div class="host_ans"><%= @experience.user.nationality %></div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="host_header">Contact Info:</div>
-        <div class="host_ans"><%= @experience.user.email %></div>
-        <div class="host_ans"><%= @experience.user.phone %></div>
-      </div>
-    </div>
-  </div>
-</div>
 <% @title = "#{@user.first_name} #{@user.last_name}"  %>
-<div class="show-wrapper">
-  <div class="show-container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <div class="width-400">
-          <%= cl_image_tag @user.photo, height: 400, width: 400, crop: :fill %>
-          <br>
-          <br>
-          <div class="show-card"><strong>Meet <%= " #{@user.first_name}" %> </strong></div>
-          <div><%= @user.description %></div>
-        </div>
-      </div>
-      <div class="book col-xs-12 col-sm-6">
-        <h1 class="host_name_header"><strong><%= " #{@user.first_name} #{@user.last_name}" %></strong></h1>
-        <div><%= "You are a host." if @user.host %></div>
-        <div>
-          <% if @user.host %>
-            <%= link_to 'Add An Experience To Your Profile', new_experience_path if policy(Experience).create? %>
-          <% else %>
-            <%= link_to 'Become A Host', edit_user_registration_path %>
-          <% end %>
+<div class="container-experience-show" style="background: white">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8">
+      <%= cl_image_tag @user.photo, height: 400, width: 400, crop: :fill %>
+      <br>
+      <br>
+      <div class="show-card"><strong>Meet <%= " #{@user.first_name}" %> </strong></div>
+      <div><%= @user.description %></div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="host_info_container">
+        <div class="row">
+          <h1 class="host_name_header"><strong><%= " #{@user.first_name} #{@user.last_name}" %></strong></h1>
+          </div>
         </div>
         <br>
-        <div class="host_header">Occupation:</div>
-        <div class="host_ans"><%= @user.occupation %></div>
+          <div class="row"><%= "You are a host." if @user.host %></div>
+          <div class="row">
+            <% if @user.host %>
+              <%= link_to 'Add An Experience To Your Profile', new_experience_path if policy(Experience).create? %>
+            <% else %>
+              <%= link_to 'Become A Host', edit_user_registration_path %>
+            <% end %>
+          </div>
         <br>
-        <div class="host_header">Hometown:</div>
-        <!-- hometown (need to add in db) -->
-        <div class="host_ans"><%= @user.hometown %></div>
+        <div class="row">
+          <div class="host_header">Occupation:</div>
+          <div class="host_ans"><%= @user.occupation %>
+          </div>
+        </div>
         <br>
-        <div class="host_header">Intersting Fact:</div>
-        <!-- Interesting fact (need to add in db) -->
-        <div class="host_ans"><%= @user.interesting_fact %></div>
+        <div class="row">
+          <div class="host_header">Hometown:</div>
+          <div class="host_ans"><%= @user.hometown %>
+          </div>
+        </div>
         <br>
-        <div class="host_header">Interests:</div>
-        <div class="host_ans"><%=  %></div>
-        <!-- interests *could be tags* (need to add in db) -->
+        <div class="row">
+          <div class="host_header">Intersting Fact:</div>
+          <div class="host_ans"><%= @user.interesting_fact %>
+          </div>
+        </div>
         <br>
-        <div class="host_header">Nationality:</div>
-        <div class="host_ans"><%= @user.nationality %></div>
+        <div class="row">
+          <div class="host_header">Interests:</div>
+          <div class="host_ans"><%=  %></div>
+          <!-- interests *could be tags* (need to add in db) -->
+        </div>
         <br>
-        <div class="host_header">Contact Info:</div>
-        <div class="host_ans"><%= @user.email %></div>
-        <div class="host_ans"><%= @user.phone %></div>
+        <div class="row">
+          <div class="host_header">Nationality:</div>
+          <div class="host_ans"><%= @user.nationality %></div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="host_header">Contact Info:</div>
+          <div class="host_ans"><%= @user.email %></div>
+          <div class="host_ans"><%= @user.phone %></div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<div class="show-wrapper">
-  <div class="show-container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
         <h3 class="form-border"><%= "Your Experiences" %></h3>
         <ul>
           <% @user.experiences.each do |exp| %>
@@ -115,94 +75,78 @@
             </li>
           <% end %>
         </ul>
-      </div>
     </div>
   </div>
-</div>
-<div class="show-wrapper">
-  <div class="show-container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
         <h3 class="form-border"><%= "Attending" %></h3>
-        <ul>
-          <% @attending_bookings.each do |booking| %>
-            <li>
-              <div><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></div>
-              <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
-              <div><%= booking.start_time %></div>
-              <div><%= booking.end_time %></div>
-              <div><%= link_to "Cancel", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></div>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+          <ul>
+            <% @attending_bookings.each do |booking| %>
+              <li>
+                <div><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></div>
+                <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
+                <div><%= booking.start_time %></div>
+                <div><%= booking.end_time %></div>
+                <div><%= link_to "Cancel", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></div>
+              </li>
+            <% end %>
+          </ul>
     </div>
   </div>
-</div>
-<div class="show-wrapper">
-  <div class="show-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      <h3 class="form-border"><%= "Attended" %></h3>
+      <ul>
+        <% @attended_bookings.each do |booking| %>
+          <li>
+            <div><%= booking.experience.name %></div>
+            <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
+            <div><%= booking.start_time %></div>
+            <div><%= booking.end_time %></div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <% if @user.host %>
     <div class="row">
       <div class="col-xs-12 col-sm-12">
-        <h3 class="form-border"><%= "Attended" %></h3>
+        <h3 class="form-border"><%= "Hosting" %></h3>
         <ul>
-          <% @attended_bookings.each do |booking| %>
+          <% @hosting_bookings.each do |booking| %>
             <li>
               <div><%= booking.experience.name %></div>
-              <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
+              <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
               <div><%= booking.start_time %></div>
               <div><%= booking.end_time %></div>
+              <div>
+                <%= "In Progress" %>
+                <%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %>
+              </div>
+              <div><%= link_to "Decline", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></div>
             </li>
           <% end %>
         </ul>
       </div>
     </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12">
+        <h3 class="form-border"><%= "Hosted" %></h3>
+        <ul>
+          <% @hosted_bookings.each do |booking| %>
+            <li>
+              <div><%= booking.experience.name %></div>
+              <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
+              <div><%= booking.start_time %></div>
+              <div><%= booking.end_time %></div>
+              <div>
+                <%= "This Deal Is Closed" %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
   </div>
 </div>
-<% if @user.host %>
-  <div class="show-wrapper">
-    <div class="show-container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12">
-          <h2 class="form-border"><%= "Hosting" %></h2>
-          <ul>
-            <% @hosting_bookings.each do |booking| %>
-              <li>
-                <div><%= booking.experience.name %></div>
-                <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
-                <div><%= booking.start_time %></div>
-                <div><%= booking.end_time %></div>
-                <div>
-                  <%= "In Progress" %>
-                  <%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %>
-                </div>
-                <div><%= link_to "Decline", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></div>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="show-wrapper">
-    <div class="show-container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12">
-          <h2 class="form-border"><%= "Hosted" %></h2>
-          <ul>
-            <% @hosted_bookings.each do |booking| %>
-              <li>
-                <div><%= booking.experience.name %></div>
-                <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
-                <div><%= booking.start_time %></div>
-                <div><%= booking.end_time %></div>
-                <div>
-                  <%= "This Deal Is Closed" %>
-                </div>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
