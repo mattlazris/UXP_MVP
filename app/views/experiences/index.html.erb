@@ -3,25 +3,22 @@
     <h1>UniXP - Experience Platform</h1>
     <h2>Life Is Too Short: Own Experiences, Not Things.</h2>
     <div class="align-items-search">
-     <%= form_tag experiences_path, method: :get, class:"align-items-search" do %>
-       <%= text_field_tag :query,
+      <%= form_tag experiences_path, method: :get, class:"align-items-search" do %>
+        <%= text_field_tag :query,
        params[:query],
        class: "form-control",
        placeholder: "Start your day off by treating yourself an unique experience"
      %>
-     <button name="button" type="submit" class="btn btn-success btn-medium">Seach</button>
-     <% end %>
-  </div>
-
+        <button name="button" type="submit" class="btn btn-success btn-medium">Seach</button>
+      <% end %>
+    </div>
   </div>
 </div>
-
 <h2 class="section-title-home">
   <div class="section-title-home-content" style="font-size:30px;">
     Explore by category
   </div>
 </h2>
-
 <div class="tabs">
   <a class="tab" href="#">
     <div class="tabbox1">
@@ -48,15 +45,13 @@
     </div>
   </a>
 </div>
-
 <h2 class="section-title-home">
   <div class="section-title-home-content">
     Popular experiences nearby
   </div>
 </h2>
-<div class="row">
+<div class="row experience-card-index">
   <% @experiences.each do |experience| %>
-
     <div class="col-xs-12 col-sm-4 wholecard">
       <div class="card-description">
         <p id="snip1584-name"><%= experience.name %></p>
@@ -68,7 +63,8 @@
           <h5><%= experience.user.first_name %></h5>
           <p><%= experience.user.nationality %></p>
           <p><%= experience.user.email %></p>
-        </div><a href="#"></a>
+        </div>
+        <a href="#"></a>
         <a class="card-link" href="#"></a>
         <div class="_1mdayhn">
           <button type="button" class="_1rp5252" >
