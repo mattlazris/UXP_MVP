@@ -1,40 +1,44 @@
 <% @title = "Book #{@experience.name}"  %>
 <div class="booking-wrapper ">
   <div class="form-wrapper">
-    <div class="booking-review">
-      <h3>Review and Pay</h3>
-      <p>Who's coming?</p>
-      <div class="in-line">
-        <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class:"book-avatar"%>
-        <p class="margin-left">Jackson</p>
-      </div>
-      <div class="in-line">
-        <i class="fas fa-plus-circle"></i>
-      </div>
-    </div>
-    <div class="booking-info">
-      <h3><%= @experience.name %></h3>
-      <p class="font-size-20">Host: <%= "#{@experience.user.first_name} #{@experience.user.last_name}" %></p>
-      <p class="font-size-20">Price: <%= @experience.price %></p>
-      <%= render 'form', booking: @booking %>
-      <br>
-      <div class="form-border"><p>Cancelation Poloicy</p></div>
-      <br>
-      <div class="form-border"><p>Guest requirements</p></div>
-    </div>
-    <div class="booking-payment">
-      <h3>Payment method</h3>
-      <div class="booking-wrapper">
-        <br>
-        <div class="in-line">
-          <%= image_tag "wechat-payment.png", class:"small-img" %>
-          <p>WeChat Payment</p>
-          <i class="fas fa-check-circle green"></i>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="booking-review">
+          <h3>Review and Pay</h3>
+          <p>Who's coming?</p>
+          <div class="in-line">
+            <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class:"book-avatar"%>
+            <p class="margin-left">Jackson</p>
+          </div>
+          <div class="in-line">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+          <h3>Payment method</h3>
+          <div class="booking-wrapper">
+            <br>
+            <div class="in-line">
+              <%= image_tag "wechat-payment.png", class:"small-img" %>
+              <p>WeChat Payment</p>
+              <i class="fas fa-check-circle green"></i>
+            </div>
+            <div class="in-line">
+              <%= image_tag "alipay.png", class:"small-img" %>
+              <p>Alipay</p>
+              <i class="fas fa-check-circle green "></i>
+            </div>
+          </div>
         </div>
-        <div class="in-line">
-          <%= image_tag "alipay.png", class:"small-img" %>
-          <p>Alipay</p>
-          <i class="fas fa-check-circle green "></i>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="booking-info">
+          <h3><%= @experience.name %></h3>
+          <p class="font-size-20">Host: <%= "#{@experience.user.first_name} #{@experience.user.last_name}" %></p>
+          <p class="font-size-20">Price: <%= @experience.price %></p>
+          <%= render 'form', booking: @booking %>
+          <br>
+          <div class="form-border"><p>Cancelation Poloicy</p></div>
+          <br>
+          <div class="form-border"><p>Guest requirements</p></div>
         </div>
       </div>
     </div>
