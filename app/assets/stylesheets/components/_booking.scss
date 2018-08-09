@@ -1,9 +1,17 @@
+
 .booking-wrapper {
   background: white;
+  height: calc(100vh - 200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.booking-container {
+  width:90%
 }
 
 .booking-info {
-  width: 400px;
   border-radius: 5px ;
   background-position: center;
   color: #616668;
@@ -11,6 +19,8 @@
   padding: 20px;                              /* Internal space */
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 20px 35px;
+  width: 80%;
 };
 
 
@@ -19,7 +29,9 @@
   background-position: center;
   color: #616668;
   background: white;                          /* White background */
-  padding: 20px;                              /* Internal space */
+  padding: 20px;                             /* Internal space */
+  margin: 20px 35px;
+  width: 80%;
 };
 
 .booking-payment {

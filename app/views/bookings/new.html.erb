@@ -1,44 +1,53 @@
 <% @title = "Book #{@experience.name}"  %>
-<div class="booking-wrapper ">
-  <div class="form-wrapper">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <div class="booking-review">
-          <h3>Review and Pay</h3>
-          <p>Who's coming?</p>
-          <div class="in-line">
-            <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class:"book-avatar"%>
-            <p class="margin-left">Jackson</p>
-          </div>
-          <div class="in-line">
-            <i class="fas fa-plus-circle font_size_35"></i>
-          </div>
-          <h3>Payment method</h3>
-          <div class="booking-wrapper">
+<div>
+  <div class="booking-wrapper ">
+    <div class="booking-container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="booking-review">
+            <h3>Review and Pay</h3>
+            <p>Who's coming?</p>
+            <div class="in-line">
+              <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class:"book-avatar"%>
+              <p class="margin-left">Jackson</p>
+            </div>
             <br>
             <div class="in-line">
-              <%= image_tag "wechat-payment.png", class:"small-img" %>
-              <p>WeChat Payment</p>
-              <i class="fas fa-check-circle green"></i>
+              <i class="fas fa-plus-circle font_size_35"></i>
             </div>
-            <div class="in-line">
-              <%= image_tag "alipay.png", class:"small-img" %>
-              <p>Alipay</p>
-              <i class="fas fa-check-circle green "></i>
+            <br>
+            <h3>Payment method</h3>
+            <div>
+              <br>
+              <div class="in-line">
+                <%= image_tag "wechat-payment.png", class:"small-img" %>
+                <p>WeChat Payment</p>
+                <i class="fas fa-check-circle green font_size_25"></i>
+              </div>
+              <br>
+              <div class="in-line">
+                <%= image_tag "alipay.png", class:"small-img" %>
+                <p>Alipay</p>
+                <i class="fas fa-check-circle green font_size_25"></i>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        <div class="booking-info">
-          <h3><%= @experience.name %></h3>
-          <p class="font-size-20">Host: <%= "#{@experience.user.first_name} #{@experience.user.last_name}" %></p>
-          <p class="font-size-20">Price: <%= @experience.price %></p>
-          <%= render 'form', booking: @booking %>
-          <br>
-          <div class="form-border"><p>Cancelation Poloicy</p></div>
-          <br>
-          <div class="form-border"><p>Guest requirements</p></div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="booking-info">
+            <h3><%= @experience.name %></h3>
+            <p class="font-size-20">Host: <%= "#{@experience.user.first_name} #{@experience.user.last_name}" %></p>
+            <p class="font-size-20">Price: <%= @experience.price %></p>
+            <%= render 'form', booking: @booking %>
+            <br>
+            <div class="form-border"><h3>Cancelation Poloicy</h3></div>
+            <br>
+            <div><p>An experience is fully refundable if:</p></div>
+            <br>
+            <div><p>You cancel within 24 hours of reserving it.</p></div>
+            <div><p>You cancel at least 30 days before it’s scheduled to start.</p></div>
+            <div><p>You cancel due to an extenuating circumstance.</p></div>
+          </div>
         </div>
       </div>
     </div>

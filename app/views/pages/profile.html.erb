@@ -16,7 +16,7 @@
         </div>
         <br>
 
-          <div class="row"><%= "You are a host." if @user.host %></div>
+          <div class="row"><h3><%= "You are a host." if @user.host %></h3></div>
           <div class="row">
             <% if @user.host %>
               <%= link_to 'Add An Experience To Your Profile', new_experience_path if policy(Experience).create? %>
@@ -89,7 +89,7 @@
                 <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
                 <div><%= booking.start_time %></div>
                 <div><%= booking.end_time %></div>
-                <div><%= link_to "Cancel", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></div>
+                <div><%= link_to "Cancel", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure? RMB#{booking.experience.price} will be refunded back to your account."} %></div>
               </li>
             <% end %>
           </ul>
