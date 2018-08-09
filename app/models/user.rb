@@ -6,6 +6,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
 
+  acts_as_taggable
+  acts_as_taggable_on :interests
+
   has_many :experiences, dependent: :destroy
   has_many :bookings
 

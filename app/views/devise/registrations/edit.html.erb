@@ -14,6 +14,7 @@
         <%= f.input :hometown, required: true %>
         <%= f.input :occupation, required: true %>
         <%= f.input :interesting_fact, required: true, hint: "An interesting fact about yourself" %>
+        <%= f.input :tag_list, as: :check_boxes, collection: ['Sports', 'Music', 'Art', 'Cuisine', 'Social'], hint: 'Check Your Interests' %>
         <%= f.input :photo, hint: "Upload a photo of your self" %>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>

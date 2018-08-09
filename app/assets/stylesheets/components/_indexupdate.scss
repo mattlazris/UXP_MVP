@@ -1,3 +1,8 @@
+// .wrapper {
+//   color:white;
+
+// }
+
 .align-items-search {
  display: flex;
  align-items: center;
@@ -46,7 +51,7 @@
 }
 
 .tabs {
-  display: flex;
+  display: block;
   padding: 0px 40px 5px 111px;
   font-weight: bold;
   margin-bottom: 50px;
@@ -61,6 +66,7 @@
 .tabs a:hover {
   cursor: pointer;
   text-decoration: none;
+  color: white;
   opacity: 0.8;
 }
 .tabs h3 {
@@ -79,7 +85,7 @@
   text-align: center;
   padding: 10px 0px;
   margin: 0px;
-  background-color: #F4F4F4;
+  background-color: white;
 }
 
 .tabbox1{
@@ -128,7 +134,7 @@
 
 .section-title-home-content {
     text-align: left;
-    background-color: #F4F4F4;
+    background-color: white;
     position: relative;
     padding-right: 30px;
     padding-left: 24px;
@@ -185,14 +191,24 @@
 }
 
 .card-description {
+    text-align: left;
     position: absolute;
-    top: 181px;
+    top: 153px;
     bottom: 0px;
     left: 50px;
     right: 0px;
     font-size: 13px;
-    z-index:1;
-    text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
+    z-index: 1;
+    text-shadow: 0px 1px 5px black;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+* {
+    box-sizing: border-box;
 }
 
 .card-link {
@@ -414,7 +430,8 @@ overflow-x: hidden;
 
 .backcard {
   text-align:center;
-  margin-top: 15px;
+  padding-left:15px;
+  margin-top: 20px;
   text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
 }
 .snip1584 {
@@ -474,6 +491,9 @@ overflow-x: hidden;
   letter-spacing: 1px;
 }
 .snip1584 h5 {
+  font-size:13px;
+  text-align: left;
+
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
   text-transform: uppercase;
@@ -483,6 +503,9 @@ overflow-x: hidden;
   margin-bottom: 5px;
 }
 .snip1584 p {
+  font-size:10px;
+  text-align: left;
+
   font-weight: normal;
   // background-color: #ae895d;
   padding: 3px 10px;
