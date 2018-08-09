@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2018_08_08_031734) do
     t.string "name"
     t.string "description"
     t.string "category"
-    t.integer "price"
+    t.float "price"
     t.integer "capacity"
     t.string "location"
     t.string "language"

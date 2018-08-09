@@ -9,6 +9,7 @@
         <%= f.input :first_name, required: true, autofocus: true %>
         <%= f.input :last_name, required: true %>
         <%= f.input :gender, as: :radio_buttons, collection: ['Female', 'Male'] %>
+        <%= f.input :tag_list, as: :check_boxes, collection: ['Sports', 'Music', 'Art', 'Cuisine', 'Social'], hint: 'Check Your Interests' %>
         <%= f.input :photo, hint: "Upload a photo of your self" %>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
