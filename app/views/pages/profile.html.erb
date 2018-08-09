@@ -64,7 +64,7 @@
     </div>
   <div class="row">
     <div class="col-xs-12 col-sm-12">
-        <h3 class="form-border"><%= "Your Experiences" %></h3>
+        <h3 class="form-border"><%= "Experiences I host" %></h3>
         <ul>
           <% @user.experiences.each do |exp| %>
             <li>
@@ -152,51 +152,3 @@
   <% end %>
   </div>
 </div>
-<% if @user.host %>
-  <div class="show-wrapper">
-    <div class="show-container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12">
-          <h2 class="form-border"><%= "Hosting" %></h2>
-          <ul>
-            <% @hosting_bookings.each do |booking| %>
-              <li>
-                <div><%= booking.experience.name %></div>
-                <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
-                <div><%= booking.start_time %></div>
-                <div><%= booking.end_time %></div>
-                <div>
-                  <%= "In Progress" %>
-                  <%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %>
-                </div>
-                <div><%= link_to "Decline", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></div>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="show-wrapper">
-    <div class="show-container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12">
-          <h2 class="form-border"><%= "Hosted" %></h2>
-          <ul>
-            <% @hosted_bookings.each do |booking| %>
-              <li>
-                <div><%= booking.experience.name %></div>
-                <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
-                <div><%= booking.start_time %></div>
-                <div><%= booking.end_time %></div>
-                <div>
-                  <%= "This Deal Is Closed" %>
-                </div>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
