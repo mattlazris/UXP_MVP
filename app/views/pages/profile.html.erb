@@ -23,7 +23,6 @@
         </div>
         <br>
         <div class="host_header">Occupation:</div>
-
         <div class="host_ans"><%= @user.occupation %></div>
         <br>
         <div class="host_header">Hometown:</div>
@@ -52,19 +51,19 @@
   <div class="show-container">
     <div class="row">
       <div class="col-xs-12 col-sm-12">
-          <h3 class="form-border"><%= "Your Experiences" %></h3>
-          <ul>
-            <% @user.experiences.each do |exp| %>
-              <li>
-                <div><%= link_to exp.name, exp %></div>
-                <div><%= exp.description %></div>
-                <div><%= "¥#{exp.price}" %></div>
-                <div><%= exp.capacity %></div>
-                <div><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></div>
-                <div><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></div>
-              </li>
-            <% end %>
-          </ul>
+        <h3 class="form-border"><%= "Your Experiences" %></h3>
+        <ul>
+          <% @user.experiences.each do |exp| %>
+            <li>
+              <div><%= link_to exp.name, exp %></div>
+              <div><%= exp.description %></div>
+              <div><%= "¥#{exp.price}" %></div>
+              <div><%= exp.capacity %></div>
+              <div><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></div>
+              <div><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></div>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
@@ -73,18 +72,18 @@
   <div class="show-container">
     <div class="row">
       <div class="col-xs-12 col-sm-12">
-          <h3 class="form-border"><%= "Attending" %></h3>
-            <ul>
-              <% @attending_bookings.each do |booking| %>
-                <li>
-                  <div><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></div>
-                  <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
-                  <div><%= booking.start_time %></div>
-                  <div><%= booking.end_time %></div>
-                  <div><%= link_to "Cancel", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></div>
-                </li>
-              <% end %>
-            </ul>
+        <h3 class="form-border"><%= "Attending" %></h3>
+        <ul>
+          <% @attending_bookings.each do |booking| %>
+            <li>
+              <div><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></div>
+              <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
+              <div><%= booking.start_time %></div>
+              <div><%= booking.end_time %></div>
+              <div><%= link_to "Cancel", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></div>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
@@ -108,7 +107,6 @@
     </div>
   </div>
 </div>
-
 <% if @user.host %>
   <div class="show-wrapper">
     <div class="show-container">
@@ -157,4 +155,3 @@
     </div>
   </div>
 <% end %>
-
