@@ -1,59 +1,22 @@
-<div class="show-wrapper">
-  <div class="show-container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <div class="width-400">
-          <div><%= cl_image_tag @host.photo, height: 400, width: 400, crop: :fill %></div>
-          <br>
-          <div class="show-card"><strong>Meet your host, </strong></div>
-          <div><%= @host.description %></div>
-        </div>
-      </div>
-      <div class="book col-xs-12 col-sm-6">
-        <div class="host_name_header"><%= link_to " #{@host.first_name} #{@host.last_name}", experience_host_path(@experience)%> </div>
-
-        <div class="host_header">Occupation:</div>
-
-        <div class="host_ans"><%= @host.occupation %></div>
-        <br>
-        <div class="host_header">Hometown:</div>
-        <!-- hometown (need to add in db) -->
-        <div class="host_ans"><%= @host.hometown %></div>
-        <br>
-        <div class="host_header">Intersting Fact:</div>
-        <!-- Interesting fact (need to add in db) -->
-        <div class="host_ans"><%= @host.interesting_fact %></div>
-        <br>
-        <div class="host_header">Interests:</div>
-        <div class="host_ans"><%=  %></div>
-        <!-- interests *could be tags* (need to add in db) -->
-        <br>
-        <div class="host_header">Nationality:</div>
-        <div class="host_ans"><%= @host.nationality %></div>
-        <br>
-        <div class="host_header">Contact Info:</div>
-        <div class="host_ans"><%= @host.email %></div>
-        <div class="host_ans"><%= @host.phone %></div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="show-wrapper">
-  <div class="show-container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12">
-        <div>
-          <% @host.gender == 'Male' ? (pronoun = 'His') : (pronoun = 'Her') %>
-          <h3 class="form-border"><%= "#{pronoun} Experiences" %></h3>
-            <% @host.experiences.each do |exp| %>
-              <div><%= link_to exp.name, exp %></div>
-              <div><%= exp.price %></div>
-              <div><%= exp.description %></div>
-            <% end %>
+<div class="container-experience-show" style="background: white">
+  <%= render './experiences/show_page_bottom' %>
+  <div class="show-wrapper">
+    <div class="show-container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12">
+          <div>
+            <% @host.gender == 'Male' ? (pronoun = 'His') : (pronoun = 'Her') %>
+            <h3 class="form-border"><%= "#{pronoun} Experiences" %></h3>
+              <% @host.experiences.each do |exp| %>
+                <div><%= link_to exp.name, exp %></div>
+                <div><%= exp.price %></div>
+                <div><%= exp.description %></div>
+              <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-</div>
+
