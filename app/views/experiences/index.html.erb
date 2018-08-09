@@ -66,7 +66,6 @@
     Popular experiences nearby
   </div>
 </h2>
-
 <div class="container">
   <div class="row experience-card-index">
     <% @experiences.each do |experience| %>
@@ -95,19 +94,19 @@
             <li class="review-icon">
               <a href="#"><i class="fas fa-comment"></i></a>
               <span>15</span>
-              </li>
             </li>
-            <li class="save-icon">
-              <a href="#"><i class="fas fa-heart"></i></a>
-              <span>4,846</span>
-            </li>
-            <li class="price-icon">
-              <a href="#"><i class="fas fa-yen-sign"></i></a>
-              <span><%=  experience.price %></span>
-            </li>
-          </ul>
+          </li>
+          <li class="save-icon">
+            <a href="#"><i class="fas fa-heart"></i></a>
+            <span>4,846</span>
+          </li>
+          <li class="price-icon">
+            <a href="#"><i class="fas fa-yen-sign"></i></a>
+            <span><%=  experience.price %></span>
+          </li>
+        </ul>
       </div>
     </div>
-    <% end %>
-  </div>
+  <% end %>
 </div>
+
