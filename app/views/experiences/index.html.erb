@@ -120,23 +120,6 @@
               </div>
             </figure>
           <% end %>
-  <% count = 25 %>
-    <% while count <= 33 do %>
-      <% count += 1 %>
-        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-          <div class="wholecard">
-            <%= link_to experience_path(Experience.find(count)) do %>
-              <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('cl_image_tag experience.photo');">
-                <div class="card-category"><%= Experience.find(count).category %></div>
-                  <%= image_tag "zack.jpg", class: "avatar card-user" %>
-                    <div class="backcard">
-                      <h5><%= Experience.find(count).user.first_name %></h5>
-                      <p><%= Experience.find(count).user.occupation %></p>
-                      <p><%= Experience.find(count).user.hometown %> <%=Experience.find(count).user.nationality%></p>
-                      <p><%= Experience.find(count).user.interesting_fact %></p>
-                    </div>
-              </figure>
-            <% end %>
           <div class="card-description">
             <p id="snip1584-name"><%= experience.name %></p>
           </div>
