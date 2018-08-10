@@ -14,6 +14,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     authorize @booking
     @experience = Experience.find(params[:experience_id])
+    @choices_array = []
+    @experience.timeslots.each do |ts|
+      @choices_array << ts.start_time
+    end
   end
 
   def create

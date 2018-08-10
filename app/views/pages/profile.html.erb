@@ -63,19 +63,22 @@
   </div>
   <h3 class="form-border"><%= "Experiences I host" %></h3>
   <div class="row">
-    <% @user.experiences.each do |exp| %>
-      <div class="col-xs-12 col-sm-3">
-        <div><%= cl_image_tag exp.photo, height: 200, width: 200, crop: :fill %></div>
-        <div class="div-recommended2">
-          <h3><%= link_to exp.name, exp %></h3>
-          <div><%= exp.description %></div>
-          <div><%= "¥#{exp.price}" %></div>
-          <div><%= exp.capacity %></div>
-          <div><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></div>
-          <div><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></div>
-        </div>
-      </div>
-    <% end %>
+    <div class="col-xs-12 col-sm-12">
+      <h3 class="form-border"><%= "Your Experiences" %></h3>
+      <ul>
+        <% @user.experiences.each do |exp| %>
+          <li>
+            <div><%= link_to exp.name, exp %></div>
+            <div><%= exp.description %></div>
+            <div><%= "¥#{exp.price}" %></div>
+            <div><%= exp.capacity %></div>
+            <%= link_to 'Add A Timeslot', new_experience_timeslot_path(exp) %>
+            <div><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></div>
+            <div><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
   <h3 class="form-border"><%= "Experiences I will attend" %></h3>
   <div class="row">

@@ -44,6 +44,14 @@ puts 'Done'
     )
     experience.user = user
     experience.save
+    rand(2..5).times do
+      timeslot = Timeslot.new(
+        start_time: Faker::Time.between(DateTime.now - 10, DateTime.now),
+        end_time: Faker::Time.between(DateTime.now - 10, DateTime.now)
+      )
+      timeslot.experience = experience
+      timeslot.save
+    end
   end
   user.save
 end

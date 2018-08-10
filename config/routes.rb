@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :experiences do
     get "host", to: "pages#host"
     resources :bookings
+    resources :timeslots
   end
 
   get "profile", to: "pages#profile", as: "profile"

@@ -48,6 +48,19 @@
           <%= link_to "Book", new_experience_booking_path(@experience), class: "btn btn-success font-white book-btn-fill"%>
         </div>
       </div>
+      <div>
+        <ul>
+          <% @experience.timeslots.each do |ts| %>
+            <li>
+              <div><%= "From: #{ts.start_time}" %></div>
+              <div><%= "To: #{ts.end_time}" %></div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="row">
+        <%= link_to "Book", new_experience_booking_path(@experience), class: "btn btn-success btn-book font-white"  %>
+      </div>
     </div>
   </div>
 </div>
