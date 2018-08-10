@@ -100,6 +100,12 @@
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
 }
 
+.host_description_container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  margin: 15px;
+}
 
 .host_name_header a{
   color: black;
@@ -166,4 +172,13 @@
 
 .icon-middle-bottom {
   margin-bottom: 8px;
+}
+
+.host-desc-center {
+  margin: auto;
+  margin-left: 30px;
+}
+
+.experience-host-container {
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
 }

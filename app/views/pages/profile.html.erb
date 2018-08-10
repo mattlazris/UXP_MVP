@@ -1,6 +1,5 @@
-
 <% @title = "#{@user.first_name} #{@user.last_name}"  %>
-<div class="container-experience-show" style="background: white">
+<div class="container-experience-show">
   <div class="row">
     <div class="col-xs-12 col-sm-8">
       <%= cl_image_tag @user.photo, height: 400, width: 400, crop: :fill %>
@@ -64,32 +63,32 @@
   </div>
   <h3 class="form-border"><%= "Experiences I host" %></h3>
   <div class="row">
-      <% @user.experiences.each do |exp| %>
-        <div class="col-xs-12 col-sm-3">
-          <div><%= cl_image_tag exp.photo, height: 200, width: 200, crop: :fill %></div>
-          <div class="div-recommended2">
-            <h3><%= link_to exp.name, exp %></h3>
-            <div><%= exp.description %></div>
-            <div><%= "¥#{exp.price}" %></div>
-            <div><%= exp.capacity %></div>
-            <div><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></div>
-            <div><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></div>
-          </div>
+    <% @user.experiences.each do |exp| %>
+      <div class="col-xs-12 col-sm-3">
+        <div><%= cl_image_tag exp.photo, height: 200, width: 200, crop: :fill %></div>
+        <div class="div-recommended2">
+          <h3><%= link_to exp.name, exp %></h3>
+          <div><%= exp.description %></div>
+          <div><%= "¥#{exp.price}" %></div>
+          <div><%= exp.capacity %></div>
+          <div><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></div>
+          <div><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></div>
         </div>
-      <% end %>
+      </div>
+    <% end %>
   </div>
   <h3 class="form-border"><%= "Experiences I will attend" %></h3>
   <div class="row">
     <% @attending_bookings.each do |booking| %>
       <div class="col-xs-12 col-sm-3">
         <div><%= cl_image_tag booking.experience.photo, height: 200, width: 200, crop: :fill %></div>
-          <div class="div-recommended2">
+        <div class="div-recommended2">
           <div><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></div>
           <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
           <div><%= booking.start_time %></div>
           <div><%= booking.end_time %></div>
           <div><%= link_to "Cancel", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure? RMB#{booking.experience.price} will be refunded back to your account."} %></div>
-          </div>
+        </div>
       </div>
     <% end %>
   </div>
@@ -98,54 +97,54 @@
     <% @attended_bookings.each do |booking| %>
       <div class="col-xs-12 col-sm-3">
         <div><%= cl_image_tag booking.experience.photo, height: 200, width: 200, crop: :fill %></div>
-          <div class="div-recommended2">
+        <div class="div-recommended2">
           <div><%= booking.experience.name %></div>
           <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
           <div><%= booking.start_time %></div>
           <div><%= booking.end_time %></div>
-          </div>
+        </div>
       </div>
     <% end %>
   </div>
   <% if @user.host %>
     <h3 class="form-border"><%= "Experiences I will host" %></h3>
     <div class="row">
-          <% @hosting_bookings.each do |booking| %>
-            <div class="col-xs-12 col-sm-3">
-            <div><%= cl_image_tag booking.experience.photo, height: 200, width: 200, crop: :fill %></div>
-            <div class="div-recommended2">
-              <div><%= booking.experience.name %></div>
-              <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
-              <div><%= booking.start_time %></div>
-              <div><%= booking.end_time %></div>
-              <div>
-                <%= "In Progress" %>
-                <br>
-                <%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %>
-              </div>
-              <div><%= link_to "Decline", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></div>
-              </div>
+      <% @hosting_bookings.each do |booking| %>
+        <div class="col-xs-12 col-sm-3">
+          <div><%= cl_image_tag booking.experience.photo, height: 200, width: 200, crop: :fill %></div>
+          <div class="div-recommended2">
+            <div><%= booking.experience.name %></div>
+            <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
+            <div><%= booking.start_time %></div>
+            <div><%= booking.end_time %></div>
+            <div>
+              <%= "In Progress" %>
+              <br>
+              <%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %>
             </div>
-          <% end %>
-      </div>
+            <div><%= link_to "Decline", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
     <h3 class="form-border"><%= "Experiences I've hosted" %></h3>
     <div class="row">
-          <% @hosted_bookings.each do |booking| %>
-            <div class="col-xs-12 col-sm-3">
-            <div><%= cl_image_tag booking.experience.photo, height: 200, width: 200, crop: :fill %></div>
-            <div class="div-recommended2">
-              <div><%= booking.experience.name %></div>
-              <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
-              <button><%= booking.start_time %></button>
-              <button><%= booking.end_time %></button>
-              <div>
-                <%= "This Deal Is Closed" %>
-              </div>
+      <% @hosted_bookings.each do |booking| %>
+        <div class="col-xs-12 col-sm-3">
+          <div><%= cl_image_tag booking.experience.photo, height: 200, width: 200, crop: :fill %></div>
+          <div class="div-recommended2">
+            <div><%= booking.experience.name %></div>
+            <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
+            <button><%= booking.start_time %></button>
+            <button><%= booking.end_time %></button>
+            <div>
+              <%= "This Deal Is Closed" %>
             </div>
-          <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-  <% end %>
+<% end %>
 </div>
 </div>

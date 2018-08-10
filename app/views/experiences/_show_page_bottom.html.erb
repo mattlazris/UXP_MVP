@@ -22,19 +22,19 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
-    <div class="host_info_container">
-      <div class="row">
+    <div class="host_description_container">
+      <div class=" host-desc-center">
         <i class="fas fa-briefcase description-icons"></i>
         <div class="experience-desc-after-icon host_header">Occupation:</div>
         <div class="host_ans"><%= @experience.user.occupation %>
         </div>
       </div>
-      <div class="row">
+      <div class="host-desc-center">
         <i class="far fa-flag description-icons"></i>
         <div class="experience-desc-after-icon host_header">Nationality:</div>
         <div class="host_ans"><%= @experience.user.nationality %></div>
       </div>
-      <div class="row">
+      <div class="host-desc-center">
         <i class="fas fa-home description-icons"></i>
         <div class="experience-desc-after-icon host_header">Hometown:</div>
         <div class="host_ans"><%= @experience.user.hometown %>
@@ -46,23 +46,21 @@
         <div class="host_ans"><%=  %></div> -->
       <!-- interests *could be tags* (need to add in db) -->
       <!--  </div> -->
-      <div class="row">
+      <div class="host-desc-center">
         <i class="fas fa-fire description-icons"></i>
         <div class="experience-desc-after-icon host_header">Unique Fact:</div>
         <div class="host_ans"><%= @experience.user.interesting_fact %>
         </div>
       </div>
-      <div class="row">
+      <div class="host-desc-center">
         <i class="far fa-address-card description-icons"></i>
         <div class="experience-desc-after-icon host_header">Contact Info:</div>
         <div class="host_ans"><%= "Email: #{@experience.user.email}" %></div>
         <div class="host_ans"><%= "Number: #{@experience.user.phone}" %></div>
       </div>
+      <div class="host-desc-center">
+        <%= link_to "See All Host's Experiences", experiences_path %>
+      </div>
     </div>
-    <div>
-      <%= link_to "See All Host's Experiences", experiences_path %>
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-4">
   </div>
 </div>
