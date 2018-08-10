@@ -6,6 +6,6 @@
   </div>
   <br>
   <div class="form-actions">
-    <%= f.submit "Book The Meal", class: "btn btn-success", data: { confirm: "Please Confirm: You are booking #{@experience.name} hosted by #{@experience.user.first_name} #{@experience.user.last_name} with a price of ¥#{@experience.price}" } %>
+    <%= f.submit "Book The Experience", class: "btn btn-success", data: { confirm: "Please Confirm: You are booking #{@experience.name} hosted by #{@experience.user.first_name} #{@experience.user.last_name} with a price of ¥#{@experience.price}" } %>
   </div>
 <% end %>
