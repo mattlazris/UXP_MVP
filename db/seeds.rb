@@ -30,7 +30,7 @@ puts 'Done'
     host: true
   )
   user.save
-  rand(0..5).times do
+  1.times do
     experience =  Experience.new(
       name: Faker::Food.dish,
       description: Faker::Food.description,
