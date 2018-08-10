@@ -17,11 +17,6 @@
     <div class="row">
       <%= @experience.user.description %>
     </div>
-    <div>
-      <%= link_to "See All Host's Experiences", experiences_path %>
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-4">
     <div class="host_info_container">
       <div class="row">
         <i class="fas fa-briefcase description-icons"></i>
@@ -40,14 +35,14 @@
         <div class="host_ans"><%= @experience.user.hometown %>
         </div>
       </div>
+      <!-- <div class="row"> -->
+      <!-- <i class="far fa-lightbulb description-icons"></i>
+        <div class="experience-desc-after-icon host_header">Interests:</div>
+        <div class="host_ans"><%=  %></div> -->
+      <!-- interests *could be tags* (need to add in db) -->
+      <!--  </div> -->
       <div class="row">
         <i class="fas fa-fire description-icons"></i>
-        <div class="experience-desc-after-icon host_header">Interests:</div>
-        <div class="host_ans"><%=  %></div>
-        <!-- interests *could be tags* (need to add in db) -->
-      </div>
-      <div class="row">
-        <i class="far fa-lightbulb description-icons"></i>
         <div class="experience-desc-after-icon host_header">Unique Fact:</div>
         <div class="host_ans"><%= @experience.user.interesting_fact %>
         </div>
@@ -59,5 +54,10 @@
         <div class="host_ans"><%= "Number: #{@experience.user.phone}" %></div>
       </div>
     </div>
+    <div>
+      <%= link_to "See All Host's Experiences", experiences_path %>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
   </div>
 </div>
