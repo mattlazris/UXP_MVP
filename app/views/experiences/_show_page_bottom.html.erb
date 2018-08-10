@@ -17,6 +17,11 @@
     <div class="row">
       <%= @experience.user.description %>
     </div>
+    <div>
+      <%= link_to "See All Host's Experiences", experience_host_path(@experience) %>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
     <div class="host_info_container">
       <div class="row">
         <i class="fas fa-briefcase description-icons"></i>
