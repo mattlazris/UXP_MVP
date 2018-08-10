@@ -1,0 +1,13 @@
+<h1>Add A Time Slot To <%= @experience.name %></h1>
+<div class="form-wrapper form-margin form-backgroup3">
+  <div class="cardlogin">
+    <div class="col col-sm-12 col-sm-offset-0">
+      <div class="div-design">
+        <h3 class="font-color">Add A New Timeslot To <%= @experience.name %></h3>
+        <%= render 'form', timeslot: @timeslot %>
+        <br>
+        <%= link_to 'Back', profile_path %>
+      </div>
+    </div>
+  </div>
+</div>

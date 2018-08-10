@@ -70,6 +70,7 @@
             <div><%= exp.description %></div>
             <div><%= "¥#{exp.price}" %></div>
             <div><%= exp.capacity %></div>
+            <%= link_to 'Add A Timeslot', new_experience_timeslot_path(exp) %>
             <div><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></div>
             <div><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></div>
           </li>
