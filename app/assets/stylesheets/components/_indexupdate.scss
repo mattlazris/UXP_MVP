@@ -630,6 +630,8 @@ overflow-x: hidden;
   display: flex;
   margin-left: 50px;
   margin-top:30px;
+  align-items: center;
+  justify-content: center;
 }
 .splitter {
   border-right: solid 2px white;
@@ -656,4 +658,3 @@ overflow-x: hidden;
 }
 
 
-}
