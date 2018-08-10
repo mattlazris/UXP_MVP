@@ -1,4 +1,4 @@
-<div class="container-experience-show" style="background: white">
+<div class="container-experience-show" >
   <%= render './experiences/show_page_bottom' %>
   <div class="show-wrapper">
     <div class="show-container">
@@ -7,16 +7,14 @@
           <div>
             <% @host.gender == 'Male' ? (pronoun = 'His') : (pronoun = 'Her') %>
             <h3 class="form-border"><%= "#{pronoun} Experiences" %></h3>
-              <% @host.experiences.each do |exp| %>
-                <div><%= link_to exp.name, exp %></div>
-                <div><%= exp.price %></div>
-                <div><%= exp.description %></div>
-              <% end %>
+            <% @host.experiences.each do |exp| %>
+              <div><%= link_to exp.name, exp %></div>
+              <div><%= exp.price %></div>
+              <div><%= exp.description %></div>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-

@@ -9,8 +9,51 @@
        class: "form-control",
        placeholder: "Start your day off by treating yourself an unique experience"
      %>
-        <button name="button" type="submit" class="btn btn-success btn-medium">Seach</button>
+        <button name="button" type="submit" class="btn btn-success btn-medium">Find an experience</button>
       <% end %>
+    </div>
+  </div>
+</div>
+<div class="bottom-section">
+  <div>
+    <h1>How UniXP works</h1>
+  </div>
+  <div class="second-section">
+    <div  class="col-xs-6 col-sm-6 col-md-6">
+      <h1>As an user</h1>
+      <div class="splitter">
+        <div class="section-combo">
+          <div><i class="fas fa-search"></i></div>
+          <div class="section-words">
+            <h3>Find an unique experience</h3>
+            <h5>Do unique things at accepatable prices.</h5>
+          </div>
+        </div>
+        <div class="section-combo">
+          <div><i class="fas fa-diagnoses"></i></div>
+          <div class="section-words">
+            <h3>Meet interesting people</h3>
+            <h5>Network with interesting hosts with shared interests.</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div  class="col-xs-6 col-sm-6 col-md-6">
+      <h1>As a host</h1>
+      <div class="section-combo">
+        <div><i class="far fa-plus-square"></i></div>
+        <div class="section-words">
+          <h3>Create an unique experience</h3>
+          <h5>Showcase your talents to the rest of the world.</h5>
+        </div>
+      </div>
+      <div class="section-combo">
+        <div><i class="fas fa-dollar-sign"></i></div>
+        <div class="section-words4">
+          <h3>Make some profits</h3>
+          <h5>Use your spare time to earn money while having fun.</h5>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -19,87 +62,131 @@
     Explore by category
   </div>
 </h2>
-<div class="tabs">
-  <a class="tab" href="#">
-    <div class="tabbox1">
-      <%= image_tag "grill.gif", class: "img" %>
-      <p>Food & Drinks</p>
+<div class="container">
+  <div class="tabs">
+    <div class="col-xs-12 col-sm-3 col-md-3 text-center">
+      <a class="tab" href="#">
+        <div class="tabbox1">
+          <%= image_tag "grill.gif", class: "img" %>
+          <p>Food & Drinks</p>
+        </div>
+      </a>
     </div>
-  </a>
-  <a class="tab" href="#">
-    <div class="tabbox2">
-      <%= image_tag "bulb.gif", class: "img" %>
-      <p>Classes & Workshops</p>
+    <div class="col-xs-12 col-sm-3 col-md-3 text-center">
+      <a class="tab" href="#">
+        <div class="tabbox2">
+          <%= image_tag "bulb.gif", class: "img" %>
+          <p>Classes & Workshops</p>
+        </div>
+      </a>
     </div>
-  </a>
-  <a class="tab" href="#">
-    <div class="tabbox3">
-      <%= image_tag "rocket.gif", class: "img" %>
-      <p>Unique Tours</p>
+    <div class="col-xs-12 col-sm-3 col-md-3 text-center">
+      <a class="tab" href="#">
+        <div class="tabbox3">
+          <%= image_tag "rocket.gif", class: "img" %>
+          <p>Unique Tours</p>
+        </div>
+      </a>
     </div>
-  </a>
-  <a class="tab" href="#">
-    <div class="tabbox4">
-      <%= image_tag "tent.gif", class: "img" %>
-      <p>Sports & Outdoors</p>
+    <div class="col-xs-12 col-sm-3 col-md-3 text-center">
+      <a class="tab" href="#">
+        <div class="tabbox4">
+          <%= image_tag "tent.gif", class: "img" %>
+          <p>Sports & Outdoors</p>
+        </div>
+      </a>
     </div>
-  </a>
+  </div>
 </div>
 <h2 class="section-title-home">
   <div class="section-title-home-content">
     Popular experiences nearby
   </div>
 </h2>
-
-<div class="container">
-<div class="row experience-card-index">
-  <% @experiences.each do |experience| %>
-    <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-      <div class="wholecard">
-
-      <%= link_to experience_path(experience) do %>
-      <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('cl_image_tag experience.photo');">
-        <div class="card-category"><%= experience.category %></div>
-        <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/atmosfeer">
-        <div class="backcard">
-          <h5><%= experience.user.first_name %></h5>
-          <p><%= experience.user.nationality %></p>
-          <p><%= experience.user.email %></p>
+<div class="container text-center">
+  <div class="row experience-card-index">
+    <% @experiences.each do |experience| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+        <div class="wholecard">
+          <%= link_to experience_path(experience) do %>
+            <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_tag experience.photo%>');">
+              <div class="card-category"><%= experience.category %></div>
+              <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/atmosfeer">
+              <div class="backcard">
+                <h5><%= experience.user.first_name %></h5>
+                <p><%= experience.user.occupation %></p>
+                <p><%= experience.user.hometown %> <%=experience.user.nationality%></p>
+                <p><%= experience.user.interesting_fact %></p>
+              </div>
+            </figure>
+          <% end %>
+          <div class="card-description">
+            <p id="snip1584-name"><%= experience.name %></p>
+          </div>
+          <ul class="icongroup">
+            <li class="rating-icon">
+              <a href="#"><i class="fas fa-star rating"></i></a>
+              <span>4.9</span>
+            </li>
+            <li class="review-icon">
+              <a href="#"><i class="fas fa-comment"></i></a>
+              <span>15</span>
+            </li>
+            <li class="save-icon">
+              <a href="#"><i class="fas fa-heart"></i></a>
+              <span>4,846</span>
+            </li>
+            <li class="price-icon">
+              <a href="#"><i class="fas fa-yen-sign"></i></a>
+              <span><%=  experience.price %></span>
+            </li>
+          </ul>
         </div>
-        <a href="#"></a>
-        <a class="card-link" href="#"></a>
-        <div class="_1mdayhn">
-          <button type="button" class="_1rp5252" >
-          </button>
-        </div>
-      </figure>
-      <% end %>
-
-      <div class="card-description">
-        <p id="snip1584-name"><%= experience.name %></p>
       </div>
-
-      <ul class="icongroup">
-        <li class="rating-icon">
-          <a href="#"><i class="fas fa-star rating"></i></a>
-          <span>4.9</span>
-        </li>
-        <li class="review-icon">
-          <a href="#"><i class="fas fa-comment"></i></a>
-          <span>15</span>
-          </li>
-        </li>
-        <li class="save-icon">
-          <a href="#"><i class="fas fa-heart"></i></a>
-          <span>4,846</span>
-        </li>
-        <li class="price-icon">
-          <a href="#"><i class="fas fa-yen-sign"></i></a>
-          <span><%=  experience.price %></span>
-        </li>
-      </ul>
+    <% end %>
+  </div>
+  <div class="cutline">
+    <button name="button" type="submit" class="btn-more">See more experiences</button>
+  </div>
+</div>
+<div class="testimonial">
+  <div class="testimonial-title">
+    <h1>Users Love UniXP</h1>
+  </div>
+  <div class="usercards">
+    <div class="row">
+      <div  class="col-xs-6 col-sm-6 col-md-3">
+        <div class="usercard">
+          <%= image_tag 'chef.jpg', class: "user-avatar" %>
+          <h4>Chef</h4>
+          <h5>springfield, Colorado</h5>
+          <p>I can cook and make $$$!!!</p>
+        </div>
+      </div>
+      <div  class="col-xs-6 col-sm-6 col-md-3">
+        <div class="usercard">
+          <%= image_tag 'south 2.png', class: "user-avatar" %>
+          <h4>Cartman</h4>
+          <h5>springfield, Colorado</h5>
+          <p>UniXP is fxcking awesome!</p>
+        </div>
+      </div>
+      <div  class="col-xs-6 col-sm-6 col-md-3">
+        <div class="usercard">
+          <%= image_tag 'southpark.png', class: "user-avatar" %>
+          <h4>Kenny</h4>
+          <h5>springfield, Colorado</h5>
+          <p>$#%@*&#$$%&**@#!!!</p>
+        </div>
+      </div>
+      <div  class="col-xs-6 col-sm-6 col-md-3">
+        <div class="usercard">
+          <%= image_tag 'trump.jpg', class: "user-avatar" %>
+          <h4>Donald</h4>
+          <h5>New York City, New York</h5>
+          <p>UniXP is Yuuuuuuuge!!!</p>
+        </div>
+      </div>
     </div>
   </div>
-  <% end %>
-</div>
 </div>
