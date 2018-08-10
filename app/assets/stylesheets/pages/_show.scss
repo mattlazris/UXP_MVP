@@ -1,3 +1,13 @@
+#sticky-card {
+  position: sticky;
+  top: 50px;
+}
+
+.book-btn-fill {
+  width: 100%;
+  font-size: 18px;
+  margin: atuo;
+}
 
 .show-wrapper {
   background-color: white;
@@ -11,10 +21,12 @@
   margin: auto;
 }
 
-.geocode-card {
-  border: .5px solid black;
-  border-radius: 4px;
+.top-margin-icon {
+  margin-top: 15px;
 }
+
+.bottom-margin-icon {
+  margin-bottom: 15px;
 
 .flex-geocode {
   display: flex;
@@ -23,8 +35,6 @@
 }
 
 #btn-book {
-  // padding-right: 150px;
-  // padding-left: 150px;
   width: 100%;
 }
 
@@ -83,6 +93,13 @@
   color: white;
 }
 
+.host_info_container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+}
+
+
 .host_name_header a{
   color: black;
   font-size: 26px;
@@ -108,14 +125,17 @@
 }
 
 .icon-detail {
-  width: 50%;
+  width: 100%;
 }
+
+.margin-icon {
+  margin-left: 15px;
+}
+
+.margin-
 
 .icons {
   font-size: 20px;
-  margin-right: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 .description-icons {
@@ -144,6 +164,6 @@
     padding-bottom: 30px;
 }
 
-.book {
-  margin: 15px;
+.icon-middle-bottom {
+  margin-bottom: 8px;
 }

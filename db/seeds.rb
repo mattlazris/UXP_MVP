@@ -39,7 +39,8 @@ puts 'Done'
       category: ['Food & Drink', 'Classes & Workshops', 'Unique tours', 'Sports & Outdoors'].sample,
       price: rand(50..300),
       duration: (1..5).to_a.sample,
-      capacity: rand(1..10)
+      capacity: rand(1..10)，
+      # remote_photo_url: [""].sample
     )
     experience.user = user
     experience.save
