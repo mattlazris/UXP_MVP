@@ -110,8 +110,11 @@
     Popular experiences nearby
   </div>
 </h2>
-<div class="container">
+
+
+<div class="container text-center">
   <div class="row experience-card-index">
+
     <% @experiences.each do |experience| %>
       <div class="col-xs-12 col-sm-6 col-md-4 text-center">
         <div class="wholecard">
@@ -128,7 +131,7 @@
             </figure>
           <% end %>
           <div class="card-description">
-            <p id="snip1584-name"><%= experience.name %></p>
+            <p id="snip1584-name"><%= Experience.find(count).name %></p>
           </div>
           <ul class="icongroup">
             <li class="rating-icon">
@@ -139,18 +142,68 @@
               <a href="#"><i class="fas fa-comment"></i></a>
               <span>15</span>
             </li>
-          </li>
-          <li class="save-icon">
-            <a href="#"><i class="fas fa-heart"></i></a>
-            <span>4,846</span>
-          </li>
-          <li class="price-icon">
-            <a href="#"><i class="fas fa-yen-sign"></i></a>
-            <span><%=  experience.price %></span>
-          </li>
-        </ul>
+            <li class="save-icon">
+              <a href="#"><i class="fas fa-heart"></i></a>
+              <span>4,846</span>
+            </li>
+            <li class="price-icon">
+              <a href="#"><i class="fas fa-yen-sign"></i></a>
+              <span><%=  Experience.find(count).price %></span>
+            </li>
+          </ul>
       </div>
     </div>
   <% end %>
+  </div>
+  <div class="cutline">
+  <button name="button" type="submit" class="btn-more">See more experiences</button>
+  </div>
 </div>
 
+<div class="testimonial">
+  <div class="testimonial-title">
+    <h1>Users Love UniXP</h1>
+  </div>
+  <div class="usercards">
+  <div class="row">
+
+      <div  class="col-xs-6 col-sm-6 col-md-3">
+        <div class="usercard">
+            <%= image_tag 'chef.jpg', class: "user-avatar" %>
+            <h4>Chef</h4>
+            <h5>springfield, Colorado</h5>
+            <p>I can cook and make $$$!!!</p>
+        </div>
+      </div>
+
+
+      <div  class="col-xs-6 col-sm-6 col-md-3">
+        <div class="usercard">
+            <%= image_tag 'south 2.png', class: "user-avatar" %>
+            <h4>Cartman</h4>
+            <h5>springfield, Colorado</h5>
+            <p>UniXP is fxcking awesome!</p>
+        </div>
+      </div>
+
+
+      <div  class="col-xs-6 col-sm-6 col-md-3">
+        <div class="usercard">
+            <%= image_tag 'southpark.png', class: "user-avatar" %>
+            <h4>Kenny</h4>
+            <h5>springfield, Colorado</h5>
+            <p>$#%@*&#$$%&**@#!!!</p>
+      </div>
+    </div>
+
+      <div  class="col-xs-6 col-sm-6 col-md-3">
+        <div class="usercard">
+            <%= image_tag 'trump.jpg', class: "user-avatar" %>
+            <h4>Donald</h4>
+            <h5>New York City, New York</h5>
+            <p>UniXP is Yuuuuuuuge!!!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
