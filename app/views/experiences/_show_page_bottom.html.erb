@@ -1,66 +1,13 @@
-<div class="row center-experience-title">
-  <div class="col-xs-12 col-sm-8">
-    <div class="row">
-      <div class="host_header">
-        <h2>Meet Your Host,<%= link_to " #{@experience.user.first_name}", experience_host_path(@experience)%></h2>
+<!-- <ul>
+          <% @experience.timeslots.each do |ts| %>
+            <li>
+              <div><%= "From: #{ts.start_time}" %></div>
+              <div><%= "To: #{ts.end_time}" %></div>
+            </li>
+          <% end %>
+        </ul>
       </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12 col-sm-8 center-image">
-    <div class="row">
-      <%= cl_image_tag @experience.user.photo, height: 400, width: 400, crop: :fill, class: "show-margin-15" %>
-    </div>
-    <div class="row host_header"> <%= "More About #{@experience.user.first_name},"%>
-    </div>
-    <div class="row">
-      <%= @experience.user.description %>
-    </div>
-    <div>
-      <%= link_to "See All Host's Experiences", experience_host_path(@experience) %>
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-4">
-    <div class="host_description_container">
-      <div class=" host-desc-center">
-        <i class="fas fa-briefcase description-icons"></i>
-        <div class="experience-desc-after-icon host_header">Occupation:</div>
-        <div class="host_ans"><%= @experience.user.occupation %>
-        </div>
+      <div class="row">
+        <%= link_to "Book", new_experience_booking_path(@experience), class: "btn btn-success btn-book font-white"  %>
       </div>
-      <div class="host-desc-center">
-        <i class="far fa-flag description-icons"></i>
-        <div class="experience-desc-after-icon host_header">Nationality:</div>
-        <div class="host_ans"><%= @experience.user.nationality %></div>
-      </div>
-      <div class="host-desc-center">
-        <i class="fas fa-home description-icons"></i>
-        <div class="experience-desc-after-icon host_header">Hometown:</div>
-        <div class="host_ans"><%= @experience.user.hometown %>
-        </div>
-      </div>
-      <!-- <div class="row"> -->
-      <!-- <i class="far fa-lightbulb description-icons"></i>
-        <div class="experience-desc-after-icon host_header">Interests:</div>
-        <div class="host_ans"><%=  %></div> -->
-      <!-- interests *could be tags* (need to add in db) -->
-      <!--  </div> -->
-      <div class="host-desc-center">
-        <i class="fas fa-fire description-icons"></i>
-        <div class="experience-desc-after-icon host_header">Unique Fact:</div>
-        <div class="host_ans"><%= @experience.user.interesting_fact %>
-        </div>
-      </div>
-      <div class="host-desc-center">
-        <i class="far fa-address-card description-icons"></i>
-        <div class="experience-desc-after-icon host_header">Contact Info:</div>
-        <div class="host_ans"><%= "Email: #{@experience.user.email}" %></div>
-        <div class="host_ans"><%= "Number: #{@experience.user.phone}" %></div>
-      </div>
-      <div class="host-desc-center">
-        <%= link_to "See All Host's Experiences", experiences_path %>
-      </div>
-    </div>
-  </div>
-</div>
+      </div> -->
