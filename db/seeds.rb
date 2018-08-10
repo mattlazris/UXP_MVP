@@ -14,7 +14,7 @@ User.destroy_all
 
 puts 'Done'
 
-20.times do
+9.times do
   user = User.new(
     first_name: Faker::FunnyName.two_word_name.scan(/\S+/)[0],
     last_name: Faker::FunnyName.two_word_name.scan(/\S+/)[1],
