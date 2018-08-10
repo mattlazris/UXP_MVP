@@ -11,7 +11,7 @@
 <div class="row">
   <div class="col-xs-12 col-sm-8 center-image">
     <div class="row">
-      <img height=400px width=400px >
+      <%= cl_image_tag @experience.photo, height: 400, width: 400, crop: :fill %>
     </div>
     <div class="row">
       <div class="host_header"> <strong>Our Plan:</strong></div>
