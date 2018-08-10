@@ -30,7 +30,7 @@ puts 'Done'
     host: true
   )
   user.save
-  rand(0..5).times do
+  1.times do
     experience =  Experience.new(
       name: Faker::Food.dish,
       description: Faker::Food.description,
@@ -40,6 +40,8 @@ puts 'Done'
       price: rand(50..300),
       duration: (1..5).to_a.sample,
       capacity: rand(1..10)
+      # remote_photo_url: [""].sample
+
     )
     experience.user = user
     experience.save

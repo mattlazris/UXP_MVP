@@ -635,7 +635,10 @@ overflow-x: hidden;
   display: flex;
   margin-left: 50px;
   margin-top:30px;
+  align-items: center;
+  justify-content: center;
 }
+
 .splitter {
   border-right: solid 2px white;
   padding-right: 20px;
@@ -725,8 +728,3 @@ overflow-x: hidden;
 
 }
 
-.bottomunderline {
-  border-bottom: solid 3px #14A481;
-  padding-bottom: 20px;
-  border-radius: 2%;
-}

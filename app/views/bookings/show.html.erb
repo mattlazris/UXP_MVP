@@ -1,26 +1,30 @@
 <% @title = @booking.experience.name  %>
-<div class="form-wrapper">
-  <div>
-    <h2 class="title-green"> You’ve successfully booked the experience!</h2>
-    <h4>We hope you enjoy your experience!</h4>
-    <br>
-    <h5>Below are the details of your order:</h5>
-    <div class="in-line">
-      <div class="div-recommended">
-        <h3 font-weight= bold ><%= @booking.experience.name %></h3>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="form-wrapper">
+      <div>
+        <h2 class="title-green"> You’ve successfully booked the experience!</h2>
+        <h4>We hope you enjoy your experience!</h4>
         <br>
-        <h5>Price: <%= @booking.experience.price %></h5>
-        <h5>Start At: <%= @booking.start_time %></h5>
-        <h5>End At: <%= @booking.end_time %></h5>
-        <h5>Host: <%= "#{@booking.experience.user.first_name} #{@booking.experience.user.last_name}" %></h5>
-        <h5>Email: <%= @booking.experience.user.email %></h5>
-        <h5>Please say hello to your foodie guide!</h5>
+        <h5>Below are the details of your order:</h5>
+        <div class="in-line">
+          <div class="div-recommended">
+            <h3 font-weight= bold ><%= @booking.experience.name %></h3>
+            <br>
+            <h5>Price: <%= @booking.experience.price %></h5>
+            <h5>Start At: <%= @booking.start_time %></h5>
+            <h5>End At: <%= @booking.end_time %></h5>
+            <h5>Host: <%= "#{@booking.experience.user.first_name} #{@booking.experience.user.last_name}" %></h5>
+            <h5>Email: <%= @booking.experience.user.email %></h5>
+            <h5>Please say hello to your foodie guide!</h5>
+          </div>
+          <div><%= cl_image_tag @booking.experience.photo, height: 304.5, width: 304.5, crop: :fill %></div>
+        </div>
+        <br>
+        <div class="in-line">
+          <button class="font-color-white btn btn-success font-white"><%= link_to 'Back to home page', root_path %></button>
+        </div>
       </div>
-      <div><%= cl_image_tag @booking.experience.user.photo, height: 304.5, width: 304.5, crop: :fill %></div>
-    </div>
-    <br>
-    <div class="in-line">
-      <button class="font-color-white btn btn-success font-white"><%= link_to 'Back to home page', root_path %></button>
     </div>
   </div>
 </div>
