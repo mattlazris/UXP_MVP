@@ -34,7 +34,7 @@ puts 'Done'
     experience =  Experience.new(
       name: Faker::Food.dish,
       description: Faker::Food.description,
-      location: Faker::Address.street_address,
+      location: ['699 West Nanjing Road, Shanghai, China', '1149 West Nanjing Road, Shanghai, China', '678 Hankou Road, Shanghai, China', '150 West Nanjing Road, Shanghai, China'].sample,
       language: ['English', 'Mandarin', 'Cantonese'].sample,
       category: ['Food & Drink', 'Classes & Workshops', 'Unique tours', 'Sports & Outdoors'].sample,
       price: rand(50..300),
