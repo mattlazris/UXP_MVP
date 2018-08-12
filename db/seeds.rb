@@ -40,11 +40,19 @@ puts 'Done'
       price: rand(50..300),
       duration: (1..5).to_a.sample,
       capacity: rand(1..10)
-      # remote_photo_url: [""].sample
 
+      # remote_photo_url: [""].sample
     )
     experience.user = user
     experience.save
+    rand(2..5).times do
+      timeslot = Timeslot.new(
+        start_time: Faker::Time.between(DateTime.now - 10, DateTime.now),
+        end_time: Faker::Time.between(DateTime.now - 10, DateTime.now)
+      )
+      timeslot.experience = experience
+      timeslot.save
+    end
   end
   user.save
 end

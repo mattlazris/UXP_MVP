@@ -1,21 +1,77 @@
-<div class="row center-experience-title">
-  <div class="col-xs-12 col-sm-8">
-    <div>
-      <h2><%= @experience.name %></h2>
-    </div>
-    <div>
-      <p><%= @experience.category %></p>
+<div class="row">
+  <div class="col-xs-12 col-sm-8 center-image">
+    <div class="row">
+      <div>
+        <h2><%= @experience.name %></h2>
+      </div>
+      <div>
+        <p><%= @experience.category %></p>
+      </div>
     </div>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12 col-sm-8 center-image">
     <div class="row">
-      <img height=400px width=400px >
+      <%= cl_image_tag @experience.photo, height: 400, width: 400, crop: :fill %>
     </div>
     <div class="row">
       <div class="host_header"> <strong>Our Plan:</strong></div>
       <div class="text-restrict-width"><%= @experience.description %></div>
+    </div>
+    <div class="row">
+      <div class="host_header">
+        <h2>Meet Your Host,<%= link_to " #{@experience.user.first_name}", experience_host_path(@experience)%></h2>
+      </div>
+    </div>
+    <div class="row">
+      <%= cl_image_tag @experience.user.photo, height: 400, width: 400, crop: :fill, class: "show-margin-15" %>
+    </div>
+    <div class="row host_header"> <%= "More About #{@experience.user.first_name},"%>
+    </div>
+    <div class="row">
+      <%= @experience.user.description %>
+    </div>
+    <div class="row">
+      <div class="host_description_container">
+        <div class=" host-desc-center">
+          <i class="fas fa-briefcase description-icons"></i>
+          <div class="experience-desc-after-icon host_header">Occupation:</div>
+          <div class="host_ans"><%= @experience.user.occupation %>
+          </div>
+        </div>
+        <div class="host-desc-center">
+          <i class="far fa-flag description-icons"></i>
+          <div class="experience-desc-after-icon host_header">Nationality:</div>
+          <div class="host_ans"><%= @experience.user.nationality %></div>
+        </div>
+        <div class="host-desc-center">
+          <i class="fas fa-home description-icons"></i>
+          <div class="experience-desc-after-icon host_header">Hometown:</div>
+          <div class="host_ans"><%= @experience.user.hometown %>
+          </div>
+        </div>
+        <div class="host-desc-center">
+          <i class="fas fa-fire description-icons"></i>
+          <div class="experience-desc-after-icon host_header">Unique Fact:</div>
+          <div class="host_ans"><%= @experience.user.interesting_fact %>
+          </div>
+        </div>
+        <div class="host-desc-center">
+          <i class="far fa-address-card description-icons"></i>
+          <div class="experience-desc-after-icon host_header">Contact Info:</div>
+          <div class="host_ans"><%= "Email: #{@experience.user.email}" %></div>
+          <div class="host_ans"><%= "Number: #{@experience.user.phone}" %></div>
+        </div>
+        <div class="host-desc-center">
+          <div>
+            <%= link_to "See All Host's Experiences", experience_host_path(@experience) %>
+          </div>
+          <div>
+            <%= link_to "See All Host's Experiences", experiences_path %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="col-xs-12 col-sm-4" id="sticky-card">
@@ -26,12 +82,12 @@
       <div class="tour-info-icons">
         <div class="icon-detail margin-icon top-margin-icon icon-middle-bottom">
           <i class="fas fa-language icons"></i>
-          <div class="experience-desc-after-icon"><%= "#{@experience.language}" %>
+          <div class="experience-desc-after-icon"><%= "This experience will be in #{@experience.language}" %>
           </div>
         </div>
         <div class="icon-detail margin-icon icon-middle-bottom">
           <i class="far fa-clock icons"></i>
-          <div class="experience-desc-after-icon"><%= "#{@experience.duration} hours" %></div>
+          <div class="experience-desc-after-icon"><%= "#{@experience.duration} hours/total" %></div>
         </div>
         <div class="icon-detail margin-icon icon-middle-bottom" id="adress-flex">
           <i class="far fa-clipboard icons"></i>
@@ -41,7 +97,7 @@
         </div>
         <div class="icon-detail margin-icon bottom-margin-icon">
           <i class="fas fa-coins icons"></i>
-          <div class="experience-desc-after-icon"> <%= "¥#{@experience.price}" %>
+          <div class="experience-desc-after-icon"> <%= "¥#{@experience.price} per person" %>
           </div>
         </div>
         <div class="icon-detail">
