@@ -12,6 +12,13 @@ class ExperiencesController < ApplicationController
   end
 
   def show
+    @marker = Experience.where.not(latitude: nil, longitude: nil).map do |exp|
+      {
+        lat: exp.latitude,
+        lng: exp.longitude,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def new
