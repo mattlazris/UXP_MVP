@@ -1,3 +1,19 @@
+.no-bottom-for-p {
+  margin-bottom: 0px !important;
+}
+
+.bottom-after-line {
+  margin-bottom: 50px;
+}
+
+.border-line-bottom {
+  margin-bottom: 50px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  border-bottom: .5px solid gray;
+  opacity: .5;
+  padding-bottom: .5px;
+}
+
 #sticky-card {
   position: sticky;
   top: 50px;
@@ -115,6 +131,7 @@
 .host_header {
   font-size: 18px;
   color: black;
+  margin-bottom: 10px;
 }
 
 .host_ans {
@@ -151,7 +168,6 @@
 }
 
 .text-restrict-width {
-  width: 80%;
   margin: auto;
   margin-bottom: 50px;
 }
@@ -174,11 +190,12 @@
   margin-bottom: 8px;
 }
 
-.host-desc-center {
-  margin: auto;
-  margin-left: 30px;
-}
+// .host-desc-center {
+//   margin: auto;
+//   margin-left: 30px;
+// }
 
 .experience-host-container {
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  margin-left: 30px;
+  margin-right: 30px;
 }
