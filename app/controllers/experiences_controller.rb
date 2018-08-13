@@ -12,7 +12,7 @@ class ExperiencesController < ApplicationController
   end
 
   def show
-    @marker = Experience.where.not(latitude: nil, longitude: nil).map do |exp|
+    @marker = Experience.where(id: params[:id]).map do |exp|
       {
         lat: exp.latitude,
         lng: exp.longitude,
