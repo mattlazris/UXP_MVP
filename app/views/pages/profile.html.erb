@@ -1,8 +1,39 @@
 <% @title = "#{@user.first_name} #{@user.last_name}"  %>
+
+<div class="main">
+  <div class="main-content">
+    <%= cl_image_tag @user.photo, width: 300, crop: :fill, class: "profile-pic" %>
+    <h1 class="host_name_header"><strong><%= " #{@user.first_name} #{@user.last_name}" %></strong></h1>
+    <h3><%= "You are a host." if @user.host %></h3>
+    <% if @user.host %>
+      <%= link_to 'Add An Experience To Your Profile', new_experience_path if policy(Experience).create? %>
+    <% else %>
+      <%= link_to 'Become A Host', edit_user_registration_path %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="container-experience-show">
   <div class="row">
     <div class="col-xs-12 col-sm-8">
-      <%= cl_image_tag @user.photo, width: 300, crop: :fill %>
+      <%= cl_image_tag @user.photo, width: 300, crop: :fill, class: "profile-pic" %>
       <br>
       <br>
       <div class="show-card"><strong>Meet <%= " #{@user.first_name}" %> </strong></div>
