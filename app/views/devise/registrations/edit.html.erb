@@ -1,8 +1,8 @@
 <% @title = 'Sign Up'  %>
 <% @title = 'Apply To Become A Host'  %>
 <div class="form-backgroup3">
-  <div class="col-xs-12 col-sm-12 col-sm-offset-4">
-    <div class="cardlogin form-top">
+  <div class="col-xs-12 col-sm-12 col-sm-offset-4 form-top">
+    <div class="cardlogin">
       <h2>Edit <%= resource_name.to_s.humanize %></h2>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
@@ -14,11 +14,11 @@
           <%= f.input :description, required: true, hint: "Write about yourself and your lifestyle" %>
           <%= f.input :hometown, required: true %>
           <%= f.input :occupation, required: true %>
-          <%= f.input :tag_list, as: :check_boxes, collection: ['Sports', 'Music', 'Art', 'Cuisine', 'Social'], hint: 'Check Your Interests' %>
+          <%= f.input :favorite_players, required: true %>
           <%= f.input :photo, hint: "Upload a photo of your self" %>
           <%= f.input :photo_cache, as: :hidden %>
-          <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-          <%= f.input :password_confirmation, required: false %>
+<!--           <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+          <%= f.input :password_confirmation, required: false %> -->
           <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
           <%= f.input :host, as: :radio_buttons, collection: [['I want to be a host', true], ['Not right now', false]] %>
         </div>
