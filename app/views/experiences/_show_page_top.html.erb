@@ -73,81 +73,56 @@
           <%= cl_image_tag @experience.user.photo, width: 300, crop: :fill, class: "show-pic" %>
         </div>
       </div>
-      <div class="row">
-        <div class="tour-info-icons">
-          <div class="icon-detail margin-icon top-margin-icon icon-middle-bottom">
-            <div class="width-of-icon-text"><i class="far fa-user icons"></i></div>
-            <div class="experience-desc-after-icon"><%= link_to "#{@experience.user.first_name} #{@experience.user.last_name}", experience_host_path(@experience)%>
-            </div>
-          </div>
-          <div class="icon-detail margin-icon icon-middle-bottom">
-            <div class="width-of-icon-text"><i class="far fa-flag icons"></i></div>
-            <div class="experience-desc-after-icon"> <%= "#{@experience.user.nationality}" %>
-            </div>
-          </div>
-          <div class="icon-detail margin-icon icon-middle-bottom">
-            <div class="width-of-icon-text"><i class="fas fa-hashtag icons"></i></div>
-            <div class="experience-desc-after-icon"><%= "#{@experience.user.age} years old" %></div>
-          </div>
-          <div class="icon-detail margin-icon icon-middle-bottom">
-            <div class="width-of-icon-text"><i class="fas fa-<%= @experience.user.gender.downcase %> icons"></i></div>
-            <div class="experience-desc-after-icon"><%= "#{@experience.user.gender}" %></div>
-          </div>
-          <div class="icon-detail margin-icon icon-middle-bottom">
-            <div class="width-of-icon-text"><i class="fas fa-language icons"></i></div>
-            <div class="experience-desc-after-icon"><%= "First language: #{@experience.language}" %>
-            </div>
-          </div>
-          <div class="icon-detail margin-icon icon-middle-bottom" id="adress-flex">
-            <div class="width-of-icon-text"><i class="fas fa-fire icons"></i></div>
-            <div class="experience-desc-after-icon">
-              <%= "#{@experience.skill_level} skill level" %>
-            </div>
-          </div>
-          <div class="icon-detail margin-icon bottom-margin-icon" id="adress-flex">
-            <div class="width-of-icon-text"><i class="fas fa-medal icons"></i></div>
-            <div class="experience-desc-after-icon">
-              <%= "Favorite Player: #{@experience.user.favorite_players}" %>
-            </div>
-          </div>
-        </div>
-        <div class="border-line-bottom">
-        </div>
-      </div>
-    </div>
-    <div class="row host_header"> <strong><%= "More About #{@experience.user.first_name},"%></strong>
     </div>
     <div class="row">
-      <div class="bottom-after-line">
-        <%= @experience.user.description %>
+      <div class="tour-info-icons">
+        <div class="icon-detail margin-icon top-margin-icon icon-middle-bottom">
+          <div class="width-of-icon-text"><i class="far fa-user icons"></i></div>
+          <div class="experience-desc-after-icon"><%= link_to "#{@experience.user.first_name} #{@experience.user.last_name}", experience_host_path(@experience)%>
+          </div>
+        </div>
+        <div class="icon-detail margin-icon icon-middle-bottom">
+          <div class="width-of-icon-text"><i class="far fa-flag icons"></i></div>
+          <div class="experience-desc-after-icon"> <%= "#{@experience.user.nationality}" %>
+          </div>
+        </div>
+        <div class="icon-detail margin-icon icon-middle-bottom">
+          <div class="width-of-icon-text"><i class="fas fa-hashtag icons"></i></div>
+          <div class="experience-desc-after-icon"><%= "#{@experience.user.age} years old" %></div>
+        </div>
+        <div class="icon-detail margin-icon icon-middle-bottom">
+          <div class="width-of-icon-text"><i class="fas fa-<%= @experience.user.gender.downcase %> icons"></i></div>
+          <div class="experience-desc-after-icon"><%= "#{@experience.user.gender}" %></div>
+        </div>
+        <div class="icon-detail margin-icon icon-middle-bottom">
+          <div class="width-of-icon-text"><i class="fas fa-language icons"></i></div>
+          <div class="experience-desc-after-icon"><%= "First language: #{@experience.language}" %>
+          </div>
+        </div>
+        <div class="icon-detail margin-icon icon-middle-bottom" id="adress-flex">
+          <div class="width-of-icon-text"><i class="fas fa-fire icons"></i></div>
+          <div class="experience-desc-after-icon">
+            <%= "#{@experience.skill_level} skill level" %>
+          </div>
+        </div>
+        <div class="icon-detail margin-icon bottom-margin-icon">
+          <div class="width-of-icon-text"><i class="fas fa-medal icons"></i></div>
+          <div class="experience-desc-after-icon"> <%= "Favorite Player: #{@experience.user.favorite_players}" %>
+          </div>
+        </div>
       </div>
       <div class="border-line-bottom">
       </div>
     </div>
     <div class="row">
-      <!--  <div class=" host-desc-center">
-        <i class="fas fa-briefcase description-icons"></i>
-        <div class="experience-desc-after-icon host_header">Occupation:</div>
-        <div class="host_ans"><%= @experience.user.occupation %>
-        </div>
+      <div class="host_header">
+        <strong>More About <%="#{@experience.user.first_name},"%></strong>
       </div>
-      <div class="host-desc-center">
-        <i class="far fa-flag description-icons"></i>
-        <div class="experience-desc-after-icon host_header">Nationality:</div>
-        <div class="host_ans"><%= @experience.user.nationality %></div>
+      <div class="text-restrict-width bottom-margin-icon"><%= @experience.user.description %></div>
+      <div class="border-line-bottom">
       </div>
-      <div class="host-desc-center">
-        <i class="fas fa-home description-icons"></i>
-        <div class="experience-desc-after-icon host_header">Hometown:</div>
-        <div class="host_ans"><%= @experience.user.hometown %>
-        </div>
-      </div>
-      <div class="host-desc-center">
-        <i class="far fa-address-card description-icons"></i>
-        <div class="experience-desc-after-icon host_header">Contact Info:</div>
-        <div class="host_ans"><%= "Email: #{@experience.user.email}" %></div>
-        <div class="host_ans"><%= "Number: #{@experience.user.phone}" %></div>
-      </div> -->
+    </div>
+    <div class="row">
       <div class="host-desc-center">
         <div>
           <%= link_to "See All of #{@experience.user.first_name}'s Game Opportunities", experience_host_path(@experience) %>
