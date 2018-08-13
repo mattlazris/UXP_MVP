@@ -1,8 +1,39 @@
 <% @title = "#{@user.first_name} #{@user.last_name}"  %>
+
+<div class="main">
+  <div class="main-content">
+    <%= cl_image_tag @user.photo, width: 300, crop: :fill, class: "profile-pic" %>
+    <h1 class="host_name_header"><strong><%= " #{@user.first_name} #{@user.last_name}" %></strong></h1>
+    <h3><%= "You are a host." if @user.host %></h3>
+    <% if @user.host %>
+      <%= link_to 'Add An Experience To Your Profile', new_experience_path if policy(Experience).create? %>
+    <% else %>
+      <%= link_to 'Become A Host', edit_user_registration_path %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="container-experience-show">
   <div class="row">
     <div class="col-xs-12 col-sm-8">
-      <%= cl_image_tag @user.photo, height: 400, width: 400, crop: :fill %>
+      <%= cl_image_tag @user.photo, width: 300, crop: :fill, class: "profile-pic" %>
       <br>
       <br>
       <div class="show-card"><strong>Meet <%= " #{@user.first_name}" %> </strong></div>
@@ -37,8 +68,8 @@
         </div>
         <br>
         <div class="row">
-          <div class="host_header">Intersting Fact:</div>
-          <div class="host_ans"><%= @user.interesting_fact %>
+          <div class="host_header">Favorite players:</div>
+          <div class="host_ans"><%= @user.favorite_players %>
           </div>
         </div>
         <br>
@@ -61,26 +92,26 @@
       </div>
     </div>
   </div>
-  <h3 class="form-border"><%= "Experiences I host" %></h3>
+  <h3 class="form-border"><%= "Sports Events I host" %></h3>
   <div class="row">
-    <div class="col-xs-12 col-sm-12">
-      <h3 class="form-border"><%= "Your Experiences" %></h3>
-      <ul>
-        <% @user.experiences.each do |exp| %>
-          <li>
-            <div><%= link_to exp.name, exp %></div>
-            <div><%= exp.description %></div>
-            <div><%= "¥#{exp.price}" %></div>
-            <div><%= exp.capacity %></div>
-            <%= link_to 'Add A Timeslot', new_experience_timeslot_path(exp) %>
-            <div><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></div>
-            <div><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></div>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+    <% @user.experiences.each do |exp| %>
+      <div class="col-xs-12 col-sm-3">
+        <div><%= cl_image_tag exp.photo, height: 200, width: 200, crop: :fill %></div>
+        <div class="div-recommended2">
+          <div><%= link_to exp.name, exp %></div>
+          <div><%= exp.description %></div>
+          <div>Price: <%= "¥#{exp.price}" %></div>
+          <div>Capacity: <%= exp.capacity %></div>
+          <div>Venue: <%= exp.venue %></div>
+          <div>Skill Level: <%= exp.skill_level %></div>
+          <div><%= link_to 'Add A Timeslot', new_experience_timeslot_path(exp) %></div>
+          <div><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></div>
+          <div><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></div>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <h3 class="form-border"><%= "Experiences I will attend" %></h3>
+  <h3 class="form-border"><%= "Sports Events I will attend" %></h3>
   <div class="row">
     <% @attending_bookings.each do |booking| %>
       <div class="col-xs-12 col-sm-3">
@@ -95,7 +126,7 @@
       </div>
     <% end %>
   </div>
-  <h3 class="form-border"><%= "Experiences I've attended" %></h3>
+  <h3 class="form-border"><%= "Sports Events I've attended" %></h3>
   <div class="row">
     <% @attended_bookings.each do |booking| %>
       <div class="col-xs-12 col-sm-3">
@@ -110,7 +141,7 @@
     <% end %>
   </div>
   <% if @user.host %>
-    <h3 class="form-border"><%= "Experiences I will host" %></h3>
+    <h3 class="form-border"><%= "Sports Events I will host" %></h3>
     <div class="row">
       <% @hosting_bookings.each do |booking| %>
         <div class="col-xs-12 col-sm-3">
@@ -130,7 +161,7 @@
         </div>
       <% end %>
     </div>
-    <h3 class="form-border"><%= "Experiences I've hosted" %></h3>
+    <h3 class="form-border"><%= "Sports Events I've hosted" %></h3>
     <div class="row">
       <% @hosted_bookings.each do |booking| %>
         <div class="col-xs-12 col-sm-3">

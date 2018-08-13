@@ -1,11 +1,13 @@
 <% @title = @booking.experience.name  %>
 
-<div class="form-wrapper">
-  <div>
-    <h2 class="title-green"> You’ve successfully booked the experience!</h2>
-    <h4>We hope you enjoy your experience!</h4>
-    <br>
-    <h5>Below are the details of your order:</h5>
+<div class="margin_50">
+  <div class="container">
+    <div class="row">
+      <h2 class="title-green"> You’ve successfully booked the experience!</h2>
+      <h4>We hope you enjoy your experience!</h4>
+      <br>
+      <h5>Below are the details of your order:</h5>
+    </div>
     <div class="row">
       <div class="div-recommended col-xs-12 col-sm-6">
         <h3 font-weight= bold ><%= @booking.experience.name %></h3>
@@ -20,8 +22,8 @@
       <div class="col-xs-12 col-sm-6"><%= cl_image_tag @booking.experience.photo, height: 298, crop: :fill %></div>
     </div>
     <br>
-    <div class="in-line">
-      <button class="font-color-white btn btn-success font-white"><%= link_to 'Back to home page', root_path %></button>
+    <div class="row">
+      <button class="btn btn-success font-white"><%= link_to 'Back to home page', root_path %></button>
     </div>
   </div>
 </div>

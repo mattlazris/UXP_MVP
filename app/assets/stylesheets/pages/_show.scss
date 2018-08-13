@@ -1,3 +1,51 @@
+.show-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.venue-flex-box {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+}
+
+
+.venue-title {
+  width: 80%;
+  font-size: 30px;
+}
+
+.venue-image {
+  width: 20%;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.venue-image-params {
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.no-bottom-for-p {
+  margin-bottom: 0px !important;
+}
+
+.bottom-after-line {
+  margin-bottom: 50px;
+}
+
+.border-line-bottom {
+  margin-bottom: 30px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  border-bottom: .5px solid gray;
+  opacity: .5;
+  padding-bottom: .5px;
+}
+
 #sticky-card {
   position: sticky;
   top: 50px;
@@ -98,6 +146,7 @@
   display: flex;
   flex-direction: column;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  margin-top: 20px;
 }
 
 .host_description_container {
@@ -115,6 +164,7 @@
 .host_header {
   font-size: 18px;
   color: black;
+  margin-bottom: 10px;
 }
 
 .host_ans {
@@ -129,10 +179,18 @@
 
 .experience-desc-after-icon {
   font-size: 14px;
+  width: 85%;
 }
 
 .icon-detail {
+  display: flex;
+  align-items: center;
   width: 100%;
+}
+
+.width-of-icon-text {
+  width: 15%;
+  vertical-align: middle;
 }
 
 .margin-icon {
@@ -151,7 +209,6 @@
 }
 
 .text-restrict-width {
-  width: 80%;
   margin: auto;
   margin-bottom: 50px;
 }
@@ -174,11 +231,12 @@
   margin-bottom: 8px;
 }
 
-.host-desc-center {
-  margin: auto;
-  margin-left: 30px;
-}
+// .host-desc-center {
+//   margin: auto;
+//   margin-left: 30px;
+// }
 
 .experience-host-container {
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  margin-left: 30px;
+  margin-right: 30px;
 }

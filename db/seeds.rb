@@ -24,9 +24,10 @@ puts 'Done'
     nationality: ['Chinese', 'American', 'German', 'Swedish', 'British', 'Russian', 'Korean', 'French', 'Japanese'].sample,
     occupation: Faker::Job.field,
     hometown: Faker::Address.city,
-    interesting_fact: Faker::MostInterestingManInTheWorld.quote,
     gender:['Male', 'Female'].sample,
     password: "123456",
+    favorite_players: Faker::Esport.player,
+    age: rand(18..45).to_s,
     host: true
   )
   user.save
@@ -34,13 +35,14 @@ puts 'Done'
     experience =  Experience.new(
       name: Faker::Food.dish,
       description: Faker::Food.description,
-      location: Faker::Address.street_address,
+      location: ['699 West Nanjing Road, Shanghai, China', '1149 West Nanjing Road, Shanghai, China', '678 Hankou Road, Shanghai, China', '150 West Nanjing Road, Shanghai, China'].sample,
       language: ['English', 'Mandarin', 'Cantonese'].sample,
-      category: ['Food & Drink', 'Classes & Workshops', 'Unique tours', 'Sports & Outdoors'].sample,
+      category: ['Basketball', 'Soccer', 'Tennis', 'Others'].sample,
       price: rand(50..300),
       duration: (1..5).to_a.sample,
-      capacity: rand(1..10)
-
+      capacity: rand(1..10),
+      venue: ['Indoors', 'Outdoors'].sample,
+      skill_level: ['Beginner', 'Intermediate', 'Advanced', 'Watching'].sample
       # remote_photo_url: [""].sample
     )
     experience.user = user
