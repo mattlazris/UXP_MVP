@@ -34,8 +34,10 @@ ActiveRecord::Schema.define(version: 2018_08_12_155745) do
     t.integer "price"
     t.integer "capacity"
     t.string "location"
+    t.string "venue"
     t.string "language"
     t.integer "duration"
+    t.string "skill_level"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -101,7 +103,8 @@ ActiveRecord::Schema.define(version: 2018_08_12_155745) do
     t.string "occupation"
     t.string "nationality"
     t.string "hometown"
-    t.text "interesting_fact"
+    t.string "age"
+    t.string "favorite_players"
     t.boolean "host", default: false
     t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
