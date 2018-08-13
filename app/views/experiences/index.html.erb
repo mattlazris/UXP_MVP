@@ -1,106 +1,55 @@
-<div class="banner" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3) 50%, rgba(0,36,61,0.6) 100%), url('<%= image_path 'surf.jpg' %>');">
+<div class="banner" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3) 50%, rgba(0,36,61,0.6) 100%), url('<%= image_path 'streetbasketballbanner.png' %>');">
   <div class="banner-content">
-    <h1>UniXP - Experience Platform</h1>
-    <h2>Life Is Too Short: Own Experiences, Not Things.</h2>
-    <div class="align-items-search">
-      <%= form_tag experiences_path, method: :get, class:"align-items-search" do %>
-        <%= text_field_tag :query,
-       params[:query],
-       class: "form-control",
-       placeholder: "Start your day off by treating yourself an unique experience"
-     %>
-        <button name="button" type="submit" class="btn btn-success btn-medium">Find an experience</button>
-      <% end %>
-    </div>
+    <h1 text-center>Spocal</h1>
+    <h2>Play sports with locals anywhere in the world</h2>
   </div>
 </div>
-<div class="bottom-section">
-  <div>
-    <h1>How UniXP works</h1>
-  </div>
-  <div class="second-section">
-    <div  class="col-xs-6 col-sm-6 col-md-6">
-      <h1>As an user</h1>
-      <div class="splitter">
-        <div class="section-combo">
-          <div><i class="fas fa-search"></i></div>
-          <div class="section-words">
-            <h3>Find an unique experience</h3>
-            <h5>Do unique things at accepatable prices.</h5>
-          </div>
-        </div>
-        <div class="section-combo">
-          <div><i class="fas fa-diagnoses"></i></div>
-          <div class="section-words">
-            <h3>Meet interesting people</h3>
-            <h5>Network with interesting hosts with shared interests.</h5>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div  class="col-xs-6 col-sm-6 col-md-6">
-      <h1>As a host</h1>
-      <div class="section-combo">
-        <div><i class="far fa-plus-square"></i></div>
-        <div class="section-words">
-          <h3>Create an unique experience</h3>
-          <h5>Showcase your talents to the rest of the world.</h5>
-        </div>
-      </div>
-      <div class="section-combo">
-        <div><i class="fas fa-dollar-sign"></i></div>
-        <div class="section-words4">
-          <h3>Make some profits</h3>
-          <h5>Use your spare time to earn money while having fun.</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 <h2 class="section-title-home">
   <div class="section-title-home-content" style="font-size:30px;">
-    Explore by category
+    Pick a sport, Find a local teammate
   </div>
 </h2>
-<div class="container">
+<div class="cardcontainer">
   <div class="tabs">
-    <div class="col-xs-12 col-sm-3 col-md-3 text-center">
+    <div class="col-xs-12 col-sm-6 col-md-3 text-center">
       <a class="tab" href="#">
-        <div class="tabbox1">
-          <%= image_tag "grill.gif", class: "tabimg" %>
-          <p>Food & Drinks</p>
+        <div class="tabbox1 zdepth1">
+          <p>Basketball</p>
+         <%= image_tag "bas.png", class: "tabimg" %>
         </div>
       </a>
     </div>
-    <div class="col-xs-12 col-sm-3 col-md-3 text-center">
+    <div class="col-xs-12 col-sm-6 col-md-3 text-center">
       <a class="tab" href="#">
-        <div class="tabbox2">
-          <%= image_tag "bulb.gif", class: "tabimg" %>
-          <p>Classes & Workshops</p>
+        <div class="tabbox2 zdepth1">
+          <p>Soccer</p>
+          <%= image_tag "soc.png", class: "tabimg" %>
         </div>
       </a>
     </div>
-    <div class="col-xs-12 col-sm-3 col-md-3 text-center">
+    <div class="col-xs-12 col-sm-6 col-md-3 text-center">
       <a class="tab" href="#">
-        <div class="tabbox3">
-          <%= image_tag "rocket.gif", class: "tabimg" %>
-          <p>Unique Tours</p>
+        <div class="tabbox3 zdepth1">
+          <p>Tennis</p>
+          <%= image_tag "ten.png", class: "tabimg" %>
         </div>
       </a>
     </div>
-    <div class="col-xs-12 col-sm-3 col-md-3 text-center">
+    <div class="col-xs-12 col-sm-6 col-md-3 text-center">
       <a class="tab" href="#">
-        <div class="tabbox4">
-          <%= image_tag "tent.gif", class: "tabimg" %>
-          <p>Sports & Outdoors</p>
+        <div class="tabbox4 zdepth1">
+          <p>Other sports</p>
+          <%= image_tag "gol.png", class: "tabimg" %>
         </div>
       </a>
     </div>
   </div>
 </div>
+
 <h2 class="section-title-home">
   <div class="section-title-home-content">
-    Popular experiences nearby
+    Top-rated experiences
   </div>
 </h2>
 <div class="container text-center">
@@ -128,31 +77,49 @@
             <p id="snip1584-name"><%= experience.name %></p>
           </div>
           <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>
 
-       <!--    <ul class="icongroup">
-            <li class="rating-icon">
-              <a href="#"><i class="fas fa-star rating"></i></a>
-              <span>4.9</span>
-            </li>
-            <li class="review-icon">
-              <a href="#"><i class="fas fa-comment"></i></a>
-              <span>15</span>
-            </li>
-            <li class="save-icon">
-              <a href="#"><i class="fas fa-heart"></i></a>
-              <span>4,846</span>
-            </li>
-            <li class="price-icon">
-              <a href="#"><i class="fas fa-yen-sign"></i></a>
-              <span><%=  experience.price %></span>
-            </li>
-          </ul> -->
+<h2 class="section-title-home">
+  <div class="section-title-home-content">
+    Experiences nearby (< 5km)
+  </div>
+</h2>
+<div class="container text-center">
+  <div class="row experience-card-index">
+    <% @experiences.each do |experience| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+        <div class="wholecard">
+          <%= link_to experience_path(experience) do %>
+            <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_tag experience.photo %>');">
+              <div class="card-category"><%= experience.category %></div>
+              <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/atmosfeer">
+              <% end %>
+              <%= link_to experience_path(experience), experience: experience do %>
+              <div class="backcard">
+                <div class="backavatar">
+                <%= image_tag "zack.jpg", class: "img" %>
+                </div>
+                <h5><%= experience.user.first_name %></h5>
+                <p><%= experience.user.occupation %></p>
+                <h4><%= experience.user.interesting_fact %></h4>
+                <h6>Click for more about experience and host</h6>
+              </div>
+            </figure>
+          <div class="card-description">
+            <p id="snip1584-name"><%= experience.name %></p>
+          </div>
+          <% end %>
         </div>
       </div>
     <% end %>
   </div>
     <div class="cutline">
-        <button name="button" type="submit" class="btn-more">See more experiences</button>
+        <button name="button" type="submit" class="btn-more">See all experiences</button>
     </div>
   </div>
 </div>
