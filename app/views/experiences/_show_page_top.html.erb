@@ -19,12 +19,6 @@
     </div>
   </div>
 </div>
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @marker.to_json %>"
-></div>
 <div class="row">
   <div class="col-xs-12 col-sm-8">
     <div class="row">
@@ -114,7 +108,12 @@
   <div class="col-xs-12 col-sm-4" id="sticky-card">
     <div class="host_info_container">
       <div class="flex-geocode"  id="center-geocode">
-        <img width=380px height=196px>
+        <div
+  id="map"
+  style="width: 100%;
+  height: 300px;"
+  data-markers="<%= @marker.to_json %>"
+></div>
       </div>
       <div class="tour-info-icons">
         <div class="icon-detail margin-icon top-margin-icon icon-middle-bottom">
