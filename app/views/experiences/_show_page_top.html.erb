@@ -21,7 +21,7 @@
           Venue Stats:
         </div>
         <div class="venue-image">
-          <img class="venue-image-params">
+          <%= cl_image_tag @experience.photo, width: 300, crop: :fill, class: "show-pic" %>
         </div>
       </div>
     </div>
@@ -70,7 +70,7 @@
           Teammate Stats:
         </div>
         <div class="venue-image">
-          <img class="venue-image-params">
+          <%= cl_image_tag @experience.user.photo, width: 300, crop: :fill, class: "show-pic" %>
         </div>
       </div>
       <div class="row">
