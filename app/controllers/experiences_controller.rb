@@ -12,6 +12,13 @@ class ExperiencesController < ApplicationController
   end
 
   def show
+    @marker = Experience.where(id: params[:id]).map do |exp|
+      {
+        lat: exp.latitude,
+        lng: exp.longitude,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def new

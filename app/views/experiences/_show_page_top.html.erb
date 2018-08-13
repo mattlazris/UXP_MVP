@@ -1,75 +1,106 @@
 <div class="row">
-  <div class="col-xs-12 col-sm-8 center-image">
+  <div class="col-xs-12 col-sm-8">
     <div class="row">
       <div>
-        <h2><%= @experience.name %></h2>
+        <h1><%= @experience.name %></h1>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-8">
+    <div class="row">
+      <div>
+        <p class="no-bottom-for-p"><strong>Category:</strong><%=" #{@experience.category}" %></p>
       </div>
       <div>
-        <p><%= @experience.category %></p>
+        <p><strong>Host:</strong><%= " #{@experience.user.first_name} #{@experience.user.last_name}" %></p>
+      </div>
+      <div class="border-line-bottom">
       </div>
     </div>
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12 col-sm-8 center-image">
+  <div class="col-xs-12 col-sm-8">
     <div class="row">
-      <%= cl_image_tag @experience.photo, height: 400, width: 400, crop: :fill %>
+      <div class="bottom-after-line">
+        <%= cl_image_tag @experience.photo, height: 400, width: 400, crop: :fill %>
+      </div>
+      <div class="border-line-bottom">
+      </div>
     </div>
     <div class="row">
-      <div class="host_header"> <strong>Our Plan:</strong></div>
+      <div class="host_header">
+        <strong>Our Plan:</strong>
+      </div>
       <div class="text-restrict-width"><%= @experience.description %></div>
+      <div class="border-line-bottom">
+      </div>
     </div>
     <div class="row">
       <div class="host_header">
         <h2>Meet Your Host,<%= link_to " #{@experience.user.first_name}", experience_host_path(@experience)%></h2>
       </div>
+      <div>
+        <p class="no-bottom-for-p"><strong>Occupation:</strong><%=" #{@experience.user.occupation}" %></p>
+      </div>
+      <div>
+        <p><strong>Interesting Fact:</strong><%= " #{@experience.user.interesting_fact}" %></p>
+      </div>
+      <div class="border-line-bottom">
+      </div>
     </div>
     <div class="row">
-      <%= cl_image_tag @experience.user.photo, height: 400, width: 400, crop: :fill, class: "show-margin-15" %>
+      <div class="bottom-after-line">
+        <%= cl_image_tag @experience.user.photo, height: 400, width: 400, crop: :fill, class: "show-margin-15" %>
+      </div>
+      <div class="border-line-bottom">
+      </div>
     </div>
-    <div class="row host_header"> <%= "More About #{@experience.user.first_name},"%>
+    <div class="row host_header"> <strong><%= "More About #{@experience.user.first_name},"%></strong>
     </div>
     <div class="row">
-      <%= @experience.user.description %>
+      <div class="bottom-after-line">
+        <%= @experience.user.description %>
+      </div>
+      <div class="border-line-bottom">
+      </div>
     </div>
     <div class="row">
-      <div class="host_description_container">
-        <div class=" host-desc-center">
-          <i class="fas fa-briefcase description-icons"></i>
-          <div class="experience-desc-after-icon host_header">Occupation:</div>
-          <div class="host_ans"><%= @experience.user.occupation %>
-          </div>
+      <!--  <div class=" host-desc-center">
+        <i class="fas fa-briefcase description-icons"></i>
+        <div class="experience-desc-after-icon host_header">Occupation:</div>
+        <div class="host_ans"><%= @experience.user.occupation %>
         </div>
-        <div class="host-desc-center">
-          <i class="far fa-flag description-icons"></i>
-          <div class="experience-desc-after-icon host_header">Nationality:</div>
-          <div class="host_ans"><%= @experience.user.nationality %></div>
+      </div>
+      <div class="host-desc-center">
+        <i class="far fa-flag description-icons"></i>
+        <div class="experience-desc-after-icon host_header">Nationality:</div>
+        <div class="host_ans"><%= @experience.user.nationality %></div>
+      </div>
+      <div class="host-desc-center">
+        <i class="fas fa-home description-icons"></i>
+        <div class="experience-desc-after-icon host_header">Hometown:</div>
+        <div class="host_ans"><%= @experience.user.hometown %>
         </div>
-        <div class="host-desc-center">
-          <i class="fas fa-home description-icons"></i>
-          <div class="experience-desc-after-icon host_header">Hometown:</div>
-          <div class="host_ans"><%= @experience.user.hometown %>
-          </div>
+      </div>
+      <div class="host-desc-center">
+        <i class="fas fa-fire description-icons"></i>
+        <div class="experience-desc-after-icon host_header">Unique Fact:</div>
+        <div class="host_ans"><%= @experience.user.interesting_fact %>
         </div>
-        <div class="host-desc-center">
-          <i class="fas fa-fire description-icons"></i>
-          <div class="experience-desc-after-icon host_header">Unique Fact:</div>
-          <div class="host_ans"><%= @experience.user.interesting_fact %>
-          </div>
+      </div>
+      <div class="host-desc-center">
+        <i class="far fa-address-card description-icons"></i>
+        <div class="experience-desc-after-icon host_header">Contact Info:</div>
+        <div class="host_ans"><%= "Email: #{@experience.user.email}" %></div>
+        <div class="host_ans"><%= "Number: #{@experience.user.phone}" %></div>
+      </div> -->
+      <div class="host-desc-center">
+        <div>
+          <%= link_to "See All of #{@experience.user.first_name}'s Experiences", experience_host_path(@experience) %>
         </div>
-        <div class="host-desc-center">
-          <i class="far fa-address-card description-icons"></i>
-          <div class="experience-desc-after-icon host_header">Contact Info:</div>
-          <div class="host_ans"><%= "Email: #{@experience.user.email}" %></div>
-          <div class="host_ans"><%= "Number: #{@experience.user.phone}" %></div>
-        </div>
-        <div class="host-desc-center">
-          <div>
-            <%= link_to "See All Host's Experiences", experience_host_path(@experience) %>
-          </div>
-          <div>
-            <%= link_to "See All Host's Experiences", experiences_path %>
-          </div>
+        <div>
+          <%= link_to "Keep Exploring", experiences_path %>
         </div>
       </div>
     </div>
@@ -77,7 +108,12 @@
   <div class="col-xs-12 col-sm-4" id="sticky-card">
     <div class="host_info_container">
       <div class="flex-geocode"  id="center-geocode">
-        <img width=380px height=196px>
+        <div
+  id="map"
+  style="width: 100%;
+  height: 300px;"
+  data-markers="<%= @marker.to_json %>"
+></div>
       </div>
       <div class="tour-info-icons">
         <div class="icon-detail margin-icon top-margin-icon icon-middle-bottom">
