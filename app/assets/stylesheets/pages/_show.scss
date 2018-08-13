@@ -147,10 +147,18 @@
 
 .experience-desc-after-icon {
   font-size: 14px;
+  width: 85%;
 }
 
 .icon-detail {
+  display: flex;
+  align-items: center;
   width: 100%;
+}
+
+.width-of-icon-text {
+  width: 15%;
+  vertical-align: middle;
 }
 
 .margin-icon {

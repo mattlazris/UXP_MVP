@@ -66,12 +66,6 @@
         </div>
       </div>
       <div class="host-desc-center">
-        <i class="fas fa-fire description-icons"></i>
-        <div class="experience-desc-after-icon host_header">Unique Fact:</div>
-        <div class="host_ans"><%= @experience.user.interesting_fact %>
-        </div>
-      </div>
-      <div class="host-desc-center">
         <i class="far fa-address-card description-icons"></i>
         <div class="experience-desc-after-icon host_header">Contact Info:</div>
         <div class="host_ans"><%= "Email: #{@experience.user.email}" %></div>
@@ -99,22 +93,22 @@
       </div>
       <div class="tour-info-icons">
         <div class="icon-detail margin-icon top-margin-icon icon-middle-bottom">
-          <i class="fas fa-language icons"></i>
+          <div class="width-of-icon-text"><i class="fas fa-language icons"></i></div>
           <div class="experience-desc-after-icon"><%= "This experience will be in #{@experience.language}" %>
           </div>
         </div>
         <div class="icon-detail margin-icon icon-middle-bottom">
-          <i class="far fa-clock icons"></i>
+          <div class="width-of-icon-text"><i class="far fa-clock icons"></i></div>
           <div class="experience-desc-after-icon"><%= "#{@experience.duration} hours/total" %></div>
         </div>
         <div class="icon-detail margin-icon icon-middle-bottom" id="adress-flex">
-          <i class="far fa-clipboard icons"></i>
+          <div class="width-of-icon-text"><i class="far fa-clipboard icons"></i></div>
           <div class="experience-desc-after-icon">
             <%= "#{@experience.category}" %>
           </div>
         </div>
         <div class="icon-detail margin-icon bottom-margin-icon">
-          <i class="fas fa-coins icons"></i>
+          <div class="width-of-icon-text"><i class="fas fa-coins icons"></i></div>
           <div class="experience-desc-after-icon"> <%= "¥#{@experience.price} per person" %>
           </div>
         </div>
