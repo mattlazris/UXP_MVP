@@ -1,3 +1,31 @@
+
+
+.venue-flex-box {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+}
+
+
+.venue-title {
+  width: 80%;
+  font-size: 30px;
+}
+
+.venue-image {
+  width: 20%;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.venue-image-params {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  vertical-align: middle;
+  align-items: center;
+}
+
 .no-bottom-for-p {
   margin-bottom: 0px !important;
 }
@@ -7,7 +35,7 @@
 }
 
 .border-line-bottom {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
   border-bottom: .5px solid gray;
   opacity: .5;
