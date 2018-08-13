@@ -1,9 +1,13 @@
 .form-wrapper {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.form-container {
+  width: 90%
+}
+
 
 .form-card {
   background-color: white;
