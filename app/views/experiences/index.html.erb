@@ -112,24 +112,22 @@
             <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_tag experience.photo %>');">
               <div class="card-category"><%= experience.category %></div>
               <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/atmosfeer">
-              <% end %>
-              <%= link_to experience_path(experience), experience: experience do %>
+            <% end %>
+            <%= link_to experience_path(experience), experience: experience do %>
               <div class="backcard">
                 <div class="backavatar">
-                <%= image_tag "zack.jpg", class: "img" %>
+                  <%= image_tag "zack.jpg", class: "img" %>
                 </div>
                 <h5><%= experience.user.first_name %></h5>
                 <p><%= experience.user.occupation %></p>
-                <h4><%= experience.user.interesting_fact %></h4>
                 <h6>Click for more about experience and host</h6>
               </div>
             </figure>
-          <div class="card-description">
-            <p id="snip1584-name"><%= experience.name %></p>
-          </div>
+            <div class="card-description">
+              <p id="snip1584-name"><%= experience.name %></p>
+            </div>
           <% end %>
-
-       <!--    <ul class="icongroup">
+          <!--    <ul class="icongroup">
             <li class="rating-icon">
               <a href="#"><i class="fas fa-star rating"></i></a>
               <span>4.9</span>
@@ -151,14 +149,11 @@
       </div>
     <% end %>
   </div>
-    <div class="cutline">
-        <button name="button" type="submit" class="btn-more">See more experiences</button>
-    </div>
+  <div class="cutline">
+    <button name="button" type="submit" class="btn-more">See more experiences</button>
   </div>
 </div>
-
-
-
+</div>
 <div class="testimonial">
   <div class="testimonial-title">
     <h1>Users Love UniXP</h1>
@@ -183,10 +178,10 @@
       </div>
       <div  class="col-xs-6 col-sm-6 col-md-3">
         <div class="usercard">
-            <%= image_tag 'southpark.png', class: "user-avatar" %>
-            <h4>Kenny</h4>
-            <h5>springfield, Colorado</h5>
-            <p>$#%@*&#$$%&**@#!!!</p>
+          <%= image_tag 'southpark.png', class: "user-avatar" %>
+          <h4>Kenny</h4>
+          <h5>springfield, Colorado</h5>
+          <p>$#%@*&#$$%&**@#!!!</p>
         </div>
       </div>
       <div  class="col-xs-6 col-sm-6 col-md-3">
