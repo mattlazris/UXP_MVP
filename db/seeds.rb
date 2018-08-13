@@ -42,7 +42,6 @@ puts 'Done'
       duration: (1..5).to_a.sample,
       capacity: rand(1..10),
       venue: ['Indoors', 'Outdoors'].sample,
-      game: ['One vs. One', "Team vs. Team", "Practice"].sample,
       skill_level: ['Beginner', 'Intermediate', 'Advanced', 'Watching'].sample
       # remote_photo_url: [""].sample
     )
