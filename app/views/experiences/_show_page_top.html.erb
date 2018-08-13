@@ -7,17 +7,60 @@
     </div>
     <div class="row">
       <div>
-        <p class="no-bottom-for-p"><strong>Playing:</strong><%=" #{@experience.category}" %></p>
+        <p class="no-bottom-for-p"><strong>Sport:</strong><%=" #{@experience.category}" %></p>
       </div>
       <div>
         <p><strong>Local Teammate:</strong><%= " #{@experience.user.first_name} #{@experience.user.last_name}" %></p>
       </div>
       <div class="border-line-bottom">
       </div>
-      <div class="host_header">
-        <strong>The Gameplan:</strong>
+    </div>
+    <div class="row">
+      <div class="venue-flex-box">
+        <div class="venue-title">
+          <strong>Venue Stats:</strong>
+        </div>
+        <div class="venue-image">
+          <img class="venue-image-params">
+        </div>
       </div>
-      <div class="text-restrict-width"><%= @experience.description %></div>
+    </div>
+    <div class="row">
+      <div class="tour-info-icons">
+        <div class="icon-detail margin-icon top-margin-icon icon-middle-bottom">
+          <div class="width-of-icon-text"><i class="fas fa-map-marker-alt icons"></i></div>
+          <div class="experience-desc-after-icon"><%= "#{@experience.location}" %>
+          </div>
+        </div>
+        <!-- <div class="icon-detail margin-icon icon-middle-bottom">
+          <div class="width-of-icon-text"><i class="fas fa-language icons"></i></div>
+          <div class="experience-desc-after-icon"><%= "Your teammate's first language is #{@experience.language}" %>
+          </div>
+        </div> -->
+        <div class="icon-detail margin-icon icon-middle-bottom">
+          <div class="width-of-icon-text"><i class="far fa-clock icons"></i></div>
+          <div class="experience-desc-after-icon"><%= "#{@experience.duration} hours of play" %></div>
+        </div>
+        <div class="icon-detail margin-icon icon-middle-bottom" id="adress-flex">
+          <div class="width-of-icon-text"><i class="fas fa-fire icons"></i></div>
+          <div class="experience-desc-after-icon">
+            <%= "#{@experience.skill_level} skill level" %>
+          </div>
+        </div>
+        <div class="icon-detail margin-icon bottom-margin-icon">
+          <div class="width-of-icon-text"><i class="fas fa-coins icons"></i></div>
+          <div class="experience-desc-after-icon"> <%= "¥#{@experience.price} per person" %>
+          </div>
+        </div>
+      </div>
+      <div class="border-line-bottom">
+      </div>
+    </div>
+    <div class="row">
+      <div class="host_header">
+        <strong>Gameplan:</strong>
+      </div>
+      <div class="text-restrict-width bottom-margin-icon"><%= @experience.description %></div>
       <div class="border-line-bottom">
       </div>
     </div>
