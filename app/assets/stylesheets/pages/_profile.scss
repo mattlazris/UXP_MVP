@@ -17,12 +17,35 @@
 
 .main-btn {
     background: white;
-    box-shadow: 0 0 1px rgba(0,0,0,0.2);
+    box-shadow: 0px 0 1px rgba(0,0,0,0.2);
     padding: 15px;
     margin-left: 10px;
     margin-right: 10px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: center;
+
+}
+
+.main-btn a {
+    color: gray;
+}
+
+.main-btn a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.main-btn i {
+    color: gray;
+}
+
+.main-btn i:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.main-btn:hover {
+    box-shadow: 0px 0 10px rgba(0,0,0,0.2);
 }
