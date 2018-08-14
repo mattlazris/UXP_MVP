@@ -12,8 +12,10 @@
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
           <% end %>
           <%= f.input :description, required: true, hint: "Write about yourself and your lifestyle" %>
+          <%= f.input :age, required: true %>
           <%= f.input :hometown, required: true %>
           <%= f.input :occupation, required: true %>
+          <%= f.input :nationality, required: true %>
           <%= f.input :favorite_players, required: true %>
           <%= f.input :photo, hint: "Upload a photo of your self" %>
           <%= f.input :photo_cache, as: :hidden %>
