@@ -1,25 +1,29 @@
-<div class="form-wrapper form-margin form-backgroup2">
-  <div class="cardlogin">
-    <% @title = 'Sign Up'  %>
-    <h3>Welcome back to UXP</h3>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-      <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :first_name, required: true, autofocus: true %>
-        <%= f.input :last_name, required: true %>
-        <%= f.input :gender, as: :radio_buttons, collection: ['Female', 'Male'] %>
-        <%= f.input :tag_list, as: :check_boxes, collection: ['Sports', 'Music', 'Art', 'Cuisine', 'Social'], hint: 'Check Your Interests' %>
-        <%= f.input :photo, hint: "Upload a photo of your self" %>
-        <%= f.input :photo_cache, as: :hidden %>
-        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-        <%= f.input :password_confirmation, required: true %>
+<% @title = 'Sign Up'  %>
+<div class="form-backgroup2">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-sm-offset-4">
+      <div class="cardlogin">
+        <h3>Welcome to UXP</h3>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+          <div class="form-inputs">
+            <%= f.input :email, required: true, autofocus: true %>
+            <%= f.input :first_name, required: true, autofocus: true %>
+            <%= f.input :last_name, required: true %>
+            <%= f.input :gender, as: :radio_buttons, collection: ['Female', 'Male'] %>
+            <%= f.input :description, hint: "write something about yourself" %>
+            <%= f.input :photo, hint: "Upload a photo of your self" %>
+            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            <%= f.input :password_confirmation, required: true %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up", class:"btn btn-success"%>
+          </div>
+        <% end %>
+        <br>
+        <%= render "devise/shared/links" %>
       </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up", class:"btn btn-success"%>
-      </div>
-    <% end %>
-    <br>
-    <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>

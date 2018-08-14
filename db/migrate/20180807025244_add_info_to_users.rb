@@ -9,8 +9,8 @@ class AddInfoToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :occupation, :string
     add_column :users, :nationality, :string
     add_column :users, :hometown, :string
-    add_column :users, :interesting_fact, :text
-
+    add_column :users, :age, :string
+    add_column :users, :favorite_players, :string
 
     add_column :users, :host, :boolean, :default => false
   end
