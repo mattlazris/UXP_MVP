@@ -14,7 +14,7 @@
 .banner {
   color: white;
   text-align: center;
-  height: 500px;
+  height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: block;
@@ -23,6 +23,7 @@
   background-attachment: fixed;
   opacity: 1;
   overflow: hidden;
+  overflow-x: hidden;
 }
 
 // .kenburns-top {
@@ -34,7 +35,7 @@
 .banner-content {
   padding-top: 5vh;
   text-shadow: 0px 1px 5px black;
-  margin-bottom: 0vh;
+  margin-top: 15vh;
 }
 
 .banner-content h2 {
@@ -102,7 +103,7 @@
 .tabbox1 {
     width: 80%;
     height: 48px;
-    border-radius: 1%;
+    // border-radius: 1%;
     margin-bottom: 30px;
     margin-top: 10px;
     padding-top: 10px;
@@ -112,7 +113,7 @@
 .tabbox2 {
     width: 80%;
     height: 48px;
-    border-radius: 1%;
+    // border-radius: 1%;
     margin-bottom: 30px;
     margin-top: 10px;
     padding-top: 10px;
@@ -123,7 +124,7 @@
 .tabbox3 {
     width: 80%;
     height: 48px;
-    border-radius: 1%;
+    // border-radius: 1%;
     margin-bottom: 30px;
     margin-top: 10px;
     padding-top: 10px;
@@ -134,7 +135,7 @@
 .tabbox4 {
     width: 80%;
     height: 48px;
-    border-radius: 1%;
+    // border-radius: 1%;
     margin-bottom: 30px;
     margin-top: 10px;
     padding-top: 10px;
@@ -223,7 +224,7 @@
     background-position: center;
     color: white;
     position: relative;
-    border-radius: 1%;
+    // border-radius: 1%;
     cursor: pointer;
 }
 
@@ -252,20 +253,25 @@
     top: 10px;
     left: 10px;
     font-size: 14px;
+    letter-spacing: 1.3px;
+    line-height: 1;
     text-transform: uppercase;
+
 }
 
 .card-description {
     text-align: left;
     position: absolute;
-    top: 315px;
+    top: 319px;
     bottom: 0px;
-    left: 44px;
+    left: 51px;
     right: 0px;
     font-size: 15px;
     z-index: 1;
-    text-shadow: 0px 1px 5px black;
     font-family: 'Raleway', sans-serif;
+       letter-spacing: 1.3px;
+    line-height: 1;
+    text-transform: uppercase;
 }
 
 * {
@@ -478,9 +484,11 @@
   padding-left: 20px;
   padding-right:15px;
   margin-top: 20px;
-  text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
   font-color:white;
   text-decoration: none;
+    letter-spacing: 1.3px;
+    line-height: 1;
+    text-transform: uppercase;
 }
 
 .backcard a {
@@ -489,13 +497,11 @@
 
 .backcard h6 {
   position: absolute;
-  top: 300px;
+  top: 290px;
   bottom: 0;
   left: 0px;
   right: 0;
-  z-index: 0;
-  text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
-  text-decoration: underline;
+  color:white
 }
 
 .snip1584 {
@@ -526,12 +532,12 @@
   right: 10px;
   top: 100%;
   content: '';
-  background-color: #14A481;
+  background-color: #32333B;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
   -webkit-transition-delay: 0.25s;
   transition-delay: 0.25s;
-  border-radius: 1%;
+  // border-radius: 1%;
 }
 .snip1584 img {
   vertical-align: top;
@@ -563,11 +569,11 @@
   margin: 0;
   opacity: 0;
   letter-spacing: 1px;
-  border: solid 2px white;
+  border: solid 1px white;
   width: 150px;
   height: 150px;
   background: white;
-  border-radius: 2%;
+  // border-radius: 2%;
   margin-bottom: 20px;
   margin-top: 5px;
  -webkit-transform: translateY(-100%);
@@ -582,7 +588,7 @@
 .tabimg {
   width: 176px;
   height: 172px;
-  border-radius: 0px 0px 2px 2px;
+  // border-radius: 0px 0px 2px 2px;
   background: white;
   margin-bottom: 10px;
   margin-top: 0;
@@ -616,10 +622,13 @@
 .snip1584 h6 {
   font-size:10px;
   text-align: center;
-  text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
-  color:#DCEAEF;
+  color:white;
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
+  letter-spacing: 1.3px;
+  line-height: 1;
+  padding-top: 16px;
+  text-transform: uppercase;
   text-transform: uppercase;
   font-weight: 400;
   -webkit-transition-delay: 0.05s;
@@ -829,14 +838,17 @@
 .testimonial {
   margin-top: 90px;
   margin-bottom: 90px;
-  background-color:#FF6B6B;
+  background-color:#32333B;
   padding-top: 30px;
   color: white;
   margin-left:30px;
   margin-right:30px;
   margin-bottom: 30px;
-  border-radius:3px;
+  // border-radius:3px;
   padding-bottom:30px;
+  letter-spacing: 1.3px;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .user-avatar {
@@ -862,8 +874,12 @@
   padding: 20px 20px 20px 20px;
   margin-right:20px;
   margin-left: 20px;
-  border-radius: 1%;
+  // border-radius: 1%;
   width: 210px;
+}
+
+.usercard p {
+ font-size: 10px;
 }
 
 .topsplitter {
@@ -875,7 +891,7 @@
   text-align:center;
   color:white;
   background-color:#14A481;
-  border-radius:5%;
+  // border-radius:5%;
   height: 35px;
 }
 
@@ -954,7 +970,7 @@
 }
 
 .explore-btn {
-  border-radius: 4px;
+  // border-radius: 4px;
   color: #14A481;
   background: white;
   text-decoration: none;
@@ -1002,11 +1018,14 @@
 }
 
 .bannerslogan {
-  position: absolute;
-    top: 203px;
-    bottom: 0px;
-    left: -200px;
-    right: 0px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.bannerslogan h2 {
+    margin-right: 13px;
 }
 
 input::-webkit-input-placeholder {
@@ -1098,4 +1117,80 @@ input::-webkit-input-placeholder {
   font-size: 18px;
   line-height: 1.5;
   margin-right: 35px;
+}
+
+.searchBarMain {
+  background: #fff;
+  width: 80%;
+  max-width: 680px;
+  margin: 0 auto;
+  height: 42px;
+  margin-top: 11px;
+  // border-radius: 2px;
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.14);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0
+}
+
+.searchBarMain i.searchBarSearchIcon {
+  height: 100%;
+  line-height: 42px;
+  float: left;
+  width: 52px;
+  text-align: center;
+  color: rgba(68, 68, 68, 0.5);
+}
+
+.searchBarMain input#searchBarInput {
+  height: 42px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  background: transparent;
+  width: calc(100% - 52px);
+  outline: none;
+  padding-right: 32px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.76);
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+}
+
+.searchBarMain i.clearSearchBarField {
+  position: absolute;
+  right: 12px;
+  top: 11px;
+  color: rgba(0, 0, 0, 0.84);
+  display: none;
+  font-size: 20px;
+}
+
+.searchBarMain i.clearSearchBarField:hover {
+  cursor: pointer;
+}
+
+.form-control {
+  width: 50px;
+}
+
+.form-search {
+    display: block;
+    width: 83%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    // border-radius: 4px;
 }
