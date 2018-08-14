@@ -2,14 +2,24 @@
   width: 30%;
 }
 
+.big-cards-keep-rollin {
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  border-radius: 5px;
+}
+
 .icon-detail {
   display: flex;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  padding: 10px;
 }
 
 .image-container-align {
   display: flex;
-  width: 70%;
+  width: 67%;
   justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
 .show-pic {
@@ -26,8 +36,14 @@
 
 
 .venue-title {
-  width: 80%;
   font-size: 30px;
+  letter-spacing: 1.3px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .venue-image {
@@ -136,6 +152,9 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  letter-spacing: 1.3px;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .icons-from-info {
@@ -166,7 +185,7 @@
 .host_info_container {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 0 0 rgba(0, 0, 0, 0.03);
   margin-top: 20px;
 }
 
@@ -213,9 +232,9 @@
   vertical-align: middle;
 }
 
-.margin-icon {
-  margin-left: 15px;
-}
+// .margin-icon {
+//   margin-left: 15px;
+// }
 
 
 .icons {
