@@ -4,6 +4,11 @@
   border-radius: 50%;
 }
 
+#sticky-profile{
+  position: sticky;
+  top:  50px;
+}
+
 .main {
     background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
