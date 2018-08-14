@@ -113,18 +113,27 @@
             <br>
             <div class="row">
               <% @user.experiences.each do |exp| %>
-                <div class="col-xs-12 col-sm-3">
-                  <div><%= cl_image_tag exp.photo, height: 200, width: 200, crop: :fill %></div>
-                  <div class="div-recommended2">
-                    <div><%= link_to exp.name, exp %></div>
-                    <div><%= exp.description %></div>
-                    <div>Price: <%= "¥#{exp.price}" %></div>
-                    <div>Capacity: <%= exp.capacity %></div>
-                    <div>Venue: <%= exp.venue %></div>
-                    <div>Skill Level: <%= exp.skill_level %></div>
-                    <div><%= link_to 'Add A Timeslot', new_experience_timeslot_path(exp) %></div>
-                    <div><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></div>
-                    <div><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></div>
+                <div class="col-xs-12 col-sm-6">
+                  <div class="wholecard">
+                    <%= link_to exp do %>
+                      <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= exp.photo %>');">
+                        <div class="card-category"><%= exp.category %></div>
+                        <img class="card-user avatar" src='<%= exp.user.photo %>'>
+                      <% end %>
+                      <%= link_to exp do %>
+                        <div class="backcard">
+                          <div class="backavatar">
+                            <%= cl_image_tag exp.user.photo, class: "img" %>
+                          </div>
+                          <h5><%= exp.user.first_name %></h5>
+                          <p><%= exp.user.occupation %></p>
+                          <h6>Click for more about experience and host</h6>
+                        </div>
+                      </figure>
+                      <div class="card-description">
+                        <p id="snip1584-name"><%= exp.name %></p>
+                      </div>
+                    <% end %>
                   </div>
                 </div>
               <% end %>
