@@ -1,24 +1,22 @@
 <div class="row">
   <div class="col-xs-12 col-sm-8">
-    <div class="row">
+    <div class="row center-it-center-it">
       <div>
         <h1 class="all-show-title-font"><%= @experience.name %></h1>
       </div>
+      <div>
+        <p class="secondary-headers"><%=" #{@experience.category}" %></p>
+      </div>
+      <div>
+        <p class="secondary-headers"><%= " #{@experience.user.first_name} #{@experience.user.last_name}" %></p>
+      </div>
     </div>
-    <div class="row">
-      <div>
-        <p class="no-bottom-for-p"><strong>Sport:</strong><%=" #{@experience.category}" %></p>
-      </div>
-      <div>
-        <p><strong>Local Teammate:</strong><%= " #{@experience.user.first_name} #{@experience.user.last_name}" %></p>
-      </div>
-      <div class="border-line-bottom">
-      </div>
+    <div class="top-page-space">
     </div>
     <div class="row big-cards-keep-rollin">
       <div class="venue-flex-box">
         <div class="venue-title">
-          Venue:
+          Venue
         </div>
       </div>
       <div class="icons-from-info">
@@ -53,7 +51,7 @@
           <div class="venue-image">
             <%= cl_image_tag @experience.photo, width: 300, crop: :fill, class: "show-pic" %>
           </div>
-          <div class="host_header all-show-title-font">
+          <div class="host_header all-show-title-font center-host-title-row">
             Gameplan:
           </div>
           <div class="text-restrict-width bottom-margin-icon"><%= @experience.description %></div>
@@ -61,10 +59,12 @@
         <br>
       </div>
     </div>
+    <div class="middle-page-space">
+    </div>
     <div class="row big-cards-keep-rollin">
       <div class="venue-flex-box">
         <div class="venue-title">
-          Teammate:
+          Teammate
         </div>
       </div>
       <div class="icons-from-info">
@@ -109,21 +109,21 @@
           <div class="venue-image">
             <%= cl_image_tag @experience.user.photo, width: 300, crop: :fill, class: "show-pic" %>
           </div>
-          <div class="host_header all-show-title-font">
+          <div class="host_header all-show-title-font center-host-title-row">
             More About <%="#{@experience.user.first_name},"%>
           </div>
           <div class="text-restrict-width bottom-margin-icon"><%= @experience.user.description %></div>
         </div>
       </div>
     </div>
-    <div class="border-line-bottom">
+    <div class="show-page-space">
     </div>
     <div class="row">
-      <div class="host-desc-center">
-        <div>
+      <div class="host-desc-center center-it-center-it">
+        <div class="padding-top-is-cool">
           <%= link_to "See All of #{@experience.user.first_name}'s Game Opportunities", experience_host_path(@experience) %>
         </div>
-        <div>
+        <div class="padding-bottom-is-cool">
           <%= link_to "Keep Exploring", experiences_path %>
         </div>
       </div>
