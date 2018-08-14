@@ -51,7 +51,7 @@
           <div class="row">
             <div class="venue-flex-box">
               <div class="venue-title">
-                My profile:
+                My profile
               </div>
             </div>
           </div>
@@ -95,7 +95,7 @@
           </div>
           <div class="row">
             <div class="venue-title">
-              More About <%="#{@user.first_name},"%>
+              More About <%="#{@user.first_name}"%>
             </div>
             <br>
             <div class="text-restrict-width bottom-margin-icon"><%= @user.description %></div>
@@ -106,7 +106,7 @@
             <div class="row">
               <div class="venue-flex-box">
                 <div class="venue-title", id="events_I_host">
-                  Sports Events I host:
+                  Sports Events I host
                 </div>
               </div>
             </div>
@@ -135,6 +135,9 @@
                       </div>
                     <% end %>
                   </div>
+                  <div><%= link_to 'Add A Timeslot', new_experience_timeslot_path(exp) %></div>
+                  <div><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></div>
+                  <div><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></div>
                 </div>
               <% end %>
             </div>
@@ -143,7 +146,7 @@
             <div class="row">
               <div class="venue-flex-box">
                 <div class="venue-title", id="events_I_will_host">
-                  Sports Events I will host:
+                  Sports Events I will host
                 </div>
               </div>
             </div>
@@ -171,7 +174,7 @@
             <div class="row">
               <div class="venue-flex-box">
                 <div class="venue-title", id="events_I_have_hosted">
-                  Sports Events I have hosted:
+                  Sports Events I have hosted
                 </div>
               </div>
             </div>
@@ -197,7 +200,7 @@
           <div class="row">
             <div class="venue-flex-box">
               <div class="venue-title", id="events_I_will_attend">
-                Sports Events I will attend:
+                Sports Events I will attend
               </div>
             </div>
           </div>
@@ -220,7 +223,7 @@
           <div class="row">
             <div class="venue-flex-box">
               <div class="venue-title", id="events_I_have_attended">
-                Sports Events I've attended :
+                Sports Events I've attended
               </div>
             </div>
           </div>
