@@ -17,7 +17,7 @@
   height: 500px;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
   background-attachment: fixed;
@@ -32,8 +32,9 @@
 
 
 .banner-content {
-  text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
-  margin-bottom: 25vh;
+  padding-top: 5vh;
+  text-shadow: 0px 1px 5px black;
+  margin-bottom: 0vh;
 }
 
 .banner-content h2 {
@@ -44,6 +45,7 @@
   font-size: 50px;
   font-weight: bold;
   letter-spacing:3px;
+   text-shadow: 0px 1px 5px black;
 }
 .banner p {
   font-size: 25px;
@@ -51,6 +53,7 @@
   color: rgb(255, 255, 255);
   margin-top: 30px;
   letter-spacing:1.5px;
+   text-shadow: 0px 1px 5px black;
 }
 
 .tabs {
@@ -98,120 +101,89 @@
 
 .tabbox1 {
     width: 80%;
-    height: 232px;
+    height: 48px;
     border-radius: 1%;
     margin-bottom: 30px;
     margin-top: 10px;
     padding-top: 10px;
+    border: 3px solid white;
+     text-shadow: 0px 1px 5px black;
 }
 
-.tabbox2{
-  width: 80%;
-  height: 232px;
-  border-radius: 1%;
-  margin-bottom: 30px;
-  margin-top: 10px;
-  padding-top: 10px;
-}
-
-
-.tabbox3{
-  width: 80%;
-  height: 232px;
-  border-radius: 1%;
-  margin-bottom: 30px;
-  margin-top: 10px;
-  padding-top: 10px;
+.tabbox2 {
+    width: 80%;
+    height: 48px;
+    border-radius: 1%;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border: 3px solid white;
+     text-shadow: 0px 1px 5px black;
 }
 
 
-.tabbox4{
- width: 80%;
-  height: 232px;
-  border-radius: 1%;
-  margin-bottom: 30px;
-  margin-top: 10px;
-  padding-top: 10px;
+.tabbox3 {
+    width: 80%;
+    height: 48px;
+    border-radius: 1%;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border: 3px solid white;
+    text-shadow: 0px 1px 5px black;
+}
+
+
+.tabbox4 {
+    width: 80%;
+    height: 48px;
+    border-radius: 1%;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border: 3px solid white;
+    text-shadow: 0px 1px 5px black;
 }
 
 
 .tabbox1 p {
-    border-bottom: 4px solid rgb(250, 131, 32);
     display: inline-block;
     font-size: 14px;
     letter-spacing: 1.3px;
     line-height: 1;
-    padding-bottom: 5px;
+    padding-top: 16px;
     text-transform: uppercase;
-    color: rgb(250, 131, 32);
-}
-
-.zdepth1 {
-  z-index: 20;
-  -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.23);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.23);  /* Firefox 3.5 - 3.6 */
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.23);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-}
-
-.tabbox1:hover {
-  z-index: 30;
-  -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.23);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.23);  /* Firefox 3.5 - 3.6 */
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.23);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-}
-
-.tabbox2:hover {
-  z-index: 30;
-  -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.23);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.23);  /* Firefox 3.5 - 3.6 */
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.23);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-}
-
-.tabbox3:hover {
-  z-index: 30;
-  -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.23);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.23);  /* Firefox 3.5 - 3.6 */
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.23);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-}
-
-.tabbox4:hover {
-  z-index: 30;
-  -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.23);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.23);  /* Firefox 3.5 - 3.6 */
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.23);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    color: white;
 }
 
 .tabbox2 p {
-    border-bottom: 4px solid #3D003D;
     display: inline-block;
     font-size: 14px;
     letter-spacing: 1.3px;
     line-height: 1;
-    padding-bottom: 5px;
+    padding-top: 16px;
     text-transform: uppercase;
-    color: #3D003D;
+    color: white;
 }
 
 .tabbox3 p {
-    border-bottom: 4px solid #336699;
     display: inline-block;
     font-size: 14px;
     letter-spacing: 1.3px;
     line-height: 1;
-    padding-bottom: 5px;
+    padding-top: 16px;
     text-transform: uppercase;
-    color: #336699;
+    color: white;
 }
 
 .tabbox4 p {
-    border-bottom: 4px solid #14A481;
     display: inline-block;
     font-size: 14px;
     letter-spacing: 1.3px;
     line-height: 1;
-    padding-bottom: 5px;
+    padding-top: 16px;
     text-transform: uppercase;
-    color: #14A481;
+    color: white;
 }
 
 .section-title-home {
@@ -326,9 +298,10 @@
 }
 
 .cardcontainer {
-max-width: 100%;
-overflow-x: hidden;
-overflow-y: hidden;
+  margin-top: 130px;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 
 }
 
@@ -1006,4 +979,61 @@ overflow-y: hidden;
 .responsive {
     width: 100%;
     height: 83%;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid white;
+  color: white;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 20px;
+  height: 50px;
+  left: 50%;
+  margin: -25px 0 0 -100px;
+  padding: 19px 0px;
+  position: absolute;
+  top: 235px;
+  bottom: 0px;
+  left: 820px;
+  right: 0px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.bannerslogan {
+  position: absolute;
+    top: 203px;
+    bottom: 0px;
+    left: -200px;
+    right: 0px;
+}
+
+input::-webkit-input-placeholder {
+  color: #AAA;
+}
+
+.input:focus+.underline {
+  transform: scale(1);
+}
+
+.underline {
+  display: inline-block;
+  height: 2px;
+  left: 50px;
+  margin-top: -4px;
+  position: absolute;
+  top: 185px;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  width: 202px;
+}
+
+.pickacity {
+  display:block;
 }

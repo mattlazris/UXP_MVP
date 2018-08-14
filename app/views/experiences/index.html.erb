@@ -1,24 +1,20 @@
 <div class="banner" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3) 50%, rgba(0,36,61,0.6) 100%), url('<%= image_path 'streetbasketballbanner.png' %>');">
   <div class="banner-content">
     <h1 text-center>Sportchain</h1>
-    <h2>Play sports with locals anywhere in the world</h2>
-     <div class="explore-btn-position">
-    <a class="explore-btn" href="#services">START EXPLORING</a>
+    <div class="pickacity">
+      <div class="bannerslogan">
+      <h2>Play sports with locals in </h2>
+      </div>
+      <input class="input" placeholder="type your city here" type="text" >
+        <span class="underline"></span>
     </div>
   </div>
-</div>
-<h2 class="section-title-home">
-  <div class="section-title-home-content" style="font-size:30px;">
-    Pick a sport, Find a local teammate
-  </div>
-</h2>
-<div class="cardcontainer">
+  <div class="cardcontainer">
   <div class="tabs">
     <div class="col-xs-12 col-sm-6 col-md-3 text-center">
       <a class="tab" href="#">
         <div class="tabbox1 zdepth1">
           <p>Basketball</p>
-          <%= image_tag "bas.png", class: "tabimg responsive" %>
         </div>
       </a>
     </div>
@@ -26,7 +22,6 @@
       <a class="tab" href="#">
         <div class="tabbox2 zdepth1">
           <p>Soccer</p>
-          <%= image_tag "soc.png", class: "tabimg responsive" %>
         </div>
       </a>
     </div>
@@ -34,7 +29,6 @@
       <a class="tab" href="#">
         <div class="tabbox3 zdepth1">
           <p>Tennis</p>
-          <%= image_tag "ten.png", class: "tabimg responsive" %>
         </div>
       </a>
     </div>
@@ -42,12 +36,13 @@
       <a class="tab" href="#">
         <div class="tabbox4 zdepth1">
           <p>Other sports</p>
-          <%= image_tag "gol.png", class: "tabimg responsive" %>
         </div>
       </a>
     </div>
   </div>
 </div>
+</div>
+
 <h2 class="section-title-home">
   <div class="section-title-home-content">
     Top-rated sports adventures
