@@ -29,10 +29,7 @@ class Experience < ApplicationRecord
 
   include PgSearch
   pg_search_scope :global_search,
-    against: [ :name, :description ],
-  associated_against: {
-    user: [ :first_name, :last_name, :description ]
-  },
+    against: [ :location ],
   using: {
     tsearch: { prefix: true }
   }

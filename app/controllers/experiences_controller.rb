@@ -4,13 +4,20 @@ class ExperiencesController < ApplicationController
 
   def index
     @experiences = policy_scope(Experience).order(created_at: :desc)
-    @top_experiences = Experience.all.sample(3)
-    @basketball_experiences = Experience.all.select { |exp| exp.category == 'Basketball' }
+    if params[:query].present?
+      @experiences = Experience.global_search(params[:query])
+    else
+      @experiences = Experience.all
+    end
+    @top_experiences = @experiences.sample(3)
+    @basketball_experiences = @experiences.select { |exp| exp.category == 'Basketball' }
     @top_basketball_experiences = @basketball_experiences.sample(3)
-    @soccer_experiences = Experience.all.select { |exp| exp.category == 'Soccer' }
+    @soccer_experiences = @experiences.select { |exp| exp.category == 'Soccer' }
     @top_soccer_experiences = @soccer_experiences.sample(3)
-    @tennis_experiences = Experience.all.select { |exp| exp.category == 'Tennis' }
+    @tennis_experiences = @experiences.select { |exp| exp.category == 'Tennis' }
     @top_tennis_experiences = @tennis_experiences.sample(3)
+    @other_experiences = @experiences.select { |exp| exp.category == 'Others' }
+    @top_other_experiences = @other_experiences.sample(3)
   end
 
   def show
