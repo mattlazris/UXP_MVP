@@ -3,11 +3,11 @@
 }
 
 .icon-container {
-  width: 30%;
+  width: 31%;
 }
 
 .big-cards-keep-rollin {
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 0 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
   border-radius: 5px;
 }
 
@@ -15,6 +15,8 @@
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 0 0 rgba(0, 0, 0, 0.06);
   border-radius: 5px;
   text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .padding-top-is-cool {
@@ -33,7 +35,7 @@
 
 .image-container-align {
   display: flex;
-  width: 67%;
+  width: 100%;
   justify-content: space-around;
   flex-direction: column;
   text-align: center;
@@ -69,9 +71,14 @@
 
 .venue-image {
   width: 100%;
+  height: 200px;
   vertical-align: middle;
   align-items: center;
   margin-bottom: 20px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
 }
 
 .venue-image-params {
@@ -209,7 +216,7 @@
 .host_info_container {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
   margin-top: 20px;
   border-radius: 5px;
 }
@@ -217,7 +224,7 @@
 .host_description_container {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
   margin: 15px;
 }
 
@@ -250,6 +257,16 @@
   display: flex;
   align-items: center;
   width: 100%;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  border-radius: 5px;
+}
+
+.icon-detail-geocoder {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 0 0 rgba(0, 0, 0, 0.06);
+  padding: 10px;
 }
 
 .width-of-icon-text {
@@ -269,8 +286,6 @@
 
 .text-restrict-width {
   margin-bottom: 50px;
-  letter-spacing: 1.3px;
-  line-height: 1;
   padding-left: 15px;
   padding-right:15px;
 }
