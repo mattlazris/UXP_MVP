@@ -22,6 +22,7 @@
   justify-content: center;
   background-attachment: fixed;
   opacity: 1;
+
 }
 
 // .kenburns-top {
@@ -42,13 +43,14 @@
 .banner h1 {
   font-size: 50px;
   font-weight: bold;
-
+  letter-spacing:3px;
 }
 .banner p {
   font-size: 25px;
   font-weight: lighter;
   color: rgb(255, 255, 255);
   margin-top: 30px;
+  letter-spacing:1.5px;
 }
 
 .tabs {
@@ -980,6 +982,25 @@ overflow-y: hidden;
 .cutline{
   border-bottom: solid 2px #ececec;
   padding-bottom: 20px;
+}
+
+.explore-btn {
+  border-radius: 4px;
+  color: #14A481;
+  background: white;
+  text-decoration: none;
+  text-shadow:none;
+  padding: 10px 10px 10px 10px;
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 1.3px;
+  line-height: 1;
+  text-transform: uppercase;
+  color:black;
+}
+
+.explore-btn-position {
+  margin-top: 30px;
 }
 
 .responsive {
