@@ -1,3 +1,8 @@
+.secondary-headers {
+  letter-spacing: 1.3px;
+  line-height: 1;
+  font-size: 14px;
+}
 
 .font-white a{
   color: white;
@@ -24,6 +29,11 @@
   color: #5DB498;
 }
 
+.center-host-title-row {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 .host_name_header a{
   color: black;
   font-size: 26px;
@@ -44,8 +54,12 @@
 }
 
 .experience-desc-after-icon {
-  display: inline-block;
   font-size: 12px;
+  letter-spacing: 1.3px;
+  line-height: 1;
+}
+
+.description-text-for-the-weak {
   letter-spacing: 1.3px;
   line-height: 1;
 }
