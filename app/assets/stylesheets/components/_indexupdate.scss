@@ -611,7 +611,7 @@ overflow-y: hidden;
 .tabimg {
   width: 176px;
   height: 172px;
-  border-radius: 1%;
+  border-radius: 0px 0px 2px 2px;
   background: white;
   margin-bottom: 10px;
   margin-top: 0;
@@ -900,11 +900,6 @@ overflow-y: hidden;
   padding-top: 20px;
 }
 
-.cutline{
-  border-bottom: solid 2px #14A481;
-  padding-bottom: 20px;
-}
-
 .btn-more {
   text-align:center;
   color:white;
@@ -961,4 +956,33 @@ overflow-y: hidden;
 .shadow-md {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12),
   0 2px 4px 0 rgba(0,0,0,0.08);
+}
+
+.btn-light {
+    color: #111;
+    background: #ececec;
+}
+
+.btn-light:visited {
+    color: #111;
+    background: #ececec;
+}
+
+.btn-sm {
+    padding: 6px 33px;
+    letter-spacing: 3px;
+}
+
+.see-more-btn {
+  text-align:center;
+}
+
+.cutline{
+  border-bottom: solid 2px #ececec;
+  padding-bottom: 20px;
+}
+
+.responsive {
+    width: 100%;
+    height: 83%;
 }
