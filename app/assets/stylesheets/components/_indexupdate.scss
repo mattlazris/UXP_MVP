@@ -22,7 +22,7 @@
   justify-content: center;
   background-attachment: fixed;
   opacity: 1;
-
+  overflow: hidden;
 }
 
 // .kenburns-top {
@@ -106,8 +106,7 @@
     margin-bottom: 30px;
     margin-top: 10px;
     padding-top: 10px;
-    border: 3px solid white;
-     text-shadow: 0px 1px 5px black;
+    border: 3px solid black;
 }
 
 .tabbox2 {
@@ -117,8 +116,7 @@
     margin-bottom: 30px;
     margin-top: 10px;
     padding-top: 10px;
-    border: 3px solid white;
-     text-shadow: 0px 1px 5px black;
+    border: 3px solid black;
 }
 
 
@@ -129,8 +127,7 @@
     margin-bottom: 30px;
     margin-top: 10px;
     padding-top: 10px;
-    border: 3px solid white;
-    text-shadow: 0px 1px 5px black;
+    border: 3px solid black;
 }
 
 
@@ -141,8 +138,7 @@
     margin-bottom: 30px;
     margin-top: 10px;
     padding-top: 10px;
-    border: 3px solid white;
-    text-shadow: 0px 1px 5px black;
+    border: 3px solid black;
 }
 
 
@@ -153,7 +149,7 @@
     line-height: 1;
     padding-top: 16px;
     text-transform: uppercase;
-    color: white;
+    color: black;
 }
 
 .tabbox2 p {
@@ -163,7 +159,7 @@
     line-height: 1;
     padding-top: 16px;
     text-transform: uppercase;
-    color: white;
+    color: black;
 }
 
 .tabbox3 p {
@@ -173,7 +169,7 @@
     line-height: 1;
     padding-top: 16px;
     text-transform: uppercase;
-    color: white;
+    color: black;
 }
 
 .tabbox4 p {
@@ -183,7 +179,7 @@
     line-height: 1;
     padding-top: 16px;
     text-transform: uppercase;
-    color: white;
+    color: black;
 }
 
 .section-title-home {
@@ -982,22 +978,23 @@
 }
 
 .input {
-  background-color: transparent;
-  border: none;
-  border-bottom: 3px solid white;
-  color: white;
-  box-sizing: border-box;
-  font-family: inherit;
-  font-size: 20px;
-  height: 50px;
-  left: 50%;
-  margin: -25px 0 0 -100px;
-  padding: 19px 0px;
-  position: absolute;
-  top: 235px;
-  bottom: 0px;
-  left: 820px;
-  right: 0px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid white;
+    color: white;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 20px;
+    height: 20px;
+    left: 50%;
+    margin: -20px 0 0 -100px;
+    padding: 19px 0px;
+    position: absolute;
+    top: 235px;
+    bottom: 0px;
+    left: 820px;
+    right: 0px;
+    text-align: center;
 
   &:focus {
     outline: none;
@@ -1036,4 +1033,69 @@ input::-webkit-input-placeholder {
 
 .pickacity {
   display:block;
+}
+
+.soccer {
+    width: 90%;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.guys {
+  width: 90%;
+  margin-top: 50px;
+}
+
+.column-md-6 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 40px;
+  padding-left: 15px;
+}
+
+.align-self-start {
+    margin-top: 50px;
+    padding-right: 30px;
+}
+
+.feature-tile__callout {
+    border-bottom: 4px solid #111;
+    display: inline-block;
+    font-size: 18px;
+    letter-spacing: 1.3px;
+    line-height: 1;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+.feature-tile__callout p {
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+
+
+
+// .feature-tile__content h2 {
+//     font-size: 30px;
+//     margin-right: 35px;
+// }
+
+.feature-tile__content2 {
+  margin-left: 50px;
+}
+
+.feature-tile__content h2 {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-right: 35px;
+}
+
+.feature-tile__content2 h2 {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-right: 35px;
 }
