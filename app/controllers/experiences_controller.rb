@@ -9,6 +9,15 @@ class ExperiencesController < ApplicationController
     else
       @experiences = Experience.all
     end
+    @top_experiences = @experiences.sample(3)
+    @basketball_experiences = @experiences.select { |exp| exp.category == 'Basketball' }
+    @top_basketball_experiences = @basketball_experiences.sample(3)
+    @soccer_experiences = @experiences.select { |exp| exp.category == 'Soccer' }
+    @top_soccer_experiences = @soccer_experiences.sample(3)
+    @tennis_experiences = @experiences.select { |exp| exp.category == 'Tennis' }
+    @top_tennis_experiences = @tennis_experiences.sample(3)
+    @other_experiences = @experiences.select { |exp| exp.category == 'Others' }
+    @top_other_experiences = @other_experiences.sample(3)
   end
 
   def show

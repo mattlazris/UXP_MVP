@@ -1,3 +1,17 @@
+.icon-container {
+  width: 30%;
+}
+
+.icon-detail {
+  display: flex;
+}
+
+.image-container-align {
+  display: flex;
+  width: 70%;
+  justify-content: space-around;
+}
+
 .show-pic {
   width: 120px;
   height: 120px;
@@ -124,6 +138,13 @@
   justify-content: center;
 }
 
+.icons-from-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .experience-image {
   display: flex;
   justify-content: space-around;
@@ -227,7 +248,7 @@
 }
 
 .icon-middle-bottom {
-  margin-bottom: 8px;
+  margin-bottom: 15px;
 }
 
 // .host-desc-center {

@@ -4,6 +4,26 @@
   border-radius: 50%;
 }
 
+#sticky-profile {
+  position: sticky;
+  top:  50px;
+}
+
+.my_profile {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.profile-container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 80%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
 .main {
     background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -17,12 +37,35 @@
 
 .main-btn {
     background: white;
-    box-shadow: 0 0 1px rgba(0,0,0,0.2);
+    box-shadow: 0px 0 1px rgba(0,0,0,0.2);
     padding: 15px;
     margin-left: 10px;
     margin-right: 10px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: center;
+
+}
+
+.main-btn a {
+    color: gray;
+}
+
+.main-btn a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.main-btn i {
+    color: gray;
+}
+
+.main-btn i:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.main-btn:hover {
+    box-shadow: 0px 0 10px rgba(0,0,0,0.2);
 }
