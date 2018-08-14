@@ -52,7 +52,7 @@
 </h2>
 <div class="container text-center">
   <div class="row experience-card-index">
-    <% @experiences.each do |experience| %>
+    <% @top_experiences.each do |experience| %>
       <div class="col-xs-12 col-sm-6 col-md-4 text-center">
         <div class="wholecard">
           <%= link_to experience_path(experience) do %>
@@ -74,53 +74,131 @@
               <p id="snip1584-name"><%= experience.name %></p>
             </div>
           <% end %>
-          </div>
         </div>
-      <% end %>
-    </div>
-    <div class="see-more-btn cutline">
+      </div>
+    <% end %>
+  </div>
+  <div class="see-more-btn cutline">
     <a class="btn btn-sm btn-light" href="#services">See More</a>
-    </div>
   </div>
 </div>
-  <h2 class="section-title-home">
-    <div class="section-title-home-content">
-      Basketball
-    </div>
-  </h2>
-    <div class="container text-center">
-      <div class="row experience-card-index">
-        <% @experiences.each do |experience| %>
-          <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-            <div class="wholecard">
-              <%= link_to experience_path(experience) do %>
-                <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_tag experience.photo %>');">
-                  <div class="card-category"><%= experience.category %></div>
-                  <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/atmosfeer">
-                <% end %>
-                <%= link_to experience_path(experience), experience: experience do %>
-                  <div class="backcard">
-                    <div class="backavatar">
-                      <%= image_tag "zack.jpg", class: "img" %>
-                    </div>
-                    <h5><%= experience.user.first_name%></h5>
-                    <p><%= experience.user.occupation %></p>
-                    <h6>Click for more about experience and host</h6>
-                  </div>
-                </figure>
-                <div class="card-description">
-                  <p id="snip1584-name"><%= experience.name %></p>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-      <div class="see-more-btn cutline">
-      <a class="btn btn-sm btn-light" href="#services">See More</a>
-      </div>
-    </div>
+</div>
+<h2 class="section-title-home">
+  <div class="section-title-home-content">
+    Basketball
   </div>
+</h2>
+<div class="container text-center">
+  <div class="row experience-card-index">
+    <% @top_basketball_experiences.each do |experience| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+        <div class="wholecard">
+          <%= link_to experience_path(experience) do %>
+            <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_tag experience.photo %>');">
+              <div class="card-category"><%= experience.category %></div>
+              <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/atmosfeer">
+            <% end %>
+            <%= link_to experience_path(experience), experience: experience do %>
+              <div class="backcard">
+                <div class="backavatar">
+                  <%= image_tag "zack.jpg", class: "img" %>
+                </div>
+                <h5><%= experience.user.first_name%></h5>
+                <p><%= experience.user.occupation %></p>
+                <h6>Click for more about experience and host</h6>
+              </div>
+            </figure>
+            <div class="card-description">
+              <p id="snip1584-name"><%= experience.name %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="see-more-btn cutline">
+    <a class="btn btn-sm btn-light" href="#services">See More</a>
+  </div>
+</div>
+</div>
+</div>
+<h2 class="section-title-home">
+  <div class="section-title-home-content">
+    Soccer
+  </div>
+</h2>
+<div class="container text-center">
+  <div class="row experience-card-index">
+    <% @top_soccer_experiences.each do |experience| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+        <div class="wholecard">
+          <%= link_to experience_path(experience) do %>
+            <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_tag experience.photo %>');">
+              <div class="card-category"><%= experience.category %></div>
+              <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/atmosfeer">
+            <% end %>
+            <%= link_to experience_path(experience), experience: experience do %>
+              <div class="backcard">
+                <div class="backavatar">
+                  <%= image_tag "zack.jpg", class: "img" %>
+                </div>
+                <h5><%= experience.user.first_name%></h5>
+                <p><%= experience.user.occupation %></p>
+                <h6>Click for more about experience and host</h6>
+              </div>
+            </figure>
+            <div class="card-description">
+              <p id="snip1584-name"><%= experience.name %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="see-more-btn cutline">
+    <a class="btn btn-sm btn-light" href="#services">See More</a>
+  </div>
+</div>
+</div>
+</div>
+<h2 class="section-title-home">
+  <div class="section-title-home-content">
+    Tennis
+  </div>
+</h2>
+<div class="container text-center">
+  <div class="row experience-card-index">
+    <% @top_tennis_experiences.each do |experience| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+        <div class="wholecard">
+          <%= link_to experience_path(experience) do %>
+            <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_tag experience.photo %>');">
+              <div class="card-category"><%= experience.category %></div>
+              <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/atmosfeer">
+            <% end %>
+            <%= link_to experience_path(experience), experience: experience do %>
+              <div class="backcard">
+                <div class="backavatar">
+                  <%= image_tag "zack.jpg", class: "img" %>
+                </div>
+                <h5><%= experience.user.first_name%></h5>
+                <p><%= experience.user.occupation %></p>
+                <h6>Click for more about experience and host</h6>
+              </div>
+            </figure>
+            <div class="card-description">
+              <p id="snip1584-name"><%= experience.name %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="see-more-btn cutline">
+    <a class="btn btn-sm btn-light" href="#services">See More</a>
+  </div>
+</div>
+</div>
 </div>
 <div class="testimonial">
   <div class="testimonial-title">
