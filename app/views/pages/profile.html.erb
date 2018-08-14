@@ -1,10 +1,8 @@
 <% @title = "#{@user.first_name} #{@user.last_name}"  %>
-
-
 <div class="container-experience-show">
   <div class="experience-host-container">
     <div class="row">
-      <div class="col-xs-4">
+      <div class="col-xs-12 col-sm-4", id="sticky-profile">
         <div class="main">
           <div class="main-content">
             <%= cl_image_tag @user.photo, width: 300, crop: :fill, class: "show-pic" %>
@@ -18,191 +16,215 @@
           </div>
         </div>
         <div class="main-btn">
-          <%= link_to "Sports Events I host", root_path %>
+          <div><%= link_to "My profile", "#" %></div>
+          <div><i class="fas fa-greater-than"></i></div>
+        </div>
+        <% if @user.host %>
+          <div class="main-btn">
+            <div><%= link_to "Sports Events I host", "#events_I_host" %></div>
+            <div><i class="fas fa-greater-than"></i></div>
+          </div>
+          <div class="main-btn">
+            <div><%= link_to "Sports Events I will host", "#events_I_will_host" %></div>
+            <div><i class="fas fa-greater-than"></i></div>
+          </div>
+          <div class="main-btn">
+            <div><%= link_to "Sports Events I've hosted  ", "#events_I_have_hosted" %></div>
+            <div><i class="fas fa-greater-than"></i></div>
+          </div>
+        <% end %>
+        <div class="main-btn">
+          <div><%= link_to "Sports Events I will attend", "#events_I_will_attend" %></div>
+          <div><i class="fas fa-greater-than"></i></div>
         </div>
         <div class="main-btn">
-          <%= link_to "Sports Events I will attend", root_path %>
-        </div>
-        <div class="main-btn">
-          <%= link_to "Sports Events I've attended", root_path %>
-        </div>
-        <div class="main-btn">
-          <%= link_to "Sports Events I will host", root_path %>
-        </div>
-        <div class="main-btn">
-          <%= link_to "Sports Events I've hosted  ", root_path %>
+          <div><%= link_to "Sports Events I've attended", "#events_I_have_attended" %></div>
+          <div><i class="fas fa-greater-than"></i></div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container-experience-show">
-  <div class="row">
-    <div class="col-xs-12 col-sm-8">
-      <%= cl_image_tag @user.photo, width: 300, crop: :fill, class: "profile-pic" %>
-      <br>
-      <br>
-      <div class="show-card"><strong>Meet <%= " #{@user.first_name}" %> </strong></div>
-      <div><%= @user.description %></div>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <div class="host_info_container">
+      <div class="col-xs-12 col-sm-8">
         <div class="row">
-          <h1 class="host_name_header"><strong><%= " #{@user.first_name} #{@user.last_name}" %></strong></h1>
+          <div class="venue-flex-box">
+            <div class="venue-title">
+              My profile:
+            </div>
+          </div>
         </div>
         <br>
         <div class="row">
-          <h3><%= "You are a host." if @user.host %></h3>
+          <div class="tour-info-icons">
+            <div class="icon-detail margin-icon icon-middle-bottom">
+              <div class="width-of-icon-text"><i class="far fa-flag icons"></i></div>
+              <div class="experience-desc-after-icon"> <%= "#{@user.nationality}" %>
+              </div>
+            </div>
+            <div class="icon-detail margin-icon icon-middle-bottom">
+              <div class="width-of-icon-text"><i class="fas fa-hashtag icons"></i></div>
+              <div class="experience-desc-after-icon"><%= "#{@user.age} years old" %></div>
+            </div>
+            <div class="icon-detail margin-icon icon-middle-bottom">
+              <div class="width-of-icon-text"><i class="fas fa-<%= @user.gender.downcase %> icons"></i></div>
+              <div class="experience-desc-after-icon"><%= "#{@user.gender}" %></div>
+            </div>
+            <div class="icon-detail margin-icon icon-middle-bottom">
+              <div class="width-of-icon-text"><i class="fas fa-language icons"></i></div>
+              <div class="experience-desc-after-icon"><%= "First language: #{@language}" %>
+              </div>
+            </div>
+            <div class="icon-detail margin-icon icon-middle-bottom" id="adress-flex">
+              <div class="width-of-icon-text"><i class="fas fa-fire icons"></i></div>
+              <div class="experience-desc-after-icon">
+                <%= "#{@skill_level} skill level" %>
+              </div>
+              <br>
+            </div>
+            <div class="icon-detail margin-icon bottom-margin-icon">
+              <div class="width-of-icon-text"><i class="fas fa-medal icons"></i></div>
+              <div class="experience-desc-after-icon"> <%= "Favorite Player: #{@user.favorite_players}" %>
+              </div>
+            </div>
+          </div>
+          <div class="border-line-bottom">
+          </div>
         </div>
         <div class="row">
-          <% if @user.host %>
-            <%= link_to 'Add An Experience To Your Profile', new_experience_path if policy(Experience).create? %>
-          <% else %>
-            <%= link_to 'Become A Host', edit_user_registration_path %>
+          <div class="venue-title">
+            More About <%="#{@user.first_name},"%>
+          </div>
+          <br>
+          <div class="text-restrict-width bottom-margin-icon"><%= @user.description %></div>
+          <div class="border-line-bottom">
+          </div>
+        </div>
+        <% if @user.host %>
+          <div class="row">
+            <div class="venue-flex-box">
+              <div class="venue-title", id="events_I_host">
+                Sports Events I host:
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <% @user.experiences.each do |exp| %>
+              <div class="col-xs-12 col-sm-3">
+                <div><%= cl_image_tag exp.photo, height: 200, width: 200, crop: :fill %></div>
+                <div class="div-recommended2">
+                  <div><%= link_to exp.name, exp %></div>
+                  <div><%= exp.description %></div>
+                  <div>Price: <%= "¥#{exp.price}" %></div>
+                  <div>Capacity: <%= exp.capacity %></div>
+                  <div>Venue: <%= exp.venue %></div>
+                  <div>Skill Level: <%= exp.skill_level %></div>
+                  <div><%= link_to 'Add A Timeslot', new_experience_timeslot_path(exp) %></div>
+                  <div><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></div>
+                  <div><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <br>
+          <div class="border-line-bottom"></div>
+          <div class="row">
+            <div class="venue-flex-box">
+              <div class="venue-title", id="events_I_will_host">
+                Sports Events I will host:
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <% @hosting_bookings.each do |booking| %>
+              <div class="col-xs-12 col-sm-3">
+                <div><%= cl_image_tag booking.experience.photo, height: 200, width: 200, crop: :fill %></div>
+                <div class="div-recommended2">
+                  <div><%= booking.experience.name %></div>
+                  <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
+                  <div><%= booking.start_time %></div>
+                  <div><%= booking.end_time %></div>
+                  <div>
+                    <%= "In Progress" %>
+                    <br>
+                    <%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %>
+                  </div>
+                  <div><%= link_to "Decline", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <br>
+          <div class="border-line-bottom"></div>
+          <div class="row">
+            <div class="venue-flex-box">
+              <div class="venue-title", id="events_I_have_hosted">
+                Sports Events I have hosted:
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <% @hosted_bookings.each do |booking| %>
+              <div class="col-xs-12 col-sm-3">
+                <div><%= cl_image_tag booking.experience.photo, height: 200, width: 200, crop: :fill %></div>
+                <div class="div-recommended2">
+                  <div><%= booking.experience.name %></div>
+                  <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
+                  <button><%= booking.start_time %></button>
+                  <button><%= booking.end_time %></button>
+                  <div>
+                    <%= "This Deal Is Closed" %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <br>
+          <div class="border-line-bottom"></div>
+        <% end %>
+        <div class="row">
+          <div class="venue-flex-box">
+            <div class="venue-title", id="events_I_will_attend">
+              Sports Events I will attend:
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <% @attending_bookings.each do |booking| %>
+            <div class="col-xs-12 col-sm-3">
+              <div><%= cl_image_tag booking.experience.photo, height: 200, width: 200, crop: :fill %></div>
+              <div class="div-recommended2">
+                <div><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></div>
+                <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
+                <div><%= booking.start_time %></div>
+                <div><%= booking.end_time %></div>
+                <div><%= link_to "Cancel", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure? RMB#{booking.experience.price} will be refunded back to your account."} %></div>
+              </div>
+            </div>
           <% end %>
         </div>
         <br>
+        <div class="border-line-bottom"></div>
         <div class="row">
-          <div class="host_header">Occupation:</div>
-          <div class="host_ans"><%= @user.occupation %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="host_header">Hometown:</div>
-          <div class="host_ans"><%= @user.hometown %>
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="host_header">Favorite players:</div>
-          <div class="host_ans"><%= @user.favorite_players %>
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="host_header">Interests:</div>
-          <div class="host_ans"><%= @user.tag_list %></div>
-          <!-- interests *could be tags* (need to add in db) -->
-        </div>
-        <br>
-        <div class="row">
-          <div class="host_header">Nationality:</div>
-          <div class="host_ans"><%= @user.nationality %></div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="host_header">Contact Info:</div>
-          <div class="host_ans"><%= @user.email %></div>
-          <div class="host_ans"><%= @user.phone %></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <h3 class="form-border"><%= "Sports Events I host" %></h3>
-  <div class="row">
-    <% @user.experiences.each do |exp| %>
-      <div class="col-xs-12 col-sm-3">
-        <div><%= cl_image_tag exp.photo, height: 200, width: 200, crop: :fill %></div>
-        <div class="div-recommended2">
-          <div><%= link_to exp.name, exp %></div>
-          <div><%= exp.description %></div>
-          <div>Price: <%= "¥#{exp.price}" %></div>
-          <div>Capacity: <%= exp.capacity %></div>
-          <div>Venue: <%= exp.venue %></div>
-          <div>Skill Level: <%= exp.skill_level %></div>
-          <div><%= link_to 'Add A Timeslot', new_experience_timeslot_path(exp) %></div>
-          <div><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></div>
-          <div><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <h3 class="form-border"><%= "Sports Events I will attend" %></h3>
-  <div class="row">
-    <% @attending_bookings.each do |booking| %>
-      <div class="col-xs-12 col-sm-3">
-        <div><%= cl_image_tag booking.experience.photo, height: 200, width: 200, crop: :fill %></div>
-        <div class="div-recommended2">
-          <div><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></div>
-          <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
-          <div><%= booking.start_time %></div>
-          <div><%= booking.end_time %></div>
-          <div><%= link_to "Cancel", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure? RMB#{booking.experience.price} will be refunded back to your account."} %></div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <h3 class="form-border"><%= "Sports Events I've attended" %></h3>
-  <div class="row">
-    <% @attended_bookings.each do |booking| %>
-      <div class="col-xs-12 col-sm-3">
-        <div><%= cl_image_tag booking.experience.photo, height: 200, width: 200, crop: :fill %></div>
-        <div class="div-recommended2">
-          <div><%= booking.experience.name %></div>
-          <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
-          <div><%= booking.start_time %></div>
-          <div><%= booking.end_time %></div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <% if @user.host %>
-    <h3 class="form-border"><%= "Sports Events I will host" %></h3>
-    <div class="row">
-      <% @hosting_bookings.each do |booking| %>
-        <div class="col-xs-12 col-sm-3">
-          <div><%= cl_image_tag booking.experience.photo, height: 200, width: 200, crop: :fill %></div>
-          <div class="div-recommended2">
-            <div><%= booking.experience.name %></div>
-            <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
-            <div><%= booking.start_time %></div>
-            <div><%= booking.end_time %></div>
-            <div>
-              <%= "In Progress" %>
-              <br>
-              <%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %>
-            </div>
-            <div><%= link_to "Decline", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <h3 class="form-border"><%= "Sports Events I've hosted" %></h3>
-    <div class="row">
-      <% @hosted_bookings.each do |booking| %>
-        <div class="col-xs-12 col-sm-3">
-          <div><%= cl_image_tag booking.experience.photo, height: 200, width: 200, crop: :fill %></div>
-          <div class="div-recommended2">
-            <div><%= booking.experience.name %></div>
-            <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
-            <button><%= booking.start_time %></button>
-            <button><%= booking.end_time %></button>
-            <div>
-              <%= "This Deal Is Closed" %>
+          <div class="venue-flex-box">
+            <div class="venue-title", id="events_I_have_attended">
+              Sports Events I've attended :
             </div>
           </div>
-        <% end %>
+        </div>
+        <div class="row">
+          <% @attended_bookings.each do |booking| %>
+            <div class="col-xs-12 col-sm-3">
+              <div><%= cl_image_tag booking.experience.photo, height: 200, width: 200, crop: :fill %></div>
+              <div class="div-recommended2">
+                <div><%= booking.experience.name %></div>
+                <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
+                <div><%= booking.start_time %></div>
+                <div><%= booking.end_time %></div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <br>
+        <div class="border-line-bottom"></div>
       </div>
     </div>
   </div>
-<% end %>
-</div>
 </div>
