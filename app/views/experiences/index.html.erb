@@ -17,7 +17,6 @@
   </div>
   <a href="#tops" class= "explore-btn">Start Exploring</a>
 </div>
-</div>
 <div class="row">
   <div class="col-12 feature-tile feature-tile--hero ">
     <div class="feature-tile__container">
@@ -76,7 +75,7 @@
   </div>
 </div>
 <div class="cardcontainer text-center" id="tops">
-  <h2 class="section-title-home-content feature-tile__callout">
+  <h2 class="section-title-home-content feature-tile__top">
     Pick a sport
   </h2>
   <div class="tabs">
@@ -110,7 +109,8 @@
     </div>
   </div>
 </div>
-</div
+</div>
+
 <h2 class="section-title-home">
 <div class="section-title-home-content">
   Top-rated sports adventures
@@ -131,7 +131,8 @@
                   <%= cl_image_tag experience.user.photo, class: "img" %>
                 </div>
                 <h5><%= experience.user.first_name %></h5>
-                <!-- <p><%= experience.skill_level %></p><br> -->
+                <p><%= experience.skill_level %></p>
+                <br>
                 <p><%= experience.location %></p>
                 <h6>Click to see full adventure</h6>
               </div>
@@ -250,8 +251,10 @@
                   <%= cl_image_tag experience.user.photo, class: "img" %>
                 </div>
                 <h5><%= experience.user.first_name%></h5>
-                <p><%= experience.user.occupation %></p>
-                <h6>Click for more about experience and host</h6>
+                <p><%= experience.skill_level %></p>
+                <br>
+                <p><%= experience.location %></p>
+                <h6>Click to see full adventure</h6>
               </div>
             </figure>
             <div class="card-description">
@@ -274,7 +277,7 @@
   </div>
 </h2>
 <div class="container text-center">
-  <div class="row eperience-card-index">
+  <div class="row experience-card-index">
     <% @top_other_experiences.each do |experience| %>
       <div class="col-xs-12 col-sm-6 col-md-4 text-center">
         <div class="wholecard">
@@ -388,5 +391,4 @@
       </div>
     </div>
   </div>
-</div>
 </div>
