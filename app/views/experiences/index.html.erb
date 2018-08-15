@@ -22,7 +22,7 @@
     <div class="feature-tile__container">
       <div class="no-gutters">
         <div class="col-md-6">
-          <%= image_tag 'soccer.jpg', class: "soccer"%>
+          <%= image_tag asset_path('soccer.jpg'), class: "soccer"%>
         </div>
         <div class="col-md-6 align-self-start">
           <div class="feature-tile__content">
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <%= image_tag 'guys.png', class: "guys"%>
+          <%= image_tag asset_path('guys.png'), class: "guys"%>
         </div>
       </div>
     </div>
@@ -56,7 +56,7 @@
     <div class="feature-tile__container">
       <div class="no-gutters">
         <div class="col-md-6">
-          <%= image_tag 'jump1.png', class: "soccer"%>
+          <%= image_tag asset_path('jump1.png'), class: "soccer"%>
         </div>
         <div class="col-md-6 align-self-start">
           <div class="feature-tile__content">
@@ -128,7 +128,7 @@
             <%= link_to experience_path(experience), experience: experience do %>
               <div class="backcard">
                 <div class="backavatar">
-                  <%= cl_image_tag experience.user.photo, class: "img" %>
+                  <%= cl_image_tag asset_path(experience.user.photo), class: "img" %>
                 </div>
                 <h5><%= experience.user.first_name %></h5>
                 <!-- <p><%= experience.skill_level %></p><br> -->
@@ -167,7 +167,7 @@
             <%= link_to experience_path(experience), experience: experience do %>
               <div class="backcard">
                 <div class="backavatar">
-                  <%= cl_image_tag experience.user.photo, class: "img" %>
+                  <%= cl_image_tag asset_path(experience.user.photo), class: "img" %>
                 </div>
                 <h5><%= experience.user.first_name%></h5>
                 <p><%= experience.skill_level %></p>
@@ -208,7 +208,7 @@
             <%= link_to experience_path(experience), experience: experience do %>
               <div class="backcard">
                 <div class="backavatar">
-                  <%= cl_image_tag experience.user.photo, class: "img" %>
+                  <%= cl_image_tag asset_path(experience.user.photo), class: "img" %>
                 </div>
                 <h5><%= experience.user.first_name%></h5>
                 <p><%= experience.skill_level %></p>
@@ -249,7 +249,7 @@
             <%= link_to experience_path(experience), experience: experience do %>
               <div class="backcard">
                 <div class="backavatar">
-                  <%= cl_image_tag experience.user.photo, class: "img" %>
+                  <%= cl_image_tag asset_path(experience.user.photo), class: "img" %>
                 </div>
                 <h5><%= experience.user.first_name%></h5>
                 <p><%= experience.user.occupation %></p>
@@ -281,14 +281,14 @@
       <div class="col-xs-12 col-sm-6 col-md-4 text-center">
         <div class="wholecard">
           <%= link_to experience_path(experience) do %>
-            <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_tag experience.photo %>');">
+            <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_tag asset_path(experience.photo) %>');">
               <div class="card-category"><%= experience.category %></div>
               <img class="card-user avatar" src='<%= experience.user.photo %>'>
             <% end %>
             <%= link_to experience_path(experience), experience: experience do %>
               <div class="backcard">
                 <div class="backavatar">
-                  <%= cl_image_tag experience.user.photo, class: "img" %>
+                  <%= cl_image_tag asset_path(experience.user.photo), class: "img" %>
                 </div>
                 <h5><%= experience.user.first_name%></h5>
                 <p><%= experience.skill_level %></p>
@@ -322,14 +322,14 @@
       <div class="col-xs-12 col-sm-6 col-md-4 text-center">
         <div class="wholecard">
           <%= link_to experience_path(experience) do %>
-            <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_tag experience.photo %>');">
+            <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_tag asset_path(experience.photo) %>');">
               <div class="card-category"><%= experience.category %></div>
               <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/atmosfeer">
             <% end %>
             <%= link_to experience_path(experience), experience: experience do %>
               <div class="backcard">
                 <div class="backavatar">
-                  <%= image_tag "zack.jpg", class: "img" %>
+                  <%= image_tag asset_path("zack.jpg"), class: "img" %>
                 </div>
                 <h5><%= experience.user.first_name%></h5>
                 <p><%= experience.skill_level %></p>
@@ -360,7 +360,7 @@
     <div class="row">
       <div  class="col-xs-12 col-sm-6 col-md-3">
         <div class="usercard">
-          <%= image_tag 'Harrison.jpeg', class: "user-avatar" %>
+          <%= image_tag asset_path('Harrison.jpeg'), class: "user-avatar" %>
           <h4>Harrison</h4>
           <h6>Shanghai, China</h6>
           <p>I love sportchain</p>
@@ -368,7 +368,7 @@
       </div>
       <div  class="col-xs-12 col-sm-6 col-md-3">
         <div class="usercard">
-          <%= image_tag 'Dounan.jpeg', class: "user-avatar" %>
+          <%= image_tag asset_path('Dounan.jpeg'), class: "user-avatar" %>
           <h4>Dounan</h4>
           <h6>Shanghai, China</h6>
           <p>Sportchain is awesome!</p>
@@ -376,7 +376,7 @@
       </div>
       <div  class="col-xs-12 col-sm-6 col-md-3">
         <div class="usercard">
-          <%= image_tag 'Ziva Xu.jpeg', class: "user-avatar" %>
+          <%= image_tag asset_path('Ziva Xu.jpeg'), class: "user-avatar" %>
           <h4>Ziva</h4>
           <h6>Shanghai, China</h6>
           <p>$#%@*&#$$%&**@#!!!</p>
@@ -384,7 +384,7 @@
       </div>
       <div  class="col-xs-12 col-sm-6 col-md-3">
         <div class="usercard">
-          <%= image_tag 'Forrest.jpeg', class: "user-avatar" %>
+          <%= image_tag asset_path('Forrest.jpeg'), class: "user-avatar" %>
           <h4>Forrest</h4>
           <h6>Shanghai, China</h6>
           <p>Sportchain is amazing</p>
