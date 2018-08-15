@@ -149,6 +149,7 @@
                         <% @hosting_bookings.each do |booking| %>
                           <% if booking.experience.name == exp.name %>
                             <div>
+                              <%= link_to "Booked By #{booking.user.first_name} #{booking.user.last_name}",  experience_host_path(booking) %>
                               <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
                               <div><%= booking.start_time %></div>
                               <div><%= booking.end_time %></div>
