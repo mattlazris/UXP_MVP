@@ -142,39 +142,49 @@
                         </a>
                       </div>
                     </div>
-
-                    <div id="<%= exp.name %>_incoming" class="history_container <%= exp.name %>">
-                      <h2>Incoming</h2>
+                  </div>
+                  <div class="history-card">
+                    <div id="<%= exp.name %>_incoming" class="<%= exp.name %>">
                       <div>
                         <% @hosting_bookings.each do |booking| %>
                           <% if booking.experience.name == exp.name %>
-                            <div>
-                              <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
-                              <div><%= booking.start_time %></div>
-                              <div><%= booking.end_time %></div>
-                              <div>
+                            <div class="message">
+                              <%= link_to experience_booking_path(booking.experience, booking) do %>
+                                <img class="profile-card-user-pic" src="<%= booking.experience.user.photo %>">
+                              <% end %>
+                              <div class="message-body">
+                                <div><%= link_to "Booked By #{booking.user.first_name} #{booking.user.last_name}",  experience_host_path(booking) %></div>
+                                <div><%= booking.start_time %></div>
+                                <div><%= booking.end_time %></div>
+                              </div>
+                              <div class="message-body">
                                 <%= "In Progress" %>
                               </div>
                               <br>
-                              <button class="btn-medium"><%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %></button>
-                              <br>
-                              <br>
-                              <button class="btn-medium"><%= link_to "Decline", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></button>
+                              <div class="message-status">
+                                <button class="btn-medium"><%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %></button>
+                                <br>
+                                <button class="btn-medium"><%= link_to "Decline", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></button>
+                              </div>
                             </div>
                           <% end %>
                         <% end %>
                       </div>
                     </div>
-                    <div id="<%= exp.name %>_passed" class="history_container <%= exp.name %>" style="display:none">
-                      <h2>Passed</h2>
+                    <div id="<%= exp.name %>_passed" class="<%= exp.name %>" style="display:none">
                       <div>
                         <% @hosted_bookings.each do |booking| %>
                           <% if booking.experience.name == exp.name %>
-                            <div>
-                              <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
-                              <div><%= booking.start_time %></div>
-                              <div><%= booking.end_time %></div>
-                              <div>
+                            <div class="message">
+                              <%= link_to experience_booking_path(booking.experience, booking) do %>
+                                <img class="profile-card-user-pic" src="<%= booking.experience.user.photo %>">
+                              <% end %>
+                              <div class="message-body">
+                                <div><%= link_to "Booked By #{booking.user.first_name} #{booking.user.last_name}",  experience_host_path(booking) %></div>
+                                <div><%= booking.start_time %></div>
+                                <div><%= booking.end_time %></div>
+                              </div>
+                              <div class="message-body">
                                 <%= "This Deal Is Closed" %>
                               </div>
                             </div>
@@ -205,7 +215,11 @@
                     <% end %>
                     <div class="message-body">
                       <h3><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></h3>
-                      <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
+                      <div><%= link_to "Hosted By #{booking.user.first_name} #{booking.user.last_name}",  experience_host_path(booking) %></div>
+                      <div><%= booking.experience.description %></div>
+                      <div><%= booking.experience.location %></div>
+                      <div><%= booking.experience.skill_level %></div>
+                      <div><%= booking.experience.price %></div>
                       <div><%= booking.start_time %></div>
                       <div><%= booking.end_time %></div>
                     </div>
@@ -235,7 +249,11 @@
                     <% end %>
                     <div class="message-body">
                       <h3><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></h3>
-                      <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
+                      <div><%= link_to "Hosted By #{booking.user.first_name} #{booking.user.last_name}",  experience_host_path(booking) %></div>
+                      <div><%= booking.experience.description %></div>
+                      <div><%= booking.experience.location %></div>
+                      <div><%= booking.experience.skill_level %></div>
+                      <div><%= booking.experience.price %></div>
                       <div><%= booking.start_time %></div>
                       <div><%= booking.end_time %></div>
                     </div>
@@ -253,16 +271,16 @@
 
 <script>
 function openCity(evt, cityName) {
-  var i, x, tablinks;
+  var i, x, y, tablinks;
   x = document.getElementsByClassName(evt);
   for (i = 0; i < x.length; i++) {
      x[i].style.display = "none";
   }
   tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
+  for (i = 0; i < tablinks.length; i++) {
      tablinks[i].className = tablinks[i].className.replace(" border-red", "");
   }
   document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " border-red";
+  event.currentTarget.firstElementChild.className += " border-red";
 }
 </script>
