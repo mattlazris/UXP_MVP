@@ -111,7 +111,7 @@
                         <img class="profile-card-pic" src="<%= exp.photo %>">
                       <% end %>
                       <div class="message-body">
-                        <h3 ><%= exp.name %></h3>
+                        <h3><%= link_to exp.name, exp %></h3>
                           <p><%= exp.description %></p>
                           <p><%= exp.location %></p>
                           <p><%= exp.language %></p>
@@ -149,7 +149,6 @@
                         <% @hosting_bookings.each do |booking| %>
                           <% if booking.experience.name == exp.name %>
                             <div>
-                              <div><%= exp.name %></div>
                               <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
                               <div><%= booking.start_time %></div>
                               <div><%= booking.end_time %></div>
@@ -172,7 +171,6 @@
                         <% @hosted_bookings.each do |booking| %>
                           <% if booking.experience.name == exp.name %>
                             <div>
-                              <div><%= booking.experience.name %></div>
                               <div><%= "Booked By #{booking.user.first_name} #{booking.user.last_name}" %></div>
                               <div><%= booking.start_time %></div>
                               <div><%= booking.end_time %></div>
@@ -206,7 +204,7 @@
                       <img class="profile-card-pic" src="<%= booking.experience.photo %>">
                     <% end %>
                     <div class="message-body">
-                      <div><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></div>
+                      <h3><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></h3>
                       <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
                       <div><%= booking.start_time %></div>
                       <div><%= booking.end_time %></div>
@@ -236,7 +234,7 @@
                       <img class="profile-card-pic" src="<%= booking.experience.photo %>">
                     <% end %>
                     <div class="message-body">
-                      <div><%= booking.experience.name %></div>
+                      <h3><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></h3>
                       <div><%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %></div>
                       <div><%= booking.start_time %></div>
                       <div><%= booking.end_time %></div>
