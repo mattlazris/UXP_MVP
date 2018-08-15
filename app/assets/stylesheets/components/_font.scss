@@ -2,6 +2,7 @@
   letter-spacing: 1.3px;
   line-height: 1;
   font-size: 14px;
+  padding-top: 5px;
 }
 
 .font-white a{
@@ -32,6 +33,7 @@
 .center-host-title-row {
   width: 100%;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .host_name_header a{
@@ -68,4 +70,16 @@
     letter-spacing: 1.3px;
     line-height: 1;
     text-transform: uppercase;
+    border-bottom: 4px solid #111;
+    display: inline-block;
+    letter-spacing: 1.3px;
+    line-height: 1;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.h3-all-show-title-font {
+  font-size: 18px;
 }

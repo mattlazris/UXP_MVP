@@ -14,7 +14,7 @@
 .banner {
   color: white;
   text-align: center;
-  height: 500px;
+  height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: block;
@@ -23,6 +23,7 @@
   background-attachment: fixed;
   opacity: 1;
   overflow: hidden;
+  overflow-x: hidden;
 }
 
 // .kenburns-top {
@@ -34,19 +35,40 @@
 .banner-content {
   padding-top: 5vh;
   text-shadow: 0px 1px 5px black;
-  margin-bottom: 0vh;
+  margin-top: 15vh;
 }
 
 .banner-content h2 {
   margin-bottom: 20px;
 }
 
+.bannerbutton {
+    width: 40px;
+    height: 30px;
+    // border-radius: 1%;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border: 3px solid white;
+}
+
 .banner h1 {
-  font-size: 50px;
+  font-size: 56px;
   font-weight: bold;
   letter-spacing:3px;
    text-shadow: 0px 1px 5px black;
+    line-height: 1;
+    text-transform: uppercase;
 }
+
+.banner h2 {
+  font-weight: bold;
+  letter-spacing:1.3px;
+   text-shadow: 0px 1px 5px black;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
 .banner p {
   font-size: 25px;
   font-weight: lighter;
@@ -102,7 +124,7 @@
 .tabbox1 {
     width: 80%;
     height: 48px;
-    border-radius: 1%;
+    // border-radius: 1%;
     margin-bottom: 30px;
     margin-top: 10px;
     padding-top: 10px;
@@ -112,7 +134,7 @@
 .tabbox2 {
     width: 80%;
     height: 48px;
-    border-radius: 1%;
+    // border-radius: 1%;
     margin-bottom: 30px;
     margin-top: 10px;
     padding-top: 10px;
@@ -123,7 +145,7 @@
 .tabbox3 {
     width: 80%;
     height: 48px;
-    border-radius: 1%;
+    // border-radius: 1%;
     margin-bottom: 30px;
     margin-top: 10px;
     padding-top: 10px;
@@ -134,7 +156,7 @@
 .tabbox4 {
     width: 80%;
     height: 48px;
-    border-radius: 1%;
+    // border-radius: 1%;
     margin-bottom: 30px;
     margin-top: 10px;
     padding-top: 10px;
@@ -223,7 +245,7 @@
     background-position: center;
     color: white;
     position: relative;
-    border-radius: 1%;
+    // border-radius: 1%;
     cursor: pointer;
 }
 
@@ -252,20 +274,25 @@
     top: 10px;
     left: 10px;
     font-size: 14px;
+    letter-spacing: 1.3px;
+    line-height: 1;
     text-transform: uppercase;
+
 }
 
 .card-description {
     text-align: left;
     position: absolute;
-    top: 315px;
+    top: 319px;
     bottom: 0px;
-    left: 44px;
+    left: 51px;
     right: 0px;
     font-size: 15px;
     z-index: 1;
-    text-shadow: 0px 1px 5px black;
     font-family: 'Raleway', sans-serif;
+       letter-spacing: 1.3px;
+    line-height: 1;
+    text-transform: uppercase;
 }
 
 * {
@@ -478,9 +505,11 @@
   padding-left: 20px;
   padding-right:15px;
   margin-top: 20px;
-  text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
   font-color:white;
   text-decoration: none;
+    letter-spacing: 1.3px;
+    line-height: 1;
+    text-transform: uppercase;
 }
 
 .backcard a {
@@ -489,13 +518,11 @@
 
 .backcard h6 {
   position: absolute;
-  top: 300px;
+  top: 290px;
   bottom: 0;
   left: 0px;
   right: 0;
-  z-index: 0;
-  text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
-  text-decoration: underline;
+  color:white
 }
 
 .snip1584 {
@@ -526,12 +553,12 @@
   right: 10px;
   top: 100%;
   content: '';
-  background-color: #14A481;
+  background-color: #32333B;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
   -webkit-transition-delay: 0.25s;
   transition-delay: 0.25s;
-  border-radius: 1%;
+  // border-radius: 1%;
 }
 .snip1584 img {
   vertical-align: top;
@@ -563,11 +590,11 @@
   margin: 0;
   opacity: 0;
   letter-spacing: 1px;
-  border: solid 2px white;
+  border: solid 1px white;
   width: 150px;
   height: 150px;
   background: white;
-  border-radius: 2%;
+  // border-radius: 2%;
   margin-bottom: 20px;
   margin-top: 5px;
  -webkit-transform: translateY(-100%);
@@ -576,13 +603,22 @@
   -webkit-transition-delay: 0.05s;
   transition-delay: 0.05s;
   margin-bottom: 5px;
-
 }
+
+.index-venue-image {
+  width: 100%;
+  height: 200px;
+
+  margin-bottom: 20px;
+
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+}
+
 
 .tabimg {
   width: 176px;
   height: 172px;
-  border-radius: 0px 0px 2px 2px;
+  // border-radius: 0px 0px 2px 2px;
   background: white;
   margin-bottom: 10px;
   margin-top: 0;
@@ -616,10 +652,13 @@
 .snip1584 h6 {
   font-size:10px;
   text-align: center;
-  text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
-  color:#DCEAEF;
+  color:white;
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
+  letter-spacing: 1.3px;
+  line-height: 1;
+  padding-top: 16px;
+  text-transform: uppercase;
   text-transform: uppercase;
   font-weight: 400;
   -webkit-transition-delay: 0.05s;
@@ -628,7 +667,7 @@
 }
 
 .snip1584 p {
-  font-size:18px;
+  font-size:14px;
   text-align: center;
 
   font-weight: normal;
@@ -829,14 +868,17 @@
 .testimonial {
   margin-top: 90px;
   margin-bottom: 90px;
-  background-color:#FF6B6B;
+  background-color:#32333B;
   padding-top: 30px;
   color: white;
   margin-left:30px;
   margin-right:30px;
   margin-bottom: 30px;
-  border-radius:3px;
+  // border-radius:3px;
   padding-bottom:30px;
+  letter-spacing: 1.3px;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .user-avatar {
@@ -853,17 +895,20 @@
 
 .usercards {
   text-align: center;
-  margin-left: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .usercard {
   background-color:white;
   color:black;
   padding: 20px 20px 20px 20px;
-  margin-right:20px;
-  margin-left: 20px;
-  border-radius: 1%;
   width: 210px;
+  margin: 10px 20px;
+}
+
+.usercard p {
+ font-size: 10px;
 }
 
 .topsplitter {
@@ -875,7 +920,7 @@
   text-align:center;
   color:white;
   background-color:#14A481;
-  border-radius:5%;
+  // border-radius:5%;
   height: 35px;
 }
 
@@ -954,9 +999,8 @@
 }
 
 .explore-btn {
-  border-radius: 4px;
-  color: #14A481;
-  background: white;
+  // border-radius: 4px;
+  background: transparent;
   text-decoration: none;
   text-shadow:none;
   padding: 10px 10px 10px 10px;
@@ -964,8 +1008,18 @@
   font-size: 14px;
   letter-spacing: 1.3px;
   line-height: 1;
-  text-transform: uppercase;
   color:black;
+  color:white;
+  font-weight:bold;
+  border: 3px solid white;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.explore-btn:hover {
+  text-decoration: none;
+  color:white;
+  opacity: 1;
 }
 
 .explore-btn-position {
@@ -981,10 +1035,10 @@
     background-color: transparent;
     border: none;
     border-bottom: 3px solid white;
-    color: white;
+    color: #fff;
     box-sizing: border-box;
     font-family: inherit;
-    font-size: 20px;
+    font-size: 30px;
     height: 20px;
     left: 50%;
     margin: -20px 0 0 -100px;
@@ -1002,15 +1056,24 @@
 }
 
 .bannerslogan {
-  position: absolute;
-    top: 203px;
-    bottom: 0px;
-    left: -200px;
-    right: 0px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.bannerslogan h2 {
+    margin-right: 11px;
+    margin-left: 203px;
 }
 
 input::-webkit-input-placeholder {
-  color: #AAA;
+  color: white;
+  font-style: italic;
+  letter-spacing:1.3px;
+   text-shadow: 0px 1px 5px black;
+    line-height: 1;
+    text-transform: uppercase;
 }
 
 .input:focus+.underline {
@@ -1098,4 +1161,85 @@ input::-webkit-input-placeholder {
   font-size: 18px;
   line-height: 1.5;
   margin-right: 35px;
+}
+
+.searchBarMain {
+  background: #fff;
+  width: 80%;
+  max-width: 680px;
+  margin: 0 auto;
+  height: 42px;
+  margin-top: 11px;
+  // border-radius: 2px;
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.14);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0
+}
+
+.searchBarMain i.searchBarSearchIcon {
+  height: 100%;
+  line-height: 42px;
+  float: left;
+  width: 52px;
+  text-align: center;
+  color: rgba(68, 68, 68, 0.5);
+}
+
+.searchBarMain input#searchBarInput {
+  height: 42px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  background: transparent;
+  width: calc(100% - 52px);
+  outline: none;
+  padding-right: 32px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.76);
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+}
+
+.searchBarMain i.clearSearchBarField {
+  position: absolute;
+  right: 12px;
+  top: 11px;
+  color: rgba(0, 0, 0, 0.84);
+  display: none;
+  font-size: 20px;
+}
+
+.searchBarMain i.clearSearchBarField:hover {
+  cursor: pointer;
+}
+
+.form-control {
+  width: 50px;
+}
+
+.form-search {
+    display: flex;
+    text-align: center;
+    width: 51%;
+    padding-bottom: 0px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin-right: 30px;
+    height: 42px;
+    font-size: 21px;
+    line-height: -21.571429;
+    color: white;
+    background-color: transparent;
+    background-image: none;
+    border-bottom: 3px solid white;
+    text-transform: uppercase;
 }
