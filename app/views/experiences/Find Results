@@ -1,0 +1,164 @@
+Searching 192 files for "image_tag"
+
+/Users/mattlazris/code/mattlazris/UXP_MVP/app/views/bookings/new.html.erb:
+    8              <p>Who's coming?</p>
+    9              <div class="in-line">
+   10:               <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class:"book-avatar"%>
+   11                <p class="margin-left">Jackson</p>
+   12              </div>
+   ..
+   20                <br>
+   21                <div class="in-line">
+   22:                 <%= image_tag asset_path("wechat-payment.png"), class:"small-img" %>
+   23                  <p>WeChat Payment</p>
+   24                  <i class="fas fa-check-circle green font_size_25"></i>
+   ..
+   26                <br>
+   27                <div class="in-line">
+   28:                 <%= image_tag asset_path("alipay.png"), class:"small-img" %>
+   29                  <p>Alipay</p>
+   30                  <i class="fas fa-check-circle green font_size_25"></i>
+
+/Users/mattlazris/code/mattlazris/UXP_MVP/app/views/bookings/show.html.erb:
+   20          <h5>Please say hello to your foodie guide!</h5>
+   21        </div>
+   22:       <div class="col-xs-12 col-sm-6"><%= cl_image_tag asset_path(@booking.experience.photo), height: 298, crop: :fill %></div>
+   23      </div>
+   24      <br>
+
+/Users/mattlazris/code/mattlazris/UXP_MVP/app/views/experiences/draft.rails:
+   10      <ul>
+   11        <li>
+   12:         <div><%= cl_image_tag asset_path(experience.photo), height: 300, width: 400, crop: :fill %></div>
+   13          <div><%= link_to experience.name, experience %></div>
+   14          <div><%= experience.description %></div>
+   15          <div><%= "¥#{experience.price}" %></div>
+   16          <div><%= "#{experience.user.first_name} #{experience.user.last_name}" %></div>
+   17:         <div><%= cl_image_tag asset_path(experience.user.photo), height: 300, width: 400, crop: :fill, alternative: "#{experience.user.first_name} #{experience.user.last_name}" %></div>
+   18          <div><%= experience.user.description %></div>
+   19        </li>
+
+/Users/mattlazris/code/mattlazris/UXP_MVP/app/views/experiences/index.html.erb:
+   23        <div class="no-gutters">
+   24          <div class="col-md-6">
+   25:           <%= image_tag asset_path('soccer.jpg'), class: "soccer"%>
+   26          </div>
+   27          <div class="col-md-6 align-self-start">
+   ..
+   46          </div>
+   47          <div class="col-md-6">
+   48:           <%= image_tag asset_path('guys.png'), class: "guys"%>
+   49          </div>
+   50        </div>
+   ..
+   57        <div class="no-gutters">
+   58          <div class="col-md-6">
+   59:           <%= image_tag asset_path('jump1.png'), class: "soccer"%>
+   60          </div>
+   61          <div class="col-md-6 align-self-start">
+   ..
+  129                <div class="backcard">
+  130                  <div class="backavatar">
+  131:                   <%= cl_image_tag asset_path(experience.user.photo), class: "img" %>
+  132                  </div>
+  133                  <h5><%= experience.user.first_name %></h5>
+  ...
+  168                <div class="backcard">
+  169                  <div class="backavatar">
+  170:                   <%= cl_image_tag asset_path(experience.user.photo), class: "img" %>
+  171                  </div>
+  172                  <h5><%= experience.user.first_name%></h5>
+  ...
+  208                <div class="backcard">
+  209                  <div class="backavatar">
+  210:                   <%= cl_image_tag asset_path(experience.user.photo), class: "img" %>
+  211                  </div>
+  212                  <h5><%= experience.user.first_name%></h5>
+  ...
+  249                <div class="backcard">
+  250                  <div class="backavatar">
+  251:                   <%= cl_image_tag asset_path(experience.user.photo), class: "img" %>
+  252                  </div>
+  253                  <h5><%= experience.user.first_name%></h5>
+  ...
+  283          <div class="wholecard">
+  284            <%= link_to experience_path(experience) do %>
+  285:             <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_tag asset_path(experience.photo) %>');">
+  286                <div class="card-category"><%= experience.category %></div>
+  287              <% end %>
+  ...
+  289                <div class="backcard">
+  290                  <div class="backavatar">
+  291:                   <%= cl_image_tag asset_path(experience.user.photo), class: "img" %>
+  292                  </div>
+  293                  <h5><%= experience.user.first_name%></h5>
+  ...
+  323          <div class="wholecard">
+  324            <%= link_to experience_path(experience) do %>
+  325:             <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_tag asset_path(experience.photo) %>');">
+  326                <div class="card-category"><%= experience.category %></div>
+  327              <% end %>
+  ...
+  329                <div class="backcard">
+  330                  <div class="backavatar">
+  331:                   <%= image_tag asset_path("zack.jpg"), class: "img" %>
+  332                  </div>
+  333                  <h5><%= experience.user.first_name%></h5>
+  ...
+  360        <div  class="col-xs-12 col-sm-6 col-md-3">
+  361          <div class="usercard">
+  362:           <%= image_tag asset_path('Harrison.jpeg'), class: "user-avatar" %>
+  363            <h4>Harrison</h4>
+  364            <h6>Shanghai, China</h6>
+  ...
+  368        <div  class="col-xs-12 col-sm-6 col-md-3">
+  369          <div class="usercard">
+  370:           <%= image_tag asset_path('Dounan.jpeg'), class: "user-avatar" %>
+  371            <h4>Dounan</h4>
+  372            <h6>Shanghai, China</h6>
+  ...
+  376        <div  class="col-xs-12 col-sm-6 col-md-3">
+  377          <div class="usercard">
+  378:           <%= image_tag asset_path('Ziva Xu.jpeg'), class: "user-avatar" %>
+  379            <h4>Ziva</h4>
+  380            <h6>Shanghai, China</h6>
+  ...
+  384        <div  class="col-xs-12 col-sm-6 col-md-3">
+  385          <div class="usercard">
+  386:           <%= image_tag asset_path('Forrest.jpeg'), class: "user-avatar" %>
+  387            <h4>Forrest</h4>
+  388            <h6>Shanghai, China</h6>
+
+/Users/mattlazris/code/mattlazris/UXP_MVP/app/views/experiences/untitled.rails:
+   10      <ul>
+   11        <li>
+   12:         <div><%= cl_image_tag asset_path(experience.photo), height: 300, width: 400, crop: :fill %></div>
+   13          <div><%= link_to experience.name, experience %></div>
+   14          <div><%= experience.description %></div>
+   15          <div><%= "¥#{experience.price}" %></div>
+   16          <div><%= "#{experience.user.first_name} #{experience.user.last_name}" %></div>
+   17:         <div><%= cl_image_tag asset_path(experience.user.photo), height: 300, width: 400, crop: :fill, alternative: "#{experience.user.first_name} #{experience.user.last_name}" %></div>
+   18          <div><%= experience.user.description %></div>
+   19        </li>
+
+/Users/mattlazris/code/mattlazris/UXP_MVP/app/views/pages/profile.html.erb:
+    7            <div class="main">
+    8              <div class="main-content">
+    9:               <%= cl_image_tag asset_path(@user.photo), width: 300, crop: :fill, class: "show-pic" %>
+   10                <h2 class="host_name_header"><strong><%= " #{@user.first_name} #{@user.last_name}" %></strong></h2>
+   11                <h3><%= "You are a host." if @user.host %></h3>
+
+/Users/mattlazris/code/mattlazris/UXP_MVP/app/views/shared/_navbar.html.erb:
+    2    <!-- Logo -->
+    3    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    4:     <%= image_tag asset_path("sclogo.png"), height: 50 %>
+    5    <% end %>
+    6    <!-- Right Navigation -->
+    .
+   13        <div class="navbar-wagon-item">
+   14          <div class="dropdown">
+   15:           <%= cl_image_tag asset_path(current_user.photo), height: 300, width: 400, crop: :fill, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+   16            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+   17              <li>
+
+26 matches across 7 files
