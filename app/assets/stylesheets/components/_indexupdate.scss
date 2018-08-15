@@ -42,12 +42,33 @@
   margin-bottom: 20px;
 }
 
+.bannerbutton {
+    width: 40px;
+    height: 30px;
+    // border-radius: 1%;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border: 3px solid white;
+}
+
 .banner h1 {
-  font-size: 50px;
+  font-size: 56px;
   font-weight: bold;
   letter-spacing:3px;
    text-shadow: 0px 1px 5px black;
+    line-height: 1;
+    text-transform: uppercase;
 }
+
+.banner h2 {
+  font-weight: bold;
+  letter-spacing:1.3px;
+   text-shadow: 0px 1px 5px black;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
 .banner p {
   font-size: 25px;
   font-weight: lighter;
@@ -979,8 +1000,7 @@
 
 .explore-btn {
   // border-radius: 4px;
-  color: #14A481;
-  background: white;
+  background: transparent;
   text-decoration: none;
   text-shadow:none;
   padding: 10px 10px 10px 10px;
@@ -988,8 +1008,18 @@
   font-size: 14px;
   letter-spacing: 1.3px;
   line-height: 1;
-  text-transform: uppercase;
   color:black;
+  color:white;
+  font-weight:bold;
+  border: 3px solid white;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.explore-btn:hover {
+  text-decoration: none;
+  color:white;
+  opacity: 1;
 }
 
 .explore-btn-position {
@@ -1005,7 +1035,7 @@
     background-color: transparent;
     border: none;
     border-bottom: 3px solid white;
-    color: white;
+    color: #fff;
     box-sizing: border-box;
     font-family: inherit;
     font-size: 30px;
@@ -1033,12 +1063,17 @@
 }
 
 .bannerslogan h2 {
-    margin-right: 4px;
+    margin-right: 11px;
     margin-left: 203px;
 }
 
 input::-webkit-input-placeholder {
   color: white;
+  font-style: italic;
+  letter-spacing:1.3px;
+   text-shadow: 0px 1px 5px black;
+    line-height: 1;
+    text-transform: uppercase;
 }
 
 .input:focus+.underline {
@@ -1193,18 +1228,18 @@ input::-webkit-input-placeholder {
 .form-search {
     display: flex;
     text-align: center;
-    width: 40%;
-    padding-bottom: 3px;
+    width: 51%;
+    padding-bottom: 0px;
     border-top: none;
     border-right: none;
     border-left: none;
-    margin-right: 23px;
+    margin-right: 30px;
     height: 42px;
-    font-size: 30px;
-    line-height: 32.428571;
+    font-size: 21px;
+    line-height: -21.571429;
     color: white;
     background-color: transparent;
     background-image: none;
     border-bottom: 3px solid white;
-     text-shadow: 0px 1px 5px black;
+    text-transform: uppercase;
 }
