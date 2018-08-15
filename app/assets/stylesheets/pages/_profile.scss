@@ -60,6 +60,12 @@
   padding-left: 15px;
 }
 
+.history-card {
+  background: white;                          /* White background */
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid rgba(0, 0, 0, 0.1);       /* OR subtle border */
+}
+
 .history_container {
   padding-right: 15px;
   padding-left: 15px;
@@ -78,6 +84,18 @@
     border-radius: 1%;
     cursor: pointer;
 }
+
+.profile-card-user-pic {
+    height: 80px;
+    border-radius: 50%;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    background-size: cover !important;
+    background-position: center;
+    color: white;
+    position: relative;
+    cursor: pointer;
+}
+
 
 
 .profile-container {
