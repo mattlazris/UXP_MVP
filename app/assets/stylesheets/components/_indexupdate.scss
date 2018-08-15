@@ -119,6 +119,8 @@
   padding: 10px 0px;
   margin: 0px;
   background-color: white;
+   align-items: center;
+    justify-content: center;
 }
 
 .tabbox1 {
@@ -129,6 +131,8 @@
     margin-top: 10px;
     padding-top: 10px;
     border: 3px solid black;
+    align-items: center;
+    justify-content: center;
 }
 
 .tabbox2 {
@@ -139,6 +143,8 @@
     margin-top: 10px;
     padding-top: 10px;
     border: 3px solid black;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -150,6 +156,8 @@
     margin-top: 10px;
     padding-top: 10px;
     border: 3px solid black;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -161,6 +169,8 @@
     margin-top: 10px;
     padding-top: 10px;
     border: 3px solid black;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -240,10 +250,8 @@
 .card {
     height: 337px;
     width: 250px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
     background-size: cover !important;
     background-position: center;
-    color: white;
     position: relative;
     // border-radius: 1%;
     cursor: pointer;
@@ -277,20 +285,24 @@
     letter-spacing: 1.3px;
     line-height: 1;
     text-transform: uppercase;
-
+    color:white;
 }
 
 .card-description {
     text-align: left;
+    height: 48px;
+    width: 300px;
+    padding-right: 20px;
+    padding-bottom: 10px;
     position: absolute;
-    top: 319px;
+    top: 290px;
     bottom: 0px;
     left: 51px;
     right: 0px;
     font-size: 15px;
     z-index: 1;
     font-family: 'Raleway', sans-serif;
-       letter-spacing: 1.3px;
+    letter-spacing: 1.3px;
     line-height: 1;
     text-transform: uppercase;
 }
@@ -505,7 +517,7 @@
   padding-left: 20px;
   padding-right:15px;
   margin-top: 20px;
-  font-color:white;
+  color:black;
   text-decoration: none;
     letter-spacing: 1.3px;
     line-height: 1;
@@ -522,7 +534,6 @@
   bottom: 0;
   left: 0px;
   right: 0;
-  color:white
 }
 
 .snip1584 {
@@ -534,7 +545,7 @@
   min-width: 241px;
   max-width: 310px;
   width: 106%;
-  color: #ffffff;
+  color:black;
   font-size: 16px;
   text-align: left;
 }
@@ -542,8 +553,8 @@
 .snip1584 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
+  -webkit-transition: all 0.001s ease;
+  transition: all 0.001s ease;
 }
 .snip1584:before {
   position: absolute;
@@ -553,11 +564,11 @@
   right: 10px;
   top: 100%;
   content: '';
-  background-color: #32333B;
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-  -webkit-transition-delay: 0.25s;
-  transition-delay: 0.25s;
+  background-color: #f8f9fa;
+  -webkit-transition: all 0.001s ease;
+  transition: all 0.001s ease;
+  -webkit-transition-delay: 0.001s;
+  transition-delay: 0.001s;
   // border-radius: 1%;
 }
 .snip1584 img {
@@ -631,8 +642,8 @@
   transform: translateY(-100%);
   text-transform: uppercase;
   font-weight: 400;
-  -webkit-transition-delay: 0.05s;
-  transition-delay: 0.05s;
+  -webkit-transition-delay: 0.001s;
+  transition-delay: 0.001s;
   margin-bottom: 5px;
 }
 
@@ -643,8 +654,8 @@
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
   font-weight: 400;
-  -webkit-transition-delay: 0.05s;
-  transition-delay: 0.05s;
+  -webkit-transition-delay: 0.001s;
+  transition-delay: 0.001s;
   margin-bottom: 5px;
 }
 
@@ -661,8 +672,8 @@
   text-transform: uppercase;
   text-transform: uppercase;
   font-weight: 400;
-  -webkit-transition-delay: 0.05s;
-  transition-delay: 0.05s;
+  -webkit-transition-delay: 0.001s;
+  transition-delay: 0.001s;
   margin-bottom: 5px;
 }
 
@@ -718,27 +729,27 @@
 
 .snip1584:hover h5,
 .snip1584.hover h5 {
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
+  -webkit-transition-delay: 0.001s;
+  transition-delay: 0.001s;
 }
 
 .snip1584:hover h4,
 .snip1584.hover h4 {
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
+  -webkit-transition-delay: 0.001s;
+  transition-delay: 0.001s;
 }
 
 
 .snip1584:hover h6,
 .snip1584.hover h6 {
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
+  -webkit-transition-delay: 0.001s;
+  transition-delay: 0.001s;
 }
 
 .snip1584:hover p,
 .snip1584.hover p {
-  -webkit-transition-delay: 0.2s;
-  transition-delay: 0.2s;
+  -webkit-transition-delay: 0.001s;
+  transition-delay: 0.001s;
 }
 
 .snip1584 {
@@ -766,12 +777,10 @@
 
   a {
     text-decoration: none;
-    color: white;
   }
 
   a:hover {
     text-decoration: none;
-    color: white;
   }
 }
 
@@ -1133,6 +1142,19 @@ input::-webkit-input-placeholder {
     font-weight: bold;
 }
 
+.feature-tile__top {
+    border-bottom: 4px solid #111;
+    display: inline-block;
+    font-size: 18px;
+    letter-spacing: 1.3px;
+    line-height: 1;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: -18px;
+}
+
 
 
 .feature-tile__callout p {
@@ -1154,13 +1176,13 @@ input::-webkit-input-placeholder {
 .feature-tile__content h2 {
   font-size: 18px;
   line-height: 1.5;
-  margin-right: 35px;
+  padding-right: 35px;
 }
 
 .feature-tile__content2 h2 {
   font-size: 18px;
   line-height: 1.5;
-  margin-right: 35px;
+  padding-right: 35px;
 }
 
 .searchBarMain {
@@ -1172,11 +1194,11 @@ input::-webkit-input-placeholder {
   margin-top: 11px;
   // border-radius: 2px;
   box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.14);
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.001s ease-in-out;
+  -moz-transition: all 0.001s ease-in-out;
+  -ms-transition: all 0.001s ease-in-out;
+  -o-transition: all 0.001s ease-in-out;
+  transition: all 0.001s ease-in-out;
   position: fixed;
   left: 0;
   right: 0;

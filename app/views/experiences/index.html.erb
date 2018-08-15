@@ -1,4 +1,5 @@
-<div class="banner" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3) 50%, rgba(0,36,61,0.6) 100%), url('<%= image_path 'streetbasketballbanner.png' %>');">
+<div style="overflow-x: hidden">
+<div class="banner" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3) 50%, rgba(0,36,61,0.6) 100%), url('<%= image_path 'greencourt.png' %>');">
   <div class="banner-content">
     <h1 text-center>Sportchain</h1>
     <div class="bannerslogan">
@@ -16,8 +17,7 @@
   </div>
   <a href="#tops" class= "explore-btn">Start Exploring</a>
 </div>
-</div>
-<div>
+<div class="row">
   <div class="col-12 feature-tile feature-tile--hero ">
     <div class="feature-tile__container">
       <div class="no-gutters">
@@ -75,7 +75,7 @@
   </div>
 </div>
 <div class="cardcontainer text-center" id="tops">
-  <h2 class="section-title-home-content feature-tile__callout">
+  <h2 class="section-title-home-content feature-tile__top">
     Pick a sport
   </h2>
   <div class="tabs">
@@ -109,7 +109,8 @@
     </div>
   </div>
 </div>
-</div
+</div>
+
 <h2 class="section-title-home">
 <div class="section-title-home-content">
   Top-rated sports adventures
@@ -123,7 +124,6 @@
           <%= link_to experience_path(experience) do %>
             <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= experience.photo %>');">
               <div class="card-category"><%= experience.category %></div>
-              <img class="card-user avatar" src='<%= experience.user.photo %>'>
             <% end %>
             <%= link_to experience_path(experience), experience: experience do %>
               <div class="backcard">
@@ -131,7 +131,8 @@
                   <%= cl_image_tag asset_path(experience.user.photo), class: "img" %>
                 </div>
                 <h5><%= experience.user.first_name %></h5>
-                <!-- <p><%= experience.skill_level %></p><br> -->
+                <p><%= experience.skill_level %></p>
+                <br>
                 <p><%= experience.location %></p>
                 <h6>Click to see full adventure</h6>
               </div>
@@ -161,8 +162,7 @@
         <div class="wholecard">
           <%= link_to experience_path(experience) do %>
             <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= experience.photo %>');">
-              <div class="card-category"><%= experience.category %></div>
-              <img class="card-user avatar" src='<%= experience.user.photo %>'>
+             <div class="card-category"><%= experience.category %></div>
             <% end %>
             <%= link_to experience_path(experience), experience: experience do %>
               <div class="backcard">
@@ -203,7 +203,6 @@
           <%= link_to experience_path(experience) do %>
             <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= experience.photo %>');">
               <div class="card-category"><%= experience.category %></div>
-              <img class="card-user avatar" src='<%= experience.user.photo %>'>
             <% end %>
             <%= link_to experience_path(experience), experience: experience do %>
               <div class="backcard">
@@ -252,8 +251,10 @@
                   <%= cl_image_tag asset_path(experience.user.photo), class: "img" %>
                 </div>
                 <h5><%= experience.user.first_name%></h5>
-                <p><%= experience.user.occupation %></p>
-                <h6>Click for more about experience and host</h6>
+                <p><%= experience.skill_level %></p>
+                <br>
+                <p><%= experience.location %></p>
+                <h6>Click to see full adventure</h6>
               </div>
             </figure>
             <div class="card-description">
@@ -283,7 +284,6 @@
           <%= link_to experience_path(experience) do %>
             <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_tag asset_path(experience.photo) %>');">
               <div class="card-category"><%= experience.category %></div>
-              <img class="card-user avatar" src='<%= experience.user.photo %>'>
             <% end %>
             <%= link_to experience_path(experience), experience: experience do %>
               <div class="backcard">
@@ -324,7 +324,6 @@
           <%= link_to experience_path(experience) do %>
             <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_tag asset_path(experience.photo) %>');">
               <div class="card-category"><%= experience.category %></div>
-              <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/atmosfeer">
             <% end %>
             <%= link_to experience_path(experience), experience: experience do %>
               <div class="backcard">
