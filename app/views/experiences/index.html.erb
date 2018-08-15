@@ -1,120 +1,119 @@
 <div style="overflow-x: hidden">
-<div class="banner" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3) 50%, rgba(0,36,61,0.6) 100%), url('<%= image_path 'greencourt.png' %>');">
-  <div class="banner-content">
-    <h1 text-center>Sportchain</h1>
-    <div class="bannerslogan">
-      <h2>Play sports with locals in </h2>
-      <div>
-        <%= form_tag experiences_path, method: :get do %>
-          <%= text_field_tag :query,
+  <div class="banner" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3) 50%, rgba(0,36,61,0.6) 100%), url('<%= image_path 'greencourt.png' %>');">
+    <div class="banner-content">
+      <h1 text-center>Sportchain</h1>
+      <div class="bannerslogan">
+        <h2>Play sports with locals in </h2>
+        <div>
+          <%= form_tag experiences_path, method: :get do %>
+            <%= text_field_tag :query,
         params[:query],
         class: "form-search",
         placeholder: "your city"
           %>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
+    <a href="#tops" class= "explore-btn">Start Exploring</a>
   </div>
-  <a href="#tops" class= "explore-btn">Start Exploring</a>
-</div>
-<div class="row">
-  <div class="col-12 feature-tile feature-tile--hero ">
-    <div class="feature-tile__container">
-      <div class="no-gutters">
-        <div class="col-md-6">
-          <%= image_tag asset_path('soccer.jpg'), class: "soccer"%>
-        </div>
-        <div class="col-md-6 align-self-start">
-          <div class="feature-tile__content">
-            <p class="feature-tile__callout">vision</p>
-            <h2 class="feature-tile__headline">To be the lead sports platform for travellers who are passionate about sports. To be the most easily accessible information exchange platform that share opportunities of doing sports with everyone. </h2>
+  <div class="row">
+    <div class="col-12 feature-tile feature-tile--hero ">
+      <div class="feature-tile__container">
+        <div class="no-gutters">
+          <div class="col-md-6">
+            <%= image_tag asset_path('soccer.jpg'), class: "soccer"%>
+          </div>
+          <div class="col-md-6 align-self-start">
+            <div class="feature-tile__content">
+              <p class="feature-tile__callout">vision</p>
+              <h2 class="feature-tile__headline">To be the lead sports platform for travellers who are passionate about sports. To be the most easily accessible information exchange platform that share opportunities of doing sports with everyone. </h2>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div>
-  <div class="col-12 feature-tile feature-tile--hero ">
-    <div class="feature-tile__container">
-      <div class="no-gutters">
-        <div class="col-md-6 align-self-start">
-          <div class="feature-tile__content2">
-            <p class="feature-tile__callout">mission</p>
-            <h2 class="feature-tile__headline">We aim to connect sport lovers who are travelling in a new place to local sport lovers. We want sport lovers to pursue their passion no matter where they are in this world. </h2>
+  <div>
+    <div class="col-12 feature-tile feature-tile--hero ">
+      <div class="feature-tile__container">
+        <div class="no-gutters">
+          <div class="col-md-6 align-self-start">
+            <div class="feature-tile__content2">
+              <p class="feature-tile__callout">mission</p>
+              <h2 class="feature-tile__headline">We aim to connect sport lovers who are travelling in a new place to local sport lovers. We want sport lovers to pursue their passion no matter where they are in this world. </h2>
+            </div>
           </div>
-        </div>
-        <div class="col-md-6">
-          <%= image_tag asset_path('guys.png'), class: "guys"%>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="col-12 feature-tile feature-tile--hero ">
-    <div class="feature-tile__container">
-      <div class="no-gutters">
-        <div class="col-md-6">
-          <%= image_tag asset_path('jump1.png'), class: "soccer"%>
-        </div>
-        <div class="col-md-6 align-self-start">
-          <div class="feature-tile__content">
-            <p class="feature-tile__callout">values</p>
-            <h2 class="feature-tile__headline">
-              Equality - People from different countries, regions, genders, ages, and other backgrounds are welcome to use our platform and be connected with each other.<br>
-              <br>
-              Healthy Life - We believe in health’s role in improving the quality of people’s life. And we believe in sports’ role in living a healthy life.<br>
-              <br>
-              Connection - We believe that sports bring people together. Connection with other interesting people is one of the major takeaways of using our platform.
-            </h2>
+          <div class="col-md-6">
+            <%= image_tag asset_path('guys.png'), class: "guys"%>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="cardcontainer text-center" id="tops">
-  <h2 class="section-title-home-content feature-tile__top">
-    Pick a sport
-  </h2>
-  <div class="tabs">
-    <div class="col-xs-12 col-sm-6 col-md-3 text-center">
-      <a class="tab" href="#basketball">
-        <div class="tabbox1 zdepth1">
-          <p>Basketball</p>
+  <div>
+    <div class="col-12 feature-tile feature-tile--hero ">
+      <div class="feature-tile__container">
+        <div class="no-gutters">
+          <div class="col-md-6">
+            <%= image_tag asset_path('jump1.png'), class: "soccer"%>
+          </div>
+          <div class="col-md-6 align-self-start">
+            <div class="feature-tile__content">
+              <p class="feature-tile__callout">values</p>
+              <h2 class="feature-tile__headline">
+                Equality - People from different countries, regions, genders, ages, and other backgrounds are welcome to use our platform and be connected with each other.<br>
+                <br>
+                Healthy Life - We believe in health’s role in improving the quality of people’s life. And we believe in sports’ role in living a healthy life.<br>
+                <br>
+                Connection - We believe that sports bring people together. Connection with other interesting people is one of the major takeaways of using our platform.
+              </h2>
+            </div>
+          </div>
         </div>
-      </a>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-3 text-center">
-      <a class="tab" href="#soccer">
-        <div class="tabbox2 zdepth1">
-          <p>Soccer</p>
-        </div>
-      </a>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3 text-center">
-      <a class="tab" href="#tennis">
-        <div class="tabbox3 zdepth1">
-          <p>Tennis</p>
-        </div>
-      </a>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3 text-center">
-      <a class="tab" href="#others">
-        <div class="tabbox4 zdepth1">
-          <p>Other sports</p>
-        </div>
-      </a>
+  </div>
+  <div class="cardcontainer text-center" id="tops">
+    <h2 class="section-title-home-content feature-tile__top">
+      Pick a sport
+    </h2>
+    <div class="tabs">
+      <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+        <a class="tab" href="#basketball">
+          <div class="tabbox1 zdepth1">
+            <p>Basketball</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+        <a class="tab" href="#soccer">
+          <div class="tabbox2 zdepth1">
+            <p>Soccer</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+        <a class="tab" href="#tennis">
+          <div class="tabbox3 zdepth1">
+            <p>Tennis</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+        <a class="tab" href="#others">
+          <div class="tabbox4 zdepth1">
+            <p>Other sports</p>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </div>
-</div>
-
 <h2 class="section-title-home">
-<div class="section-title-home-content">
-  Top-rated sports adventures
-</div>
+  <div class="section-title-home-content">
+    Top-rated sports adventures
+  </div>
 </h2>
 <div class="container text-center">
   <div class="row experience-card-index">
@@ -162,7 +161,7 @@
         <div class="wholecard">
           <%= link_to experience_path(experience) do %>
             <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= experience.photo %>');">
-             <div class="card-category"><%= experience.category %></div>
+              <div class="card-category"><%= experience.category %></div>
             <% end %>
             <%= link_to experience_path(experience), experience: experience do %>
               <div class="backcard">
