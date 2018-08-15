@@ -3,7 +3,7 @@
   <div class="col-xs-12 col-sm-8">
     <div class="row center-it-center-it">
       <div>
-        <h1 class="all-show-title-font"><%= @experience.name %></h1>
+        <h2 class="all-show-title-font"><%= @experience.name %></h2>
       </div>
       <div>
         <p class="secondary-headers"><%=" #{@experience.category}" %></p>
@@ -12,62 +12,22 @@
         <p class="secondary-headers"><%= " #{@experience.user.first_name} #{@experience.user.last_name}" %></p>
       </div>
     </div>
-    <div class="top-page-space">
+    <div class="show-page-space">
     </div>
     <div class="row big-cards-keep-rollin">
       <div class="venue-flex-box">
-        <div class="venue-image" style="background-image: url(<%=@experience.photo%>);">Venue
+        <div class="venue-image" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3) 100%, rgba(0,36,61,0.6) 100%), url(<%=@experience.photo%>);">
+          <div class="profile-venue-image" style="background-image: url(<%= @experience.user.photo%>);">
+          </div>
         </div>
       </div>
       <div class="icons-from-info">
-        <div class="icon-container">
-          <div class="icon-detail margin-icon top-margin-icon icon-middle-bottom">
-            <div class="width-of-icon-text"><i class="fas fa-map-marker-alt icons"></i></div>
-            <div class="experience-desc-after-icon"><%= "#{@experience.location}" %>
-            </div>
-          </div>
-          <div class="icon-detail margin-icon bottom-margin-icon">
-            <div class="width-of-icon-text"><i class="far fa-building icons"></i></div>
-            <div class="experience-desc-after-icon"><%= "Venue: #{@experience.venue}" %>
-            </div>
-          </div>
-        </div>
-        <div class="icon-container">
-          <div class="icon-detail margin-icon top-margin-icon icon-middle-bottom">
-            <div class="width-of-icon-text"><i class="far fa-clock icons"></i></div>
-            <div class="experience-desc-after-icon"><%= "#{@experience.duration} hours of play" %></div>
-          </div>
-          <div class="icon-detail margin-icon bottom-margin-icon" id="adress-flex">
-            <div class="width-of-icon-text"><i class="fas fa-fire icons"></i></div>
-            <div class="experience-desc-after-icon">
-              <%= "#{@experience.skill_level} skill level" %>
-            </div>
-          </div>
-        </div>
-        <div class="icon-container">
-          <div class="icon-detail margin-icon top-margin-icon">
-            <div class="width-of-icon-text"><i class="fas fa-coins icons"></i></div>
-            <div class="experience-desc-after-icon"> <%= "¥#{@experience.price} per person" %>
-            </div>
-          </div>
-        </div>
         <div class="image-container-align">
-          <div class="host_header all-show-title-font center-host-title-row">
-            Gameplan:
+          <div class="host_header center-host-title-row">
+            <h3 class="all-show-title-font h3-all-show-title-font">
+              Teammate Stats</h3>
           </div>
-          <div class="text-restrict-width bottom-margin-icon"><%= @experience.description %></div>
         </div>
-        <br>
-      </div>
-    </div>
-    <div class="middle-page-space">
-    </div>
-    <div class="row big-cards-keep-rollin">
-      <div class="venue-flex-box">
-        <div class="venue-image" style="background-image: url(<%= @experience.user.photo%>);"> Teammate
-        </div>
-      </div>
-      <div class="icons-from-info">
         <div class="icon-container">
           <div class="icon-detail margin-icon top-margin-icon icon-middle-bottom">
             <div class="width-of-icon-text"><i class="far fa-user icons"></i></div>
@@ -102,18 +62,18 @@
             <br>
           </div>
         </div>
-        <div class="icon-container">
-          <div class="icon-detail margin-icon">
-            <div class="width-of-icon-text"><i class="fas fa-medal icons"></i></div>
-            <div class="experience-desc-after-icon"> <%= "Favorite Player: #{@experience.user.favorite_players}" %>
-            </div>
-          </div>
-        </div>
         <div class="image-container-align">
-          <div class="host_header all-show-title-font center-host-title-row">
-            More About <%="#{@experience.user.first_name},"%>
+          <div class="host_header center-host-title-row">
+            <h3 class="all-show-title-font h3-all-show-title-font">
+              More About <%="#{@experience.user.first_name}"%></h3>
           </div>
           <div class="text-restrict-width bottom-margin-icon"><%= @experience.user.description %></div>
+        </div>
+        <div class="image-container-align">
+          <div class="host_header center-host-title-row">
+            <h3 class="all-show-title-font h3-all-show-title-font">Gameplan</h3>
+          </div>
+          <div class="text-restrict-width bottom-margin-icon"><%= @experience.description %></div>
         </div>
       </div>
     </div>
@@ -146,22 +106,16 @@
           <div class="experience-desc-after-icon"><%= "#{@experience.location}" %>
           </div>
         </div>
-        <!-- <div class="icon-detail margin-icon icon-middle-bottom">
-          <div class="width-of-icon-text"><i class="fas fa-language icons"></i></div>
-          <div class="experience-desc-after-icon"><%= "Your teammate's first language is #{@experience.language}" %>
-          </div>
-        </div> -->
         <div class="icon-detail-geocoder margin-icon icon-middle-bottom">
           <div class="width-of-icon-text"><i class="far fa-clock icons"></i></div>
           <div class="experience-desc-after-icon"><%= "#{@experience.duration} hours of play" %></div>
         </div>
-        <div class="icon-detail-geocoder margin-icon icon-middle-bottom" id="adress-flex">
-          <div class="width-of-icon-text"><i class="fas fa-fire icons"></i></div>
-          <div class="experience-desc-after-icon">
-            <%= "#{@experience.skill_level} skill level" %>
+        <div class="icon-detail-geocoder margin-icon icon-middle-bottom">
+          <div class="width-of-icon-text"><i class="far fa-building icons"></i></div>
+          <div class="experience-desc-after-icon"><%= "Venue: #{@experience.venue}" %>
           </div>
         </div>
-        <div class="icon-detail-geocoder margin-icon bottom-margin-icon">
+        <div class="icon-detail-geocoder margin-icon">
           <div class="width-of-icon-text"><i class="fas fa-coins icons"></i></div>
           <div class="experience-desc-after-icon"> <%= "¥#{@experience.price} per person" %>
           </div>
