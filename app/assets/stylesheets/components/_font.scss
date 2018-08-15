@@ -1,3 +1,13 @@
+.secondary-headers {
+  letter-spacing: 1.3px;
+  line-height: 1;
+  font-size: 14px;
+  padding-top: 5px;
+}
+
+.message-body h3 a {
+  color: black;
+}
 
 .font-white a{
   color: white;
@@ -24,6 +34,12 @@
   color: #5DB498;
 }
 
+.center-host-title-row {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
 .host_name_header a{
   color: black;
   font-size: 26px;
@@ -44,8 +60,12 @@
 }
 
 .experience-desc-after-icon {
-  display: inline-block;
   font-size: 12px;
+  letter-spacing: 1.3px;
+  line-height: 1;
+}
+
+.description-text-for-the-weak {
   letter-spacing: 1.3px;
   line-height: 1;
 }
@@ -54,4 +74,16 @@
     letter-spacing: 1.3px;
     line-height: 1;
     text-transform: uppercase;
+    border-bottom: 4px solid #111;
+    display: inline-block;
+    letter-spacing: 1.3px;
+    line-height: 1;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.h3-all-show-title-font {
+  font-size: 18px;
 }
