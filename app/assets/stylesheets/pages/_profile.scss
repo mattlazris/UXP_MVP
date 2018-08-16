@@ -48,8 +48,6 @@
 .profile-card {
   margin-top: 40px;
   background: white;                          /* White background */
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  border: 1px solid rgba(0, 0, 0, 0.1);       /* OR subtle border */
 }
 
 .history {
@@ -87,6 +85,7 @@
 
 .profile-card-user-pic {
     height: 80px;
+    width: 80px;
     border-radius: 50%;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
     background-size: cover !important;
@@ -174,11 +173,40 @@
     text-decoration: none;
 }
 
+.profile-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
 
 .message {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 0px;
+  padding-top: 0px;
   display: flex;
   align-items: center;
-  padding: 20px;
+  justify-content: center;
+  margin: 10px;
+}
+
+.message1 {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.display-flex-center{
+  display: flex;
+  padding-top: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
   border-bottom: 1px solid rgba(220,224,244,0.4);
 }
 
@@ -203,7 +231,8 @@
   margin-top: 5px;
 }
 .message-body {
-  padding-left: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
   font-size: 13px;
 }
 
@@ -243,6 +272,7 @@
 .profile-hover-light-grey:hover {
   background-color: #00000015;
   border-color: #5C9A4F !important;
+  color: #5C9A4F !important;
   text-decoration: none;
 }
 
