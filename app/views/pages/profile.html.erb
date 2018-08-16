@@ -109,12 +109,33 @@
                         <% end %>
                         <div class="message-body">
                           <h3><%= link_to exp.name, exp %></h3>
-                            <p><%= exp.description %></p>
-                            <p><%= exp.location %></p>
-                            <p><%= exp.language %></p>
-                            <p><%= exp.duration %> hours </p>
-                            <p><%= exp.skill_level %> skill level</p>
-                            <p><%= exp.price %> RMB </p>
+                          <div class="icon-detail1 margin-icon top-margin-icon icon-middle-bottom">
+                            <div class="width-of-icon-text"><i class="far fa-file"></i></div>
+                            <div class="experience-desc-after-icon capitalize"><%= exp.description %>
+                            </div>
+                          </div>
+                          <div class="icon-detail1 margin-icon top-margin-icon icon-middle-bottom">
+                            <div class="width-of-icon-text"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="experience-desc-after-icon capitalize"><%= exp.location %>
+                            </div>
+                          </div>
+                          <div class="icon-detail1 margin-icon icon-middle-bottom">
+                            <div class="width-of-icon-text"><i class="fas fa-language icons"></i></div>
+                            <div class="experience-desc-after-icon capitalize"><%= exp.language %>
+                            </div>
+                          </div>
+                          <div class="icon-detail1 margin-icon icon-middle-bottom">
+                            <div class="width-of-icon-text"><i class="far fa-clock"></i></div>
+                            <div class="experience-desc-after-icon capitalize"><%= exp.duration%> hours</div>
+                          </div>
+                          <div class="icon-detail1 margin-icon icon-middle-bottom">
+                            <div class="width-of-icon-text"><i class="fas fa-fire icons"></i></div>
+                            <div class="experience-desc-after-icon capitalize"><%= exp.skill_level %> skill level</div>
+                          </div>
+                          <div class="icon-detail1 margin-icon icon-middle-bottom">
+                            <div class="width-of-icon-text"><i class="fas fa-money-bill-alt"></i></div>
+                            <div class="experience-desc-after-icon capitalize"><%= exp.price %> RMB</div>
+                          </div>
                         </div>
                         <div class="message-status">
                           <btn class="main-btn padding-top-is-cool btn-sm btn-light"><%= link_to 'Add A Timeslot', new_experience_timeslot_path(exp) %></btn>
@@ -134,7 +155,7 @@
                         </div>
                         <div id="padding-0", class="col-xs-6">
                           <a href="javascript:void(0)" onclick="openCity('<%= exp.name %>', '<%= exp.name %>_passed');">
-                            <div class="profile-third tablink profile-bottombar profile-hover-light-grey profile-padding">Passed</div>
+                            <div class="profile-third tablink profile-bottombar profile-hover-light-grey profile-padding">Accepted</div>
                           </a>
                         </div>
                       </div>
@@ -154,11 +175,11 @@
                                   <div><%= booking.end_time %></div>
                                 </div>
                                 <div class="message-body">
-                                  <%= "In Progress" %>
+                                  <%= "Paid" %>
                                 </div>
                                 <br>
                                 <div class="message-status">
-                                  <button class="main-btn padding-top-is-cool btn-sm btn-light"><%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %></button>
+                                  <button class="main-btn padding-top-is-cool btn-sm btn-light"><%= link_to 'Accept', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %></button>
                                   <br>
                                   <button class="main-btn padding-top-is-cool btn-sm btn-light"><%= link_to "Decline", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></button>
                                 </div>
@@ -181,7 +202,7 @@
                                   <div><%= booking.end_time %></div>
                                 </div>
                                 <div class="message-body">
-                                  <%= "This Deal Is Closed" %>
+                                  <%= "This Deal Is Accepted" %>
                                 </div>
                               </div>
                             <% end %>
@@ -232,14 +253,33 @@
                             <img class="avatar" src="<%= booking.experience.user.photo %>">
                             <%= "Hosted By #{booking.user.first_name} #{booking.user.last_name}" %>
                           <% end %>
-                          <br>
-                          <br>
-                          <div><%= booking.experience.description %></div>
-                          <div><%= booking.experience.location %></div>
-                          <div><%= booking.experience.skill_level %></div>
-                          <div><%= booking.experience.price %></div>
-                          <div><%= booking.start_time %></div>
-                          <div><%= booking.end_time %></div>
+                          <div class="icon-detail1 margin-icon top-margin-icon icon-middle-bottom">
+                            <div class="width-of-icon-text"><i class="far fa-file"></i></div>
+                            <div class="experience-desc-after-icon capitalize"><%= booking.experience.description %>
+                            </div>
+                          </div>
+                          <div class="icon-detail1 margin-icon top-margin-icon icon-middle-bottom">
+                            <div class="width-of-icon-text"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="experience-desc-after-icon capitalize"><%= booking.experience.location %>
+                            </div>
+                          </div>
+                          <div class="icon-detail1 margin-icon icon-middle-bottom">
+                            <div class="width-of-icon-text"><i class="fas fa-language icons"></i></div>
+                            <div class="experience-desc-after-icon capitalize"><%= booking.experience.language %>
+                            </div>
+                          </div>
+                          <div class="icon-detail1 margin-icon icon-middle-bottom">
+                            <div class="width-of-icon-text"><i class="far fa-clock"></i></div>
+                            <div class="experience-desc-after-icon capitalize"><%= booking.experience.duration%> hours</div>
+                          </div>
+                          <div class="icon-detail1 margin-icon icon-middle-bottom">
+                            <div class="width-of-icon-text"><i class="fas fa-fire icons"></i></div>
+                            <div class="experience-desc-after-icon capitalize"><%= booking.experience.skill_level %> skill level</div>
+                          </div>
+                          <div class="icon-detail1 margin-icon icon-middle-bottom">
+                            <div class="width-of-icon-text"><i class="fas fa-money-bill-alt"></i></div>
+                            <div class="experience-desc-after-icon capitalize"><%= booking.experience.price %> RMB</div>
+                          </div>
                         </div>
                         <div class="message-status">
                           <button class="main-btn padding-top-is-cool btn-sm btn-light"><%= link_to "Cancel", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure? RMB#{booking.experience.price} will be refunded back to your account."} %></button>
@@ -261,14 +301,33 @@
                               <img class="avatar" src="<%= booking.experience.user.photo %>">
                               <%= "Hosted By #{booking.user.first_name} #{booking.user.last_name}" %>
                             <% end %>
-                            <br>
-                            <br>
-                            <div><%= booking.experience.description %></div>
-                            <div><%= booking.experience.location %></div>
-                            <div><%= booking.experience.skill_level %></div>
-                            <div><%= booking.experience.price %></div>
-                            <div><%= booking.start_time %></div>
-                            <div><%= booking.end_time %></div>
+                            <div class="icon-detail1 margin-icon top-margin-icon icon-middle-bottom">
+                              <div class="width-of-icon-text"><i class="far fa-file"></i></div>
+                              <div class="experience-desc-after-icon capitalize"><%= booking.experience.description %>
+                              </div>
+                            </div>
+                            <div class="icon-detail1 margin-icon top-margin-icon icon-middle-bottom">
+                              <div class="width-of-icon-text"><i class="fas fa-map-marker-alt"></i></div>
+                              <div class="experience-desc-after-icon capitalize"><%= booking.experience.location %>
+                              </div>
+                            </div>
+                            <div class="icon-detail1 margin-icon icon-middle-bottom">
+                              <div class="width-of-icon-text"><i class="fas fa-language icons"></i></div>
+                              <div class="experience-desc-after-icon capitalize"><%= booking.experience.language %>
+                              </div>
+                            </div>
+                            <div class="icon-detail1 margin-icon icon-middle-bottom">
+                              <div class="width-of-icon-text"><i class="far fa-clock"></i></div>
+                              <div class="experience-desc-after-icon capitalize"><%= booking.experience.duration%> hours</div>
+                            </div>
+                            <div class="icon-detail1 margin-icon icon-middle-bottom">
+                              <div class="width-of-icon-text"><i class="fas fa-fire icons"></i></div>
+                              <div class="experience-desc-after-icon capitalize"><%= booking.experience.skill_level %> skill level</div>
+                            </div>
+                            <div class="icon-detail1 margin-icon icon-middle-bottom">
+                              <div class="width-of-icon-text"><i class="fas fa-money-bill-alt"></i></div>
+                              <div class="experience-desc-after-icon capitalize"><%= booking.experience.price %> RMB</div>
+                            </div>
                           </div>
                         </div>
                     <% end %>
