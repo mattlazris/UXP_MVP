@@ -3,271 +3,284 @@
   <div>
     <div class="row">
       <div class="col-xs-12 col-sm-4" id="sticky-profile">
-        <div >
+        <div class="border">
           <div class="main">
             <div class="main-content">
               <%= cl_image_tag @user.photo, width: 300, crop: :fill, class: "show-pic" %>
               <h2 class="host_name_header"><strong><%= " #{@user.first_name} #{@user.last_name}" %></strong></h2>
               <h3><%= "You are a host." if @user.host %></h3>
               <% if @user.host %>
-                <button class="btn-medium"><%= link_to 'Add An Experience To Your Profile', new_experience_path if policy(Experience).create? %></button>
+                <button class="btn btn-success"><%= link_to 'Add An Experience To Your Profile', new_experience_path if policy(Experience).create? %></button>
               <% else %>
-                <button class="btn-medium "><%= link_to 'Become A Host', edit_user_registration_path %></button>
+                <button class="btn btn-success"><%= link_to 'Become A Host', edit_user_registration_path %></button>
               <% end %>
             </div>
           </div>
           <div>
-            <div class="main-btn">
-              <div><%= link_to "My profile", "#" %></div>
-              <div><i class="fas fa-greater-than"></i></div>
+            <div class="main-btn padding-top-is-cool btn-sm btn-light">
+              <div><%= link_to "MY PROFILE", "#" %></div>
             </div>
+            <br>
             <% if @user.host %>
-              <div class="main-btn">
-                <div><%= link_to "Sports Events I host", "#events_I_host" %></div>
-                <div><i class="fas fa-greater-than"></i></div>
+              <div class="main-btn padding-top-is-cool btn-sm btn-light">
+                <div><%= link_to "HOSTING", "#events_I_host" %></div>
               </div>
+              <br>
             <% end %>
-            <div class="main-btn">
-              <div><%= link_to "Sports Events I will attend", "#events_I_will_attend" %></div>
-              <div><i class="fas fa-greater-than"></i></div>
-            </div>
-            <div class="main-btn">
-              <div><%= link_to "Sports Events I've attended", "#events_I_have_attended" %></div>
-              <div><i class="fas fa-greater-than"></i></div>
+            <div class="main-btn padding-top-is-cool btn-sm btn-light">
+              <div><%= link_to "ATTENDING", "#events_I_attend" %></div>
             </div>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-sm-8">
         <div class="my_profile">
-          <div class="row">
-            <div class="venue-flex-box">
-              <div class="venue-title">
-                My profile
+          <div class="attending">
+            <div>
+              <h2 class="venue-title">
+                <div class="venue-flex-box all-show-title-font">
+                  My profile
+                </div>
+              </h2>
+              <div class="container-ofall-container-15">
+                <div class="icon-container">
+                  <div class="icon-detail margin-icon top-margin-icon icon-middle-bottom">
+                    <div class="width-of-icon-text"><i class="far fa-flag icons"></i></div>
+                    <div class="experience-desc-after-icon"><%= "#{@user.nationality}" %>
+                    </div>
+                  </div>
+                  <div class="icon-detail margin-icon icon-middle-bottom">
+                    <div class="width-of-icon-text"><i class="fas fa-hashtag icons"></i></div>
+                    <div class="experience-desc-after-icon"><%= "#{@user.age} years old" %>
+                    </div>
+                  </div>
+                  <div class="icon-detail margin-icon bottom-margin-icon">
+                    <div class="width-of-icon-text"><i class="fas fa-medal icons"></i></div>
+                    <div class="experience-desc-after-icon"><%= "Favorite Player: #{@user.favorite_players}" %></div>
+                  </div>
+                </div>
+                <div class="icon-container">
+                  <div class="icon-detail margin-icon icon-middle-bottom top-margin-icon">
+                    <div class="width-of-icon-text"><i class="fas fa-male icons"></i></div>
+                    <div class="experience-desc-after-icon"><%= "#{@user.gender}" %></div>
+                  </div>
+                  <div class="icon-detail margin-icon icon-middle-bottom">
+                    <div class="width-of-icon-text"><i class="fas fa-language icons"></i></div>
+                    <div class="experience-desc-after-icon"><%= "First language: #{@language}" %>
+                    </div>
+                  </div>
+                  <div class="icon-detail margin-icon bottom-margin-icon" id="adress-flex">
+                    <div class="width-of-icon-text"><i class="fas fa-fire icons"></i></div>
+                    <div class="experience-desc-after-icon">
+                      <%= "#{@skill_level} skill level" %>
+                    </div>
+                    <br>
+                  </div>
+                </div>
               </div>
+            </div>
+            <div>
+              <h3 class="venue-title">
+                <div class="all-show-title-font h3-all-show-title-font">
+                  More About <%="#{@user.first_name}"%>
+                </div>
+              </h3>
+              <br>
+              <div class="bottom-margin-icon padding_15"><%= @user.description %></div>
             </div>
           </div>
           <br>
-          <div class="row">
-            <div class="tour-info-icons">
-              <div class="icon-detail margin-icon icon-middle-bottom">
-                <div class="width-of-icon-text"><i class="far fa-flag icons"></i></div>
-                <div class="experience-desc-after-icon"> <%= "#{@user.nationality}" %>
-                </div>
-
-              </div>
-              <div class="icon-detail margin-icon icon-middle-bottom">
-                <div class="width-of-icon-text"><i class="fas fa-hashtag icons"></i></div>
-                <div class="experience-desc-after-icon"><%= "#{@user.age} years old" %></div>
-              </div>
-              <div class="icon-detail margin-icon icon-middle-bottom">
-                <div class="width-of-icon-text"><i class="fas fa-<%= @user.gender.downcase %> icons"></i></div>
-                <div class="experience-desc-after-icon"><%= "#{@user.gender}" %></div>
-              </div>
-              <div class="icon-detail margin-icon icon-middle-bottom">
-                <div class="width-of-icon-text"><i class="fas fa-language icons"></i></div>
-                <div class="experience-desc-after-icon"><%= "First language: #{@language}" %>
-                </div>
-              </div>
-              <div class="icon-detail margin-icon icon-middle-bottom" id="adress-flex">
-                <div class="width-of-icon-text"><i class="fas fa-fire icons"></i></div>
-                <div class="experience-desc-after-icon">
-                  <%= "#{@skill_level} skill level" %>
-                </div>
-                <br>
-              </div>
-              <div class="icon-detail margin-icon bottom-margin-icon">
-                <div class="width-of-icon-text"><i class="fas fa-medal icons"></i></div>
-                <div class="experience-desc-after-icon"> <%= "Favorite Player: #{@user.favorite_players}" %>
-                </div>
-              </div>
-            </div>
-            <div class="border-line-bottom">
-            </div>
-          </div>
-          <div class="row">
-            <div class="venue-title">
-              More About <%="#{@user.first_name}"%>
-            </div>
-            <br>
-            <div class="text-restrict-width bottom-margin-icon"><%= @user.description %></div>
-            <div class="border-line-bottom"></div>
-          </div>
           <% if @user.host %>
-            <div class="row">
-              <div class="venue-flex-box">
-                <div class="venue-title", id="events_I_host">
-                  Sports Events I host
-                </div>
+            <div class="attending", id="events_I_host">
+              <div class="row">
+                <h2 class="venue-title">
+                  <div class="venue-flex-box all-show-title-font">
+                    Hosting
+                  </div>
+                </h2>
               </div>
-            </div>
-            <br>
-            <div class="row">
-              <% @user.experiences.each do |exp| %>
-                <div class="col-xs-12 col-sm-12">
-                  <div class="profile-card">
-                     <div class="message">
-                      <%= link_to exp do %>
-                        <img class="profile-card-pic" src="<%= exp.photo %>">
-                      <% end %>
-                      <div class="message-body">
-                        <h3><%= link_to exp.name, exp %></h3>
-                          <p><%= exp.description %></p>
-                          <p><%= exp.location %></p>
-                          <p><%= exp.language %></p>
-                          <p><%= exp.duration %> hours </p>
-                          <p><%= exp.skill_level %> skill level</p>
-                          <p><%= exp.price %> RMB </p>
-                      </div>
-                      <div class="message-status">
-                        <btn class="btn-medium"><%= link_to 'Add A Timeslot', new_experience_timeslot_path(exp) %></btn>
-                        <br>
-                        <btn class="btn-medium"><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></btn>
-                        <br>
-                        <btn class="btn-medium"><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></btn>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="history">
-                    <div class="row">
-                      <div id="padding-0", class="col-xs-6">
-                        <a href="javascript:void(0)" onclick="openCity('<%= exp.name %>', '<%= exp.name %>_incoming');">
-                          <div class="profile-third tablink profile-bottombar profile-hover-light-grey profile-padding">Incoming</div>
-                        </a>
-                      </div>
-                      <div id="padding-0", class="col-xs-6">
-                        <a href="javascript:void(0)" onclick="openCity('<%= exp.name %>', '<%= exp.name %>_passed');">
-                          <div class="profile-third tablink profile-bottombar profile-hover-light-grey profile-padding">Passed</div>
-                        </a>
+              <div class="row">
+                <% @user.experiences.each do |exp| %>
+                  <div class="col-xs-12 col-sm-12">
+                    <div class="profile-card">
+                       <div class="message">
+                        <%= link_to exp do %>
+                          <img class="profile-card-pic" src="<%= exp.photo %>">
+                        <% end %>
+                        <div class="message-body">
+                          <h3><%= link_to exp.name, exp %></h3>
+                            <p><%= exp.description %></p>
+                            <p><%= exp.location %></p>
+                            <p><%= exp.language %></p>
+                            <p><%= exp.duration %> hours </p>
+                            <p><%= exp.skill_level %> skill level</p>
+                            <p><%= exp.price %> RMB </p>
+                        </div>
+                        <div class="message-status">
+                          <btn class="btn-medium"><%= link_to 'Add A Timeslot', new_experience_timeslot_path(exp) %></btn>
+                          <br>
+                          <btn class="btn-medium"><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></btn>
+                          <br>
+                          <btn class="btn-medium"><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></btn>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="history-card">
-                    <div id="<%= exp.name %>_incoming" class="<%= exp.name %>">
-                      <div>
-                        <% @hosting_bookings.each do |booking| %>
-                          <% if booking.experience.name == exp.name %>
-                            <div class="message">
-                              <%= link_to experience_booking_path(booking.experience, booking) do %>
-                                <img class="profile-card-user-pic" src="<%= booking.experience.user.photo %>">
-                              <% end %>
-                              <div class="message-body">
-                                <div><%= link_to "Booked By #{booking.user.first_name} #{booking.user.last_name}",  experience_host_path(booking) %></div>
-                                <div><%= booking.start_time %></div>
-                                <div><%= booking.end_time %></div>
-                              </div>
-                              <div class="message-body">
-                                <%= "In Progress" %>
-                              </div>
-                              <br>
-                              <div class="message-status">
-                                <button class="btn-medium"><%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %></button>
+                    <div class="history">
+                      <div class="row">
+                        <div id="padding-0", class="col-xs-6">
+                          <a href="javascript:void(0)" onclick="openCity('<%= exp.name %>', '<%= exp.name %>_incoming');">
+                            <div class="profile-third tablink profile-bottombar profile-hover-light-grey profile-padding">Incoming</div>
+                          </a>
+                        </div>
+                        <div id="padding-0", class="col-xs-6">
+                          <a href="javascript:void(0)" onclick="openCity('<%= exp.name %>', '<%= exp.name %>_passed');">
+                            <div class="profile-third tablink profile-bottombar profile-hover-light-grey profile-padding">Passed</div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="history-card">
+                      <div id="<%= exp.name %>_incoming" class="<%= exp.name %>">
+                        <div>
+                          <% @hosting_bookings.each do |booking| %>
+                            <% if booking.experience.name == exp.name %>
+                              <div class="message">
+                                <%= link_to experience_booking_path(booking.experience, booking) do %>
+                                  <img class="profile-card-user-pic" src="<%= booking.experience.user.photo %>">
+                                <% end %>
+                                <div class="message-body">
+                                  <div><%= link_to "Booked By #{booking.user.first_name} #{booking.user.last_name}",  experience_host_path(booking) %></div>
+                                  <div><%= booking.start_time %></div>
+                                  <div><%= booking.end_time %></div>
+                                </div>
+                                <div class="message-body">
+                                  <%= "In Progress" %>
+                                </div>
                                 <br>
-                                <button class="btn-medium"><%= link_to "Decline", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></button>
+                                <div class="message-status">
+                                  <button class="btn-medium"><%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %></button>
+                                  <br>
+                                  <button class="btn-medium"><%= link_to "Decline", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></button>
+                                </div>
                               </div>
-                            </div>
+                            <% end %>
                           <% end %>
-                        <% end %>
+                        </div>
                       </div>
-                    </div>
-                    <div id="<%= exp.name %>_passed" class="<%= exp.name %>" style="display:none">
-                      <div>
-                        <% @hosted_bookings.each do |booking| %>
-                          <% if booking.experience.name == exp.name %>
-                            <div class="message">
-                              <%= link_to experience_booking_path(booking.experience, booking) do %>
-                                <img class="profile-card-user-pic" src="<%= booking.experience.user.photo %>">
-                              <% end %>
-                              <div class="message-body">
-                                <div><%= link_to "Booked By #{booking.user.first_name} #{booking.user.last_name}",  experience_host_path(booking) %></div>
-                                <div><%= booking.start_time %></div>
-                                <div><%= booking.end_time %></div>
+                      <div id="<%= exp.name %>_passed" class="<%= exp.name %>" style="display:none">
+                        <div>
+                          <% @hosted_bookings.each do |booking| %>
+                            <% if booking.experience.name == exp.name %>
+                              <div class="message">
+                                <%= link_to experience_booking_path(booking.experience, booking) do %>
+                                  <img class="profile-card-user-pic" src="<%= booking.experience.user.photo %>">
+                                <% end %>
+                                <div class="message-body">
+                                  <div><%= link_to "Booked By #{booking.user.first_name} #{booking.user.last_name}",  experience_host_path(booking) %></div>
+                                  <div><%= booking.start_time %></div>
+                                  <div><%= booking.end_time %></div>
+                                </div>
+                                <div class="message-body">
+                                  <%= "This Deal Is Closed" %>
+                                </div>
                               </div>
-                              <div class="message-body">
-                                <%= "This Deal Is Closed" %>
-                              </div>
-                            </div>
+                            <% end %>
                           <% end %>
-                        <% end %>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              <% end %>
+                <% end %>
+              </div>
             </div>
             <br>
           <% end %>
-          <div class="row">
-            <div class="venue-flex-box">
-              <div class="venue-title", id="events_I_will_attend">
-                Sports Events I will attend
+            <div class="attending", id="events_I_attend">
+              <div class="row">
+                <h2 class="venue-title">
+                  <div class="venue-flex-box all-show-title-font">
+                    Attending
+                  </div>
+                </h2>
               </div>
-            </div>
-          </div>
-          <div class="row">
-            <% @attending_bookings.each do |booking| %>
-              <div class="col-xs-12 col-sm-12">
-                <div class="profile-card">
-                  <div class="message">
-                    <%= link_to experience_booking_path(booking.experience, booking) do %>
-                      <img class="profile-card-pic" src="<%= booking.experience.photo %>">
-                    <% end %>
-                    <div class="message-body">
-                      <h3><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></h3>
-                      <div><%= link_to "Hosted By #{booking.user.first_name} #{booking.user.last_name}",  experience_host_path(booking) %></div>
-                      <div><%= booking.experience.description %></div>
-                      <div><%= booking.experience.location %></div>
-                      <div><%= booking.experience.skill_level %></div>
-                      <div><%= booking.experience.price %></div>
-                      <div><%= booking.start_time %></div>
-                      <div><%= booking.end_time %></div>
-                    </div>
-                    <div class="message-status">
-                      <button class="btn-medium"><%= link_to "Cancel", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure? RMB#{booking.experience.price} will be refunded back to your account."} %></button>
-                    </div>
+              <br>
+              <div class="history">
+                <div class="row">
+                  <div id="padding-0", class="col-xs-6">
+                    <a href="javascript:void(0)" onclick="openCity('event', 'incoming');">
+                      <div class="profile-third tablink profile-bottombar profile-hover-light-grey profile-padding">Incoming</div>
+                    </a>
+                  </div>
+                  <div id="padding-0", class="col-xs-6">
+                    <a href="javascript:void(0)" onclick="openCity('event', 'passed');">
+                      <div class="profile-third tablink profile-bottombar profile-hover-light-grey profile-padding">Passed</div>
+                    </a>
                   </div>
                 </div>
               </div>
-            <% end %>
-          </div>
-          <br>
-          <div class="row">
-            <div class="venue-flex-box">
-              <div class="venue-title", id="events_I_have_attended">
-                Sports Events I've attended
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <% @attended_bookings.each do |booking| %>
-              <div class="col-xs-12 col-sm-12">
-                <div class="profile-card">
-                  <div class="message">
-                    <%= link_to experience_booking_path(booking.experience, booking) do %>
-                      <img class="profile-card-pic" src="<%= booking.experience.photo %>">
+              <div class="history-card">
+                <div id="incoming" class='event'>
+                  <div>
+                    <% @attending_bookings.each do |booking| %>
+                      <div class="message">
+                        <%= link_to experience_booking_path(booking.experience, booking) do %>
+                          <img class="profile-card-pic" src="<%= booking.experience.photo %>">
+                        <% end %>
+                        <div class="message-body">
+                          <h3><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></h3>
+                          <%= link_to experience_host_path(booking) do %>
+                            <img class="avatar" src="<%= booking.experience.user.photo %>">
+                            <%= "Hosted By #{booking.user.first_name} #{booking.user.last_name}" %>
+                          <% end %>
+                          <br>
+                          <br>
+                          <div><%= booking.experience.description %></div>
+                          <div><%= booking.experience.location %></div>
+                          <div><%= booking.experience.skill_level %></div>
+                          <div><%= booking.experience.price %></div>
+                          <div><%= booking.start_time %></div>
+                          <div><%= booking.end_time %></div>
+                        </div>
+                        <div class="message-status">
+                          <button class="btn-medium"><%= link_to "Cancel", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure? RMB#{booking.experience.price} will be refunded back to your account."} %></button>
+                        </div>
+                      </div>
                     <% end %>
-                    <div class="message-body">
-                      <h3><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></h3>
-                      <div><%= link_to "Hosted By #{booking.user.first_name} #{booking.user.last_name}",  experience_host_path(booking) %></div>
-                      <div><%= booking.experience.description %></div>
-                      <div><%= booking.experience.location %></div>
-                      <div><%= booking.experience.skill_level %></div>
-                      <div><%= booking.experience.price %></div>
-                      <div><%= booking.start_time %></div>
-                      <div><%= booking.end_time %></div>
-                    </div>
+                  </div>
+                </div>
+                <div id="passed" class='event' style="display:none">
+                  <div>
+                    <% @attended_bookings.each do |booking| %>
+                        <div class="message">
+                          <%= link_to experience_booking_path(booking.experience, booking) do %>
+                            <img class="profile-card-pic" src="<%= booking.experience.photo %>">
+                          <% end %>
+                          <div class="message-body">
+                            <h3><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></h3>
+                            <%= link_to experience_host_path(booking) do %>
+                              <img class="avatar" src="<%= booking.experience.user.photo %>">
+                              <%= "Hosted By #{booking.user.first_name} #{booking.user.last_name}" %>
+                            <% end %>
+                            <br>
+                            <br>
+                            <div><%= booking.experience.description %></div>
+                            <div><%= booking.experience.location %></div>
+                            <div><%= booking.experience.skill_level %></div>
+                            <div><%= booking.experience.price %></div>
+                            <div><%= booking.start_time %></div>
+                            <div><%= booking.end_time %></div>
+                          </div>
+                        </div>
+                    <% end %>
                   </div>
                 </div>
               </div>
-            <% end %>
-          </div>
+            </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
 <script>
 function openCity(evt, cityName) {
