@@ -109,11 +109,7 @@
                         <% end %>
                         <div class="message-body">
                           <h3><%= link_to exp.name, exp %></h3>
-                          <div class="icon-detail1 margin-icon top-margin-icon icon-middle-bottom">
-                            <div class="width-of-icon-text"><i class="far fa-file"></i></div>
-                            <div class="experience-desc-after-icon capitalize"><%= exp.description %>
-                            </div>
-                          </div>
+                            <%= exp.description %>
                           <div class="icon-detail1 margin-icon top-margin-icon icon-middle-bottom">
                             <div class="width-of-icon-text"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="experience-desc-after-icon capitalize"><%= exp.location %>
@@ -171,7 +167,6 @@
                                 <% end %>
                                 <div class="message-body">
                                   <div><%= link_to "Booked By #{booking.user.first_name} #{booking.user.last_name}",  experience_host_path(booking) %></div>
-                                  <div><%= booking.user.email %></div>
                                   <div><%= booking.user.phone %></div>
                                   <div><%= booking.user.nationality %></div>
                                   <div><%= booking.user.occupation %></div>
@@ -257,11 +252,9 @@
                             <img class="avatar" src="<%= booking.experience.user.photo %>">
                             <%= "Hosted By #{booking.user.first_name} #{booking.user.last_name}" %>
                           <% end %>
-                          <div class="icon-detail1 margin-icon top-margin-icon icon-middle-bottom">
-                            <div class="width-of-icon-text"><i class="far fa-file"></i></div>
-                            <div class="experience-desc-after-icon capitalize"><%= booking.experience.description %>
-                            </div>
-                          </div>
+                          <br>
+                          <br>
+                          <div><%= booking.experience.description %></div>
                           <div class="icon-detail1 margin-icon top-margin-icon icon-middle-bottom">
                             <div class="width-of-icon-text"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="experience-desc-after-icon capitalize"><%= booking.experience.location %>
@@ -309,11 +302,9 @@
                               <img class="avatar" src="<%= booking.experience.user.photo %>">
                               <%= "Hosted By #{booking.user.first_name} #{booking.user.last_name}" %>
                             <% end %>
-                            <div class="icon-detail1 margin-icon top-margin-icon icon-middle-bottom">
-                              <div class="width-of-icon-text"><i class="far fa-file"></i></div>
-                              <div class="experience-desc-after-icon capitalize"><%= booking.experience.description %>
-                              </div>
-                            </div>
+                            <br>
+                            <br>
+                            <div><%= booking.experience.description %></div>
                             <div class="icon-detail1 margin-icon top-margin-icon icon-middle-bottom">
                               <div class="width-of-icon-text"><i class="fas fa-map-marker-alt"></i></div>
                               <div class="experience-desc-after-icon capitalize"><%= booking.experience.location %>
