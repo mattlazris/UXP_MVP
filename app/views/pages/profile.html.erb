@@ -248,7 +248,7 @@
                         <% end %>
                         <div class="message-body">
                           <h3><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></h3>
-                          <%= link_to experience_host_path(booking.experience, booking) do %>
+                          <%= link_ot experience_host_path(booking.experience, booking) do %>
                             <img class="avatar" src="<%= booking.experience.user.photo %>">
                             <%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %>
                           <% end %>

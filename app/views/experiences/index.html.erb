@@ -243,7 +243,6 @@
           <%= link_to experience_path(experience) do %>
             <figure class="card snip1584" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_path asset_path(experience.photo) %>');">
               <div class="card-category"><%= experience.category %></div>
-              <img class="card-user avatar" src='<%= experience.user.photo %>'>
             <% end %>
             <%= link_to experience_path(experience), experience: experience do %>
               <div class="backcard">
