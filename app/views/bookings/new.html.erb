@@ -3,30 +3,34 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6">
       <div class="booking-review">
-        <h3>Review and Pay</h3>
-        <p>Who's coming?</p>
-        <div class="in-line">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class:"book-avatar"%>
-          <p class="margin-left">Jackson</p>
-        </div>
-        <br>
-        <div class="in-line">
-          <i class="fas fa-plus-circle font_size_35"></i>
-        </div>
-        <br>
-        <h3>Payment method</h3>
-        <div>
-          <br>
+        <div class="review">
+          <h3>REVIEW AND PAY</h3>
+          <p>Who's coming?</p>
           <div class="in-line">
-            <%= image_tag asset_path("wechat-payment.png"), class:"small-img" %>
-            <p>WeChat Payment</p>
-            <i class="fas fa-check-circle green font_size_25"></i>
+            <%= cl_image_tag current_user.photo, class:"book-avatar"%>
+            <p class="margin-left"><%= " #{current_user.first_name} #{current_user.last_name}" %></p>
           </div>
           <br>
           <div class="in-line">
-            <%= image_tag asset_path("alipay.png"), class:"small-img" %>
-            <p>Alipay</p>
-            <i class="fas fa-check-circle green font_size_25"></i>
+            <i class="fas fa-plus-circle font_size_35"></i>
+          </div>
+        </div>
+        <br>
+        <div class="review">
+          <h3>PAYMENT METHOD</h3>
+          <div>
+            <br>
+            <div class="in-line">
+              <%= image_tag asset_path("wechat-payment.png"), class:"small-img" %>
+              <p>WeChat Payment</p>
+              <i class="fas fa-check-circle green font_size_25"></i>
+            </div>
+            <br>
+            <div class="in-line">
+              <%= image_tag asset_path("alipay.png"), class:"small-img" %>
+              <p>Alipay</p>
+              <i class="fas fa-check-circle green font_size_25"></i>
+            </div>
           </div>
         </div>
       </div>
