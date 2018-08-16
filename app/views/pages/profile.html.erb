@@ -10,7 +10,7 @@
               <h2 class="host_name_header"><strong><%= " #{@user.first_name} #{@user.last_name}" %></strong></h2>
               <h3><%= "You are a host." if @user.host %></h3>
               <% if @user.host %>
-                <button class="btn btn-success"><%= link_to 'Add An Experience To Your Profile', new_experience_path if policy(Experience).create? %></button>
+                <button class="btn btn-success"><%= link_to 'Add A Sports Event To Your Profile', new_experience_path if policy(Experience).create? %></button>
               <% else %>
                 <button class="btn btn-success"><%= link_to 'Become A Host', edit_user_registration_path %></button>
               <% end %>
