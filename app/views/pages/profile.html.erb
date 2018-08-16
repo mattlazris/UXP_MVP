@@ -103,13 +103,20 @@
                 <% @user.experiences.each do |exp| %>
                   <div class="col-xs-12 col-sm-12">
                     <div class="profile-card">
-                       <div class="message">
+                      <div class="margin_30">
                         <%= link_to exp do %>
-                          <img class="profile-card-pic" src="<%= exp.photo %>">
+                          <div class="venue-image" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3) 100%, rgba(0,36,61,0.6) 100%), url(<%=exp.photo%>);">
+                          </div>
                         <% end %>
-                        <div class="message-body">
+                      </div>
+                      <div class="message">
+                        <div class="font-black">
                           <h3><%= link_to exp.name, exp %></h3>
-                            <%= exp.description %>
+                        </div>
+                      </div>
+                      <div class="display-flex-center">
+                        <div class="message-body">
+                          <%= exp.description %>
                           <div class="icon-detail1 margin-icon top-margin-icon icon-middle-bottom">
                             <div class="width-of-icon-text"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="experience-desc-after-icon capitalize"><%= exp.location %>
@@ -146,12 +153,12 @@
                       <div class="row">
                         <div id="padding-0", class="col-xs-6">
                           <a href="javascript:void(0)" onclick="openCity('<%= exp.name %>', '<%= exp.name %>_incoming');">
-                            <div class="profile-third tablink profile-bottombar profile-hover-light-grey profile-padding">Incoming</div>
+                            <div class="profile-third tablink profile-bottombar profile-hover-light-grey profile-padding font-black">Incoming</div>
                           </a>
                         </div>
                         <div id="padding-0", class="col-xs-6">
                           <a href="javascript:void(0)" onclick="openCity('<%= exp.name %>', '<%= exp.name %>_passed');">
-                            <div class="profile-third tablink profile-bottombar profile-hover-light-grey profile-padding">Accepted</div>
+                            <div class="profile-third tablink profile-bottombar profile-hover-light-grey profile-padding font-black">Accepted</div>
                           </a>
                         </div>
                       </div>
@@ -161,9 +168,9 @@
                         <div>
                           <% @hosting_bookings.each do |booking| %>
                             <% if booking.experience.name == exp.name %>
-                              <div class="message">
+                              <div class="message1">
                                 <%= link_to experience_host_path(booking) do %>
-                                  <img class="profile-card-user-pic" src="<%= booking.experience.user.photo %>">
+                                  <img class="profile-card-user-pic" src="<%= booking.user.photo %>">
                                 <% end %>
                                 <div class="message-body">
                                   <div><%= link_to "Booked By #{booking.user.first_name} #{booking.user.last_name}",  experience_host_path(booking) %></div>
@@ -191,7 +198,7 @@
                         <div>
                           <% @hosted_bookings.each do |booking| %>
                             <% if booking.experience.name == exp.name %>
-                              <div class="message">
+                              <div class="message1">
                                 <%= link_to experience_host_path(booking) do %>
                                   <img class="profile-card-user-pic" src="<%= booking.experience.user.photo %>">
                                 <% end %>
@@ -228,32 +235,37 @@
                 <div class="row">
                   <div id="padding-0", class="col-xs-6">
                     <a href="javascript:void(0)" onclick="openCity('event', 'incoming');">
-                      <div class="profile-third tablink profile-bottombar profile-hover-light-grey profile-padding">Incoming</div>
+                      <div class="profile-third tablink profile-bottombar profile-hover-light-grey profile-padding font-black">Incoming</div>
                     </a>
                   </div>
                   <div id="padding-0", class="col-xs-6">
                     <a href="javascript:void(0)" onclick="openCity('event', 'passed');">
-                      <div class="profile-third tablink profile-bottombar profile-hover-light-grey profile-padding">Passed</div>
+                      <div class="profile-third tablink profile-bottombar profile-hover-light-grey profile-padding font-black">Passed</div>
                     </a>
                   </div>
                 </div>
               </div>
               <div class="history-card">
                 <div id="incoming" class='event'>
-                  <div>
+                  <div class="profile-card">
                     <% @attending_bookings.each do |booking| %>
-                      <div class="message">
+                      <div class="margin_30">
                         <%= link_to experience_booking_path(booking.experience, booking) do %>
-                          <img class="profile-card-pic" src="<%= booking.experience.photo %>">
+                          <div class="venue-image" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3) 100%, rgba(0,36,61,0.6) 100%), url('booking.experience.photo');">
+                          </div>
                         <% end %>
-                        <div class="message-body">
+                      </div>
+                      <div class="message">
+                        <div class="font-black">
                           <h3><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></h3>
-                          <%= link_ot experience_host_path(booking.experience, booking) do %>
-                            <img class="avatar" src="<%= booking.experience.user.photo %>">
-                            <%= "Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %>
+                          <%= link_to experience_host_path(booking.experience, booking) do %>
+                            <img class="profile-avatar" src="<%= booking.experience.user.photo %>">
+                            <%= " Hosted By #{booking.experience.user.first_name} #{booking.experience.user.last_name}" %>
                           <% end %>
-                          <br>
-                          <br>
+                        </div>
+                      </div>
+                      <div class="display-flex-center">
+                        <div class="message-body">
                           <div><%= booking.experience.description %></div>
                           <div class="icon-detail1 margin-icon top-margin-icon icon-middle-bottom">
                             <div class="width-of-icon-text"><i class="fas fa-map-marker-alt"></i></div>
@@ -290,20 +302,25 @@
                   </div>
                 </div>
                 <div id="passed" class='event' style="display:none">
-                  <div>
+                  <div class="profile-card">
                     <% @attended_bookings.each do |booking| %>
-                        <div class="message">
-                          <%= link_to experience_booking_path(booking.experience, booking) do %>
-                            <img class="profile-card-pic" src="<%= booking.experience.photo %>">
+                      <div class="margin_30">
+                        <%= link_to experience_host_path(booking)  do  %>
+                          <div class="venue-image" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3) 100%, rgba(0,36,61,0.6) 100%), url('booking.experience.photo');">
+                          </div>
+                        <% end %>
+                      </div>
+                      <div class="message">
+                        <div class="font-black">
+                          <h3><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></h3>
+                          <%= link_to experience_host_path(booking) do %>
+                            <img class="profile-avatar" src="<%= booking.experience.user.photo %>">
+                            <%= " Hosted By #{booking.user.first_name} #{booking.user.last_name}" %>
                           <% end %>
+                        </div>
+                      </div>
+                      <div class="display-flex-center">
                           <div class="message-body">
-                            <h3><%= link_to booking.experience.name, experience_booking_path(booking.experience, booking) %></h3>
-                            <%= link_to experience_host_path(booking) do %>
-                              <img class="avatar" src="<%= booking.experience.user.photo %>">
-                              <%= "Hosted By #{booking.user.first_name} #{booking.user.last_name}" %>
-                            <% end %>
-                            <br>
-                            <br>
                             <div><%= booking.experience.description %></div>
                             <div class="icon-detail1 margin-icon top-margin-icon icon-middle-bottom">
                               <div class="width-of-icon-text"><i class="fas fa-map-marker-alt"></i></div>
