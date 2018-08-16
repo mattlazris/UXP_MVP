@@ -117,11 +117,11 @@
                             <p><%= exp.price %> RMB </p>
                         </div>
                         <div class="message-status">
-                          <btn class="btn-medium"><%= link_to 'Add A Timeslot', new_experience_timeslot_path(exp) %></btn>
+                          <btn class="main-btn padding-top-is-cool btn-sm btn-light"><%= link_to 'Add A Timeslot', new_experience_timeslot_path(exp) %></btn>
                           <br>
-                          <btn class="btn-medium"><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></btn>
+                          <btn class="main-btn padding-top-is-cool btn-sm btn-light"><%= link_to 'Edit', edit_experience_path(exp) if policy(exp).update? %></btn>
                           <br>
-                          <btn class="btn-medium"><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></btn>
+                          <btn class="main-btn padding-top-is-cool btn-sm btn-light"><%= link_to 'Delete', exp, method: :delete, data: { confirm: "Are you sure?" } if policy(exp).destroy? %></btn>
                         </div>
                       </div>
                     </div>
@@ -158,9 +158,9 @@
                                 </div>
                                 <br>
                                 <div class="message-status">
-                                  <button class="btn-medium"><%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %></button>
+                                  <button class="main-btn padding-top-is-cool btn-sm btn-light"><%= link_to 'Mark As Complete', edit_experience_booking_path(booking.experience, booking), data: {confirm: 'Are you sure?'} %></button>
                                   <br>
-                                  <button class="btn-medium"><%= link_to "Decline", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></button>
+                                  <button class="main-btn padding-top-is-cool btn-sm btn-light"><%= link_to "Decline", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure?"} %></button>
                                 </div>
                               </div>
                             <% end %>
@@ -242,7 +242,7 @@
                           <div><%= booking.end_time %></div>
                         </div>
                         <div class="message-status">
-                          <button class="btn-medium"><%= link_to "Cancel", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure? RMB#{booking.experience.price} will be refunded back to your account."} %></button>
+                          <button class="main-btn padding-top-is-cool btn-sm btn-light"><%= link_to "Cancel", experience_booking_path(booking.experience, booking), method: :delete, data: { confirm: "Are you sure? RMB#{booking.experience.price} will be refunded back to your account."} %></button>
                         </div>
                       </div>
                     <% end %>
