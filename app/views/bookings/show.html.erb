@@ -19,11 +19,11 @@
         <h5>Email: <%= @booking.experience.user.email %></h5>
         <h5>Please say hello to your teammate!</h5>
       </div>
-      <div class="col-xs-12 col-sm-6"><%= cl_image_tag @booking.experience.photo, height: 298, crop: :fill %></div>
+      <div class="col-xs-12 col-sm-6"><%= cl_image_tag @booking.experience.photo, height: 318, crop: :fill %></div>
     </div>
     <br>
     <div class="row">
-      <button class="btn btn-success font-white"><%= link_to 'Back to home page', root_path %></button>
+      <button class="btn btn-success font-white"><%= link_to 'Back to profile page', profile_path %></button>
     </div>
   </div>
 </div>
