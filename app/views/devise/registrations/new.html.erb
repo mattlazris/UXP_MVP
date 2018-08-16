@@ -12,6 +12,7 @@
             <%= f.input :last_name, required: true %>
             <%= f.input :age, required: true %>
             <%= f.input :gender, as: :radio_buttons, collection: ['Female', 'Male'] %>
+            <%= f.input :phone, hint: "your cellphone number" %>
             <%= f.input :description, hint: "write something about yourself" %>
             <%= f.input :photo, hint: "Upload a photo of your self" %>
             <%= f.input :photo_cache, as: :hidden %>

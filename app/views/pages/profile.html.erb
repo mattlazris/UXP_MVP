@@ -166,16 +166,20 @@
                           <% @hosting_bookings.each do |booking| %>
                             <% if booking.experience.name == exp.name %>
                               <div class="message">
-                                <%= link_to experience_booking_path(booking.experience, booking) do %>
+                                <%= link_to experience_host_path(booking) do %>
                                   <img class="profile-card-user-pic" src="<%= booking.experience.user.photo %>">
                                 <% end %>
                                 <div class="message-body">
                                   <div><%= link_to "Booked By #{booking.user.first_name} #{booking.user.last_name}",  experience_host_path(booking) %></div>
-                                  <div><%= booking.start_time %></div>
-                                  <div><%= booking.end_time %></div>
+                                  <div><%= booking.user.email %></div>
+                                  <div><%= booking.user.phone %></div>
+                                  <div><%= booking.user.nationality %></div>
+                                  <div><%= booking.user.occupation %></div>
                                 </div>
                                 <div class="message-body">
-                                  <%= "Paid" %>
+                                  Schedule:
+                                  <div><%= booking.start_time %></div>
+                                  <div><%= booking.end_time %></div>
                                 </div>
                                 <br>
                                 <div class="message-status">
@@ -193,7 +197,7 @@
                           <% @hosted_bookings.each do |booking| %>
                             <% if booking.experience.name == exp.name %>
                               <div class="message">
-                                <%= link_to experience_booking_path(booking.experience, booking) do %>
+                                <%= link_to experience_host_path(booking) do %>
                                   <img class="profile-card-user-pic" src="<%= booking.experience.user.photo %>">
                                 <% end %>
                                 <div class="message-body">
@@ -279,6 +283,10 @@
                           <div class="icon-detail1 margin-icon icon-middle-bottom">
                             <div class="width-of-icon-text"><i class="fas fa-money-bill-alt"></i></div>
                             <div class="experience-desc-after-icon capitalize"><%= booking.experience.price %> RMB</div>
+                          </div>
+                          <div class="icon-detail1 margin-icon icon-middle-bottom">
+                            <div class="width-of-icon-text"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="experience-desc-after-icon capitalize"><%= booking.experience.user.phone %></div>
                           </div>
                         </div>
                         <div class="message-status">
